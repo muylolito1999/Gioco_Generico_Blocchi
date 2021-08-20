@@ -28,14 +28,8 @@ public class input_handler {
     private Semaphore mutex;
     private int category;
     TextColor.Indexed color;
-    private int first_movement_row;
-    private int second_movement_row;
-    private int third_movement_row;
-    private int fourth_movement_row;
-    private int first_movement_column;
-    private int second_movement_column;
-    private int third_movement_column;
-    private int fourth_movement_column;
+	public final static int CLOCKWISE = 0;
+	public final static int ANTI_CLOCKWISE = 1;
 
     public input_handler(Screen screen, BlockGrid_Holder[][] contentAreas, int[][] grid, Semaphore mutex, TextColor.Indexed color) {
         this.screen = screen;
@@ -44,11 +38,6 @@ public class input_handler {
         this.mutex = mutex;
         this.category = 0;
         this.color = color;
-
-        this.first_movement_row = this.first_movement_column = 0;
-        this.second_movement_row = this.second_movement_column = 0;
-        this.third_movement_row = this.third_movement_column = 0;
-        this.fourth_movement_row = this.fourth_movement_column = 0;
 
         Start_Input_Handler_Thread();
 
@@ -65,54 +54,60 @@ public class input_handler {
     public void StopThread() {
         this.input_handler.stop();
     }
+    
+    public void setValues(BlockGrid_Holder[][] contentAreas, int[][] grid,
+			int value, Indexed indexed_color, int block[][]) {
+		for (int i = 0; i < block.length; i++) {
+			int row = block[i][0];
+			int col = block[i][1];
+			contentAreas[row][col].SetBlock(indexed_color);
+			grid[row][col] = value;
+		}
 
-    private void SetValues(BlockGrid_Holder[][] contentAreas, int[][] grid, int value, TextColor.Indexed indexed_color, int row1, int column1, int row2, int column2, int row3, int column3, int row4, int column4) {
+	}
+    
+    public boolean IsValid(int block[][]) {
+		for (int i = 0; i < block.length; i++) {
+			if (block[i][0] < 0 || block[i][0] >= Game.ROW || block[i][1] < 0
+					|| block[i][1] >= Game.COL) {
+				return false;
+			}
+		}
+		return true;
+	}
+    
+    private boolean validateMove(int[][] movement_block, int[][] blockChanges) {
+		boolean validBlock = IsValid(movement_block);
+		System.out.println("validBlock : " + validBlock);
+		if (!validBlock) {
+			return false;
+		}
+		
+		for (int i = 0; i < blockChanges.length; i++) {
+			int index = blockChanges[i][0];
+			int row = movement_block[index][0];
+			int col = movement_block[index][1];
+			if (grid[row][col] != 0) {
+				System.out.println("Cannot Move: " + row + ", " + col);
+				return false;
+			}
+		}
+		return true;
+	}
 
-        contentAreas[row1][column1].SetBlock(indexed_color);
-        grid[row1][column1] = value;
-
-        contentAreas[row2][column2].SetBlock(indexed_color);
-        grid[row2][column2] = value;
-
-        contentAreas[row3][column3].SetBlock(indexed_color);
-        grid[row3][column3] = value;
-
-        contentAreas[row4][column4].SetBlock(indexed_color);
-        grid[row4][column4] = value;
-
-    }
-
-    private boolean IsValid(int first_row, int first_column, int second_row, int second_column, int third_row, int third_column, int fourth_row, int fourth_column) {
-        boolean lowerbound = (first_row >= 0 && first_column >= 0
-                && second_row >= 0 && second_column >= 0
-                && third_row >= 0 && third_column >= 0
-                && fourth_row >= 0 && fourth_column >= 0);
-        boolean upperbound = (first_row < 12 && first_column < 24
-                && second_row < 12 && second_column < 24
-                && third_row < 12 && third_column < 24
-                && fourth_row < 12 && fourth_column < 24);
-
-        return lowerbound && upperbound;
-    }
-
-    private boolean assign(int first_row, int first_column, int second_row, int second_column, int third_row, int third_column, int fourth_row, int fourth_column) {
-        first_movement_row = first_row;
-        first_movement_column = first_column;
-
-        second_movement_row = second_row;
-        second_movement_column = second_column;
-
-        third_movement_row = third_row;
-        third_movement_column = third_column;
-
-        fourth_movement_row = fourth_row;
-        fourth_movement_column = fourth_column;
-
-        return IsValid(first_movement_row, first_movement_column,
-                second_movement_row, second_movement_column,
-                third_movement_row, third_movement_column,
-                fourth_movement_row, fourth_movement_column);
-    }
+	private void moveShape(int[][] block, int[][] movement_block,
+			int[][] blockChanges) {
+		for (int i = 0; i < movement_block.length; i++) {
+			movement_block[i][0] = block[i][0];
+			movement_block[i][1] = block[i][1];
+			for (int j = 0; j < blockChanges.length; j++) {
+				if (blockChanges[j][0] == i) {
+					movement_block[i][0] = block[i][0] + blockChanges[j][1];
+					movement_block[i][1] = block[i][1] + blockChanges[j][2];
+				}
+			}
+		}
+	}
 
     private void rotate(BlockGrid_Holder[][] contentAreas, int[][] grid, int movement) throws InterruptedException {
 
@@ -125,676 +120,241 @@ public class input_handler {
             return;
         }
 
-        int first_row, first_column, second_row, second_column, third_row, third_column, fourth_row, fourth_column;
-
-        first_row = first_column = second_row = second_column = third_row = third_column = fourth_row = fourth_column = 0;
-        for (int i = 0; i < 12; i++) {
-
-            for (int j = 0; j < 24; j++) {
-
-                if (grid[i][j] == 1) {
-
-                    if (first_row == 0 && first_column == 0) {
-                        first_row = i;
-                        first_column = j;
-                    } else if (second_row == 0 && second_column == 0) {
-                        second_row = i;
-                        second_column = j;
-                    } else if (third_row == 0 && third_column == 0) {
-                        third_row = i;
-                        third_column = j;
-                    } else if (fourth_row == 0 && fourth_column == 0) {
-                        fourth_row = i;
-                        fourth_column = j;
-                    }
-
-                }
-
-            }
-        }
-
-        if (category == 1) {
-            //Right T
-
-            if (movement == 0) {
-
-                boolean valid = assign(first_row, first_column, second_row, second_column, third_row - 1, third_column - 1, fourth_row, fourth_column);
-
-                if (valid && grid[third_movement_row][third_movement_column] == 0) {
-
-                    SetValues(contentAreas, grid, 0, TextColor.Indexed.fromRGB(255, 255, 255), first_row, first_column,
-                            second_row, second_column,
-                            third_row, third_column,
-                            fourth_row, fourth_column);
-
-                    SetValues(contentAreas, grid, 1, color, first_movement_row, first_movement_column,
-                            second_movement_row, second_movement_column,
-                            third_movement_row, third_movement_column,
-                            fourth_movement_row, fourth_movement_column);
-
-                    category = 4;
-                }
-
-            } else {
-
-                boolean valid = assign(first_row - 1, first_column + 1, second_row, second_column, third_row, third_column, fourth_row, fourth_column);
-
-                if (valid && grid[first_movement_row][first_movement_column] == 0) {
-
-                    SetValues(contentAreas, grid, 0, TextColor.Indexed.fromRGB(255, 255, 255), first_row, first_column,
-                            second_row, second_column,
-                            third_row, third_column,
-                            fourth_row, fourth_column);
-
-                    SetValues(contentAreas, grid, 1, color, first_movement_row, first_movement_column,
-                            second_movement_row, second_movement_column,
-                            third_movement_row, third_movement_column,
-                            fourth_movement_row, fourth_movement_column);
-
-                    category = 3;
-
-                }
-
-            }
-
-        } else if (category == 2) {
-            //Left T
-
-            if (movement == 0) {
-
-                boolean valid = assign(first_row, first_column, second_row + 1, second_column + 1, third_row, third_column, fourth_row, fourth_column);
-
-                if (valid && grid[second_movement_row][second_movement_column] == 0) {
-
-                    SetValues(contentAreas, grid, 0, TextColor.Indexed.fromRGB(255, 255, 255), first_row, first_column,
-                            second_row, second_column,
-                            third_row, third_column,
-                            fourth_row, fourth_column);
-
-                    SetValues(contentAreas, grid, 1, color, first_movement_row, first_movement_column,
-                            second_movement_row, second_movement_column,
-                            third_movement_row, third_movement_column,
-                            fourth_movement_row, fourth_movement_column);
-                    category = 3;
-                }
-
-            } else {
-
-                boolean valid = assign(first_row, first_column, second_row, second_column, third_row, third_column, fourth_row + 1, fourth_column - 1);
-
-                if (valid && grid[fourth_movement_row][fourth_movement_column] == 0) {
-
-                    SetValues(contentAreas, grid, 0, TextColor.Indexed.fromRGB(255, 255, 255), first_row, first_column,
-                            second_row, second_column,
-                            third_row, third_column,
-                            fourth_row, fourth_column);
-
-                    SetValues(contentAreas, grid, 1, color, first_movement_row, first_movement_column,
-                            second_movement_row, second_movement_column,
-                            third_movement_row, third_movement_column,
-                            fourth_movement_row, fourth_movement_column);
-                    category = 4;
-                }
-
-            }
-
-        } else if (category == 3) {
-            //Up T
-
-            if (movement == 0) {
-
-                boolean valid = assign(first_row + 1, first_column - 1, second_row, second_column, third_row, third_column, fourth_row, fourth_column);
-
-                if (valid && grid[first_movement_row][first_movement_column] == 0) {
-
-                    SetValues(contentAreas, grid, 0, TextColor.Indexed.fromRGB(255, 255, 255), first_row, first_column,
-                            second_row, second_column,
-                            third_row, third_column,
-                            fourth_row, fourth_column);
-
-                    SetValues(contentAreas, grid, 1, color, first_movement_row, first_movement_column,
-                            second_movement_row, second_movement_column,
-                            third_movement_row, third_movement_column,
-                            fourth_movement_row, fourth_movement_column);
-
-                    category = 1;
-                }
-            } else {
-
-                boolean valid = assign(first_row, first_column, second_row, second_column, third_row, third_column, fourth_row - 1, fourth_column - 1);
-
-                if (valid && grid[fourth_movement_row][fourth_movement_column] == 0) {
-
-                    SetValues(contentAreas, grid, 0, TextColor.Indexed.fromRGB(255, 255, 255), first_row, first_column,
-                            second_row, second_column,
-                            third_row, third_column,
-                            fourth_row, fourth_column);
-
-                    SetValues(contentAreas, grid, 1, color, first_movement_row, first_movement_column,
-                            second_movement_row, second_movement_column,
-                            third_movement_row, third_movement_column,
-                            fourth_movement_row, fourth_movement_column);
-
-                    category = 2;
-                }
-
-            }
-        } else if (category == 4) {
-            //reverse T
-
-            if (movement == 0) {
-
-                boolean valid = assign(first_row, first_column, second_row, second_column, third_row, third_column, fourth_row - 1, fourth_column + 1);
-
-                if (valid && grid[fourth_movement_row][fourth_movement_column] == 0) {
-
-                    SetValues(contentAreas, grid, 0, TextColor.Indexed.fromRGB(255, 255, 255), first_row, first_column,
-                            second_row, second_column,
-                            third_row, third_column,
-                            fourth_row, fourth_column);
-
-                    SetValues(contentAreas, grid, 1, color, first_movement_row, first_movement_column,
-                            second_movement_row, second_movement_column,
-                            third_movement_row, third_movement_column,
-                            fourth_movement_row, fourth_movement_column);
-
-                    category = 2;
-                }
-            } else {
-
-                boolean valid = assign(first_row + 1, first_column + 1, second_row, second_column, third_row, third_column, fourth_row, fourth_column);
-
-                if (valid && grid[first_movement_row][first_movement_column] == 0) {
-
-                    SetValues(contentAreas, grid, 0, TextColor.Indexed.fromRGB(255, 255, 255), first_row, first_column,
-                            second_row, second_column,
-                            third_row, third_column,
-                            fourth_row, fourth_column);
-
-                    SetValues(contentAreas, grid, 1, color, first_movement_row, first_movement_column,
-                            second_movement_row, second_movement_column,
-                            third_movement_row, third_movement_column,
-                            fourth_movement_row, fourth_movement_column);
-
-                    category = 1;
-                }
-
-            }
-        } else if (category == 5) {
-            //Right L
-
-            if (movement == 0) {
-
-                boolean valid = assign(first_row, first_column - 1, second_row + 1, second_column + 1, third_row, third_column, fourth_row + 1, fourth_column);
-
-                if (valid && grid[second_movement_row][second_movement_column] == 0
-                        && grid[first_movement_row][first_movement_column] == 0) {
-
-                    SetValues(contentAreas, grid, 0, TextColor.Indexed.fromRGB(255, 255, 255), first_row, first_column,
-                            second_row, second_column,
-                            third_row, third_column,
-                            fourth_row, fourth_column);
-
-                    SetValues(contentAreas, grid, 1, color, first_movement_row, first_movement_column,
-                            second_movement_row, second_movement_column,
-                            third_movement_row, third_movement_column,
-                            fourth_movement_row, fourth_movement_column);
-                    category = 6;
-                }
-            } else {
-
-                boolean valid = assign(first_row - 1, first_column - 1, second_row - 2, second_column, third_row, third_column, fourth_row - 1, fourth_column - 1);
-
-                if (valid && grid[first_movement_row][first_movement_column] == 0
-                        && grid[fourth_movement_row][fourth_movement_column] == 0
-                        && grid[second_movement_row][second_movement_column] == 0) {
-
-                    SetValues(contentAreas, grid, 0, TextColor.Indexed.fromRGB(255, 255, 255), first_row, first_column,
-                            second_row, second_column,
-                            third_row, third_column,
-                            fourth_row, fourth_column);
-
-                    SetValues(contentAreas, grid, 1, color, first_movement_row, first_movement_column,
-                            second_movement_row, second_movement_column,
-                            third_movement_row, third_movement_column,
-                            fourth_movement_row, fourth_movement_column);
-
-                    category = 7;
-                }
-
-            }
-        } else if (category == 6) {
-            //up L
-
-            if (movement == 0) {
-
-                boolean valid = assign(first_row + 1, first_column + 1, second_row, second_column, third_row - 1, third_column - 1, fourth_row, fourth_column - 2);
-
-                if (valid && grid[fourth_movement_row][fourth_movement_column] == 0
-                        && grid[third_movement_row][third_movement_column] == 0
-                        && grid[first_movement_row][first_movement_column] == 0) {
-
-                    SetValues(contentAreas, grid, 0, TextColor.Indexed.fromRGB(255, 255, 255), first_row, first_column,
-                            second_row, second_column,
-                            third_row, third_column,
-                            fourth_row, fourth_column);
-
-                    SetValues(contentAreas, grid, 1, color, first_movement_row, first_movement_column,
-                            second_movement_row, second_movement_column,
-                            third_movement_row, third_movement_column,
-                            fourth_movement_row, fourth_movement_column);
-
-                    category = 8;
-                }
-            } else {
-
-                boolean valid = assign(first_row + 2, first_column - 1, second_row, second_column + 1, third_row, third_column, fourth_row, fourth_column);
-
-                if (valid && grid[second_movement_row][second_movement_column] == 0
-                        && grid[first_movement_row][first_movement_column] == 0) {
-
-                    SetValues(contentAreas, grid, 0, TextColor.Indexed.fromRGB(255, 255, 255), first_row, first_column,
-                            second_row, second_column,
-                            third_row, third_column,
-                            fourth_row, fourth_column);
-
-                    SetValues(contentAreas, grid, 1, color, first_movement_row, first_movement_column,
-                            second_movement_row, second_movement_column,
-                            third_movement_row, third_movement_column,
-                            fourth_movement_row, fourth_movement_column);
-                    category = 5;
-                }
-
-            }
-        } else if (category == 7) {
-            //down L
-            if (movement == 0) {
-
-                boolean valid = assign(first_row, first_column + 2, second_row + 1, second_column + 1, third_row, third_column, fourth_row - 1, fourth_column - 1);
-
-                if (valid && grid[fourth_movement_row][fourth_movement_column] == 0
-                        && grid[second_movement_row][second_movement_column] == 0
-                        && grid[first_movement_row][first_movement_column] == 0) {
-
-                    SetValues(contentAreas, grid, 0, TextColor.Indexed.fromRGB(255, 255, 255), first_row, first_column,
-                            second_row, second_column,
-                            third_row, third_column,
-                            fourth_row, fourth_column);
-
-                    SetValues(contentAreas, grid, 1, color, first_movement_row, first_movement_column,
-                            second_movement_row, second_movement_column,
-                            third_movement_row, third_movement_column,
-                            fourth_movement_row, fourth_movement_column);
-
-                    category = 5;
-                }
-            } else {
-
-                boolean valid = assign(first_row + 1, first_column, second_row + 1, second_column + 1, third_row, third_column, fourth_row, fourth_column - 1);
-
-                if (valid && grid[second_movement_row][second_movement_column] == 0
-                        && grid[first_movement_row][first_movement_column] == 0
-                        && grid[fourth_movement_row][fourth_movement_column] == 0) {
-
-                    SetValues(contentAreas, grid, 0, TextColor.Indexed.fromRGB(255, 255, 255), first_row, first_column,
-                            second_row, second_column,
-                            third_row, third_column,
-                            fourth_row, fourth_column);
-
-                    SetValues(contentAreas, grid, 1, color, first_movement_row, first_movement_column,
-                            second_movement_row, second_movement_column,
-                            third_movement_row, third_movement_column,
-                            fourth_movement_row, fourth_movement_column);
-
-                    category = 8;
-                }
-
-            }
-        } else if (category == 8) {
-            //Left L
-
-            if (movement == 0) {
-
-                boolean valid = assign(first_row - 1, first_column + 1, second_row, second_column, third_row + 1, third_column - 1, fourth_row - 2, fourth_column);
-
-                if (valid && grid[fourth_movement_row][fourth_movement_column] == 0
-                        && grid[third_movement_row][third_movement_column] == 0
-                        && grid[first_movement_row][first_movement_column] == 0) {
-
-                    SetValues(contentAreas, grid, 0, TextColor.Indexed.fromRGB(255, 255, 255), first_row, first_column,
-                            second_row, second_column,
-                            third_row, third_column,
-                            fourth_row, fourth_column);
-
-                    SetValues(contentAreas, grid, 1, color, first_movement_row, first_movement_column,
-                            second_movement_row, second_movement_column,
-                            third_movement_row, third_movement_column,
-                            fourth_movement_row, fourth_movement_column);
-
-                    category = 7;
-                }
-            } else {
-
-                boolean valid = assign(first_row + 1, first_column + 2, second_row, second_column, third_row - 1, third_column - 1, fourth_row, fourth_column + 1);
-
-                if (valid && grid[first_movement_row][first_movement_column] == 0
-                        && grid[third_movement_row][third_movement_column] == 0
-                        && grid[fourth_movement_row][fourth_movement_column] == 0) {
-
-                    SetValues(contentAreas, grid, 0, TextColor.Indexed.fromRGB(255, 255, 255), first_row, first_column,
-                            second_row, second_column,
-                            third_row, third_column,
-                            fourth_row, fourth_column);
-
-                    SetValues(contentAreas, grid, 1, color, first_movement_row, first_movement_column,
-                            second_movement_row, second_movement_column,
-                            third_movement_row, third_movement_column,
-                            fourth_movement_row, fourth_movement_column);
-
-                    category = 6;
-                }
-
-            }
-        } else if (category == 9) {
-            //Reverse left L
-
-            if (movement == 0) {
-
-                boolean valid = assign(first_row + 1, first_column, second_row, second_column, third_row - 1, third_column - 1, fourth_row, fourth_column - 1);
-
-                if (valid && grid[first_movement_row][first_movement_column] == 0
-                        && grid[third_movement_row][third_movement_column] == 0
-                        && grid[fourth_movement_row][fourth_movement_column] == 0) {
-
-                    SetValues(contentAreas, grid, 0, TextColor.Indexed.fromRGB(255, 255, 255), first_row, first_column,
-                            second_row, second_column,
-                            third_row, third_column,
-                            fourth_row, fourth_column);
-
-                    SetValues(contentAreas, grid, 1, color, first_movement_row, first_movement_column,
-                            second_movement_row, second_movement_column,
-                            third_movement_row, third_movement_column,
-                            fourth_movement_row, fourth_movement_column);
-
-                    category = 10;
-                }
-            } else {
-
-                boolean valid = assign(first_row - 1, first_column + 1, second_row, second_column, third_row - 1, third_column, fourth_row, fourth_column - 1);
-
-                if (valid && grid[first_movement_row][first_movement_column] == 0
-                        && grid[third_movement_row][third_movement_column] == 0
-                        && grid[fourth_movement_row][fourth_movement_column] == 0) {
-
-                    SetValues(contentAreas, grid, 0, TextColor.Indexed.fromRGB(255, 255, 255), first_row, first_column,
-                            second_row, second_column,
-                            third_row, third_column,
-                            fourth_row, fourth_column);
-
-                    SetValues(contentAreas, grid, 1, color, first_movement_row, first_movement_column,
-                            second_movement_row, second_movement_column,
-                            third_movement_row, third_movement_column,
-                            fourth_movement_row, fourth_movement_column);
-                    category = 11;
-                }
-
-            }
-        } else if (category == 10) {
-            //Reverse Down L
-            if (movement == 0) {
-
-                boolean valid = assign(first_row + 2, first_column + 1, second_row, second_column - 1, third_row, third_column, fourth_row, fourth_column);
-
-                if (valid && grid[first_movement_row][first_movement_column] == 0
-                        && grid[second_movement_row][second_movement_column] == 0) {
-
-                    SetValues(contentAreas, grid, 0, TextColor.Indexed.fromRGB(255, 255, 255), first_row, first_column,
-                            second_row, second_column,
-                            third_row, third_column,
-                            fourth_row, fourth_column);
-
-                    SetValues(contentAreas, grid, 1, color, first_movement_row, first_movement_column,
-                            second_movement_row, second_movement_column,
-                            third_movement_row, third_movement_column,
-                            fourth_movement_row, fourth_movement_column);
-
-                    category = 12;
-                }
-            } else {
-
-                boolean valid = assign(first_row + 1, first_column + 1, second_row, second_column, third_row - 1, third_column, fourth_row, fourth_column + 1);
-
-                if (valid && grid[first_movement_row][first_movement_column] == 0
-                        && grid[third_movement_row][third_movement_column] == 0
-                        && grid[fourth_movement_row][fourth_movement_column] == 0) {
-
-                    SetValues(contentAreas, grid, 0, TextColor.Indexed.fromRGB(255, 255, 255), first_row, first_column,
-                            second_row, second_column,
-                            third_row, third_column,
-                            fourth_row, fourth_column);
-
-                    SetValues(contentAreas, grid, 1, color, first_movement_row, first_movement_column,
-                            second_movement_row, second_movement_column,
-                            third_movement_row, third_movement_column,
-                            fourth_movement_row, fourth_movement_column);
-
-                    category = 9;
-                }
-
-            }
-
-        } else if (category == 11) {
-            //Reverse up L
-
-            if (movement == 0) {
-
-                boolean valid = assign(first_row, first_column, second_row, second_column, third_row - 1, third_column - 1, fourth_row - 1, fourth_column + 1);
-
-                if (valid && grid[third_movement_row][third_movement_column] == 0
-                        && grid[fourth_movement_row][fourth_movement_column] == 0) {
-
-                    SetValues(contentAreas, grid, 0, TextColor.Indexed.fromRGB(255, 255, 255), first_row, first_column,
-                            second_row, second_column,
-                            third_row, third_column,
-                            fourth_row, fourth_column);
-
-                    SetValues(contentAreas, grid, 1, color, first_movement_row, first_movement_column,
-                            second_movement_row, second_movement_column,
-                            third_movement_row, third_movement_column,
-                            fourth_movement_row, fourth_movement_column);
-
-                    category = 9;
-                }
-            } else {
-
-                boolean valid = assign(first_row, first_column - 1, second_row + 1, second_column, third_row, third_column, fourth_row - 1, fourth_column - 1);
-
-                if (valid && grid[first_movement_row][first_movement_column] == 0
-                        && grid[second_movement_row][second_movement_column] == 0
-                        && grid[fourth_movement_row][fourth_movement_column] == 0) {
-
-                    SetValues(contentAreas, grid, 0, TextColor.Indexed.fromRGB(255, 255, 255), first_row, first_column,
-                            second_row, second_column,
-                            third_row, third_column,
-                            fourth_row, fourth_column);
-
-                    SetValues(contentAreas, grid, 1, color, first_movement_row, first_movement_column,
-                            second_movement_row, second_movement_column,
-                            third_movement_row, third_movement_column,
-                            fourth_movement_row, fourth_movement_column);
-
-                    category = 12;
-                }
-
-            }
-        } else if (category == 12) {
-            //Reverse Right L
-
-            if (movement == 0) {
-
-                boolean valid = assign(first_row, first_column + 1, second_row + 1, second_column + 1, third_row, third_column, fourth_row - 1, fourth_column);
-
-                if (valid && grid[second_movement_row][second_movement_column] == 0
-                        && grid[first_movement_row][first_movement_column] == 0
-                        && grid[fourth_movement_row][fourth_movement_column] == 0) {
-
-                    SetValues(contentAreas, grid, 0, TextColor.Indexed.fromRGB(255, 255, 255), first_row, first_column,
-                            second_row, second_column,
-                            third_row, third_column,
-                            fourth_row, fourth_column);
-
-                    SetValues(contentAreas, grid, 1, color, first_movement_row, first_movement_column,
-                            second_movement_row, second_movement_column,
-                            third_movement_row, third_movement_column,
-                            fourth_movement_row, fourth_movement_column);
-
-                    category = 11;
-                }
-            } else {
-
-                boolean valid = assign(first_row, first_column + 1, second_row + 1, second_column, third_row, third_column, fourth_row + 1, fourth_column - 1);
-
-                if (valid && grid[first_movement_row][first_movement_column] == 0
-                        && grid[second_movement_row][second_movement_column] == 0
-                        && grid[fourth_movement_row][fourth_movement_column] == 0) {
-
-                    SetValues(contentAreas, grid, 0, TextColor.Indexed.fromRGB(255, 255, 255), first_row, first_column,
-                            second_row, second_column,
-                            third_row, third_column,
-                            fourth_row, fourth_column);
-
-                    SetValues(contentAreas, grid, 1, color, first_movement_row, first_movement_column,
-                            second_movement_row, second_movement_column,
-                            third_movement_row, third_movement_column,
-                            fourth_movement_row, fourth_movement_column);
-
-                    category = 10;
-                }
-
-            }
-        } else if (category == 13) {
-            //I (vertical)
-
-            boolean valid = assign(first_row + 1, first_column + 1, second_row, second_column, third_row - 1, third_column - 1, fourth_row - 2, fourth_column - 2);
-
-            if (valid && grid[fourth_movement_row][fourth_movement_column] == 0
-                    && grid[third_movement_row][third_movement_column] == 0
-                    && grid[first_movement_row][first_movement_column] == 0) {
-
-                SetValues(contentAreas, grid, 0, TextColor.Indexed.fromRGB(255, 255, 255), first_row, first_column,
-                        second_row, second_column,
-                        third_row, third_column,
-                        fourth_row, fourth_column);
-
-                SetValues(contentAreas, grid, 1, color, first_movement_row, first_movement_column,
-                        second_movement_row, second_movement_column,
-                        third_movement_row, third_movement_column,
-                        fourth_movement_row, fourth_movement_column);
-
-                category = 14;
-            }
-        } else if (category == 14) {
-            //I (horizontal)
-
-            boolean valid = assign(first_row + 2, first_column + 2, second_row + 1, second_column + 1, third_row, third_column, fourth_row - 1, fourth_column - 1);
-
-            if (valid && grid[fourth_movement_row][fourth_movement_column] == 0
-                    && grid[second_movement_row][second_movement_column] == 0
-                    && grid[first_movement_row][first_movement_column] == 0) {
-
-                SetValues(contentAreas, grid, 0, TextColor.Indexed.fromRGB(255, 255, 255), first_row, first_column,
-                        second_row, second_column,
-                        third_row, third_column,
-                        fourth_row, fourth_column);
-
-                SetValues(contentAreas, grid, 1, color, first_movement_row, first_movement_column,
-                        second_movement_row, second_movement_column,
-                        third_movement_row, third_movement_column,
-                        fourth_movement_row, fourth_movement_column);
-
-                category = 13;
-            }
-
-        } else if (category == 15) {
-            //4 (Horizontal)
-
-            boolean valid = assign(first_row, first_column + 1, second_row, second_column, third_row, third_column, fourth_row - 2, fourth_column + 1);
-
-            if (valid && grid[first_movement_row][first_movement_column] == 0
-                    && grid[fourth_movement_row][fourth_movement_column] == 0) {
-
-                SetValues(contentAreas, grid, 0, TextColor.Indexed.fromRGB(255, 255, 255), first_row, first_column,
-                        second_row, second_column,
-                        third_row, third_column,
-                        fourth_row, fourth_column);
-
-                SetValues(contentAreas, grid, 1, color, first_movement_row, first_movement_column,
-                        second_movement_row, second_movement_column,
-                        third_movement_row, third_movement_column,
-                        fourth_movement_row, fourth_movement_column);
-
-                category = 16;
-            }
-        } else if (category == 16) {
-            //4 (Vertical)
-
-            boolean valid = assign(first_row, first_column - 1, second_row + 2, second_column - 1, third_row, third_column, fourth_row, fourth_column);
-
-            if (valid && grid[second_movement_row][second_movement_column] == 0) {
-
-                SetValues(contentAreas, grid, 0, TextColor.Indexed.fromRGB(255, 255, 255), first_row, first_column,
-                        second_row, second_column,
-                        third_row, third_column,
-                        fourth_row, fourth_column);
-
-                SetValues(contentAreas, grid, 1, color, first_movement_row, first_movement_column,
-                        second_movement_row, second_movement_column,
-                        third_movement_row, third_movement_column,
-                        fourth_movement_row, fourth_movement_column);
-                category = 15;
-            }
-
-        } else if (category == 17) {
-            //4 Reverse (Horizontal)
-
-            boolean valid = assign(first_row, first_column - 1, second_row, second_column, third_row, third_column, fourth_row - 2, fourth_column - 1);
-
-            if (valid && grid[first_movement_row][first_movement_column] == 0
-                    && grid[fourth_movement_row][fourth_movement_column] == 0) {
-
-                SetValues(contentAreas, grid, 0, TextColor.Indexed.fromRGB(255, 255, 255), first_row, first_column,
-                        second_row, second_column,
-                        third_row, third_column,
-                        fourth_row, fourth_column);
-
-                SetValues(contentAreas, grid, 1, color, first_movement_row, first_movement_column,
-                        second_movement_row, second_movement_column,
-                        third_movement_row, third_movement_column,
-                        fourth_movement_row, fourth_movement_column);
-                category = 18;
-            }
-        } else if (category == 18) {
-            //4 Reverse (Vertical)
-
-            boolean valid = assign(first_row, first_column + 2, second_row + 2, second_column, third_row, third_column, fourth_row, fourth_column);
-
-            if (valid && grid[first_movement_row][first_movement_column] == 0
-                    && grid[second_movement_row][second_movement_column] == 0) {
-
-                SetValues(contentAreas, grid, 0, TextColor.Indexed.fromRGB(255, 255, 255), first_row, first_column,
-                        second_row, second_column,
-                        third_row, third_column,
-                        fourth_row, fourth_column);
-
-                SetValues(contentAreas, grid, 1, color, first_movement_row, first_movement_column,
-                        second_movement_row, second_movement_column,
-                        third_movement_row, third_movement_column,
-                        fourth_movement_row, fourth_movement_column);
-
-                category = 17;
-            }
-
-        }
+        int block[][] = new int[4][2];
+		int movement_block[][] = new int[4][2];
+		int blockChanges[][] = new int[4][3];
+		int newCategory = 0;
+		for (int i = 0; i < Game.ROW; i++) {
+			for (int j = 0; j < Game.COL; j++) {
+				if (grid[i][j] == 1) {
+					for (int k = 0; k < block.length; k++) {
+						if (block[k][0] == 0 && block[k][1] == 0) {
+							block[k][0] = i;
+							block[k][1] = j;
+							break;
+						}
+					}
+				}
+
+			}
+		}
+
+		if (category == 1) {
+			//Right T
+			
+			if (movement == CLOCKWISE) {
+				blockChanges = new int[][] { { 2, -1, -1 } };
+				newCategory = 4;
+			} else {
+				blockChanges = new int[][] { { 0, -1, 1 } };
+				newCategory = 3;
+			}
+		}
+
+		else if (category == 2) {
+			//Left T
+			
+			if (movement == CLOCKWISE) {
+				blockChanges = new int[][] { { 1, 1, 1 } };
+				newCategory = 3;
+			} else {
+				blockChanges = new int[][] { { 3, 1, -1 } };
+				newCategory = 4;
+			}
+		}
+
+		else if (category == 3) {
+			//Up T
+			
+			if (movement == CLOCKWISE) {
+				blockChanges = new int[][] { { 0, 1, -1 } };
+				newCategory = 1;
+			} else {
+				blockChanges = new int[][] { { 3, -1, -1 } };
+				newCategory = 2;
+			}
+		}
+
+		else if (category == 4) {
+			//reverse T
+			
+			if (movement == CLOCKWISE) {
+				blockChanges = new int[][] { { 3, -1, 1 } };
+				newCategory = 2;
+			} else {
+				blockChanges = new int[][] { { 0, 1, 1 } };
+				newCategory = 1;
+			}
+		}
+
+		else if (category == 5) {
+			// Right L
+			
+			if (movement == CLOCKWISE) {
+				blockChanges = new int[][] { { 0, 0, -1 }, { 1, 1, 1 },
+						{ 3, 1, 0 } };
+				newCategory = 6;
+			} else {
+				blockChanges = new int[][] { { 0, -1, -1 }, { 1, -2, 0 },
+						{ 3, -1, -1 } };
+				newCategory = 7;
+			}
+		}
+
+		else if (category == 6) {
+			// up L
+			
+			if (movement == CLOCKWISE) {
+				blockChanges = new int[][] { { 0, 1, 1 }, { 2, -1, -1 },
+						{ 3, 0, -2 } };
+				newCategory = 8;
+			} else {
+				blockChanges = new int[][] { { 0, 2, -1 }, { 1, 0, 1 } };
+				newCategory = 5;
+			}
+		}
+
+		else if (category == 7) {
+			// down L
+			
+			if (movement == CLOCKWISE) {
+				blockChanges = new int[][] { { 0, 0, 2 }, { 1, 1, 1 },
+						{ 3, -1, -1 } };
+				newCategory = 5;
+			} else {
+				blockChanges = new int[][] { { 0, 1, 0 }, { 1, 1, 1 },
+						{ 3, 0, -1 } };
+				newCategory = 8;
+			}
+		}
+
+		else if (category == 8) {
+			// Left L
+			
+			if (movement == CLOCKWISE) {
+				blockChanges = new int[][] { { 0, -1, 1 }, { 2, 1, -1 },
+						{ 3, -2, 0 } };
+				newCategory = 7;
+			} else {
+				blockChanges = new int[][] { { 0, 1, 2 }, { 2, -1, -1 },
+						{ 3, 0, 1 } };
+				newCategory = 6;
+			}
+		}
+
+		else if (category == 9) {
+			// Reverse left L
+			
+			if (movement == CLOCKWISE) {
+				blockChanges = new int[][] { { 0, 1, 0 }, { 2, -1, -1 },
+						{ 3, 0, -1 } };
+				newCategory = 10;
+			} else {
+				blockChanges = new int[][] { { 0, -1, 1 }, { 2, -1, 0 },
+						{ 3, 0, -1 } };
+				newCategory = 11;
+			}
+		}
+
+		else if (category == 10) {
+			// Reverse Down L
+			
+			if (movement == CLOCKWISE) {
+				blockChanges = new int[][] { { 0, 2, 1 }, { 1, 0, -1 } };
+				newCategory = 12;
+			} else {
+				blockChanges = new int[][] { { 0, 1, 1 }, { 2, -1, 0 },
+						{ 3, 0, 1 } };
+				newCategory = 9;
+			}
+		}
+
+		else if (category == 11) {
+			// Reverse up L
+			
+			if (movement == CLOCKWISE) {
+				blockChanges = new int[][] { { 2, -1, -1 }, { 3, -1, 1 } };
+				newCategory = 9;
+			} else {
+				blockChanges = new int[][] { { 0, 0, -1 }, { 1, 1, 0 },
+						{ 3, -1, -1 } };
+				newCategory = 12;
+			}
+		}
+
+		else if (category == 12) {
+			// Reverse Right L
+			
+			if (movement == CLOCKWISE) {
+				blockChanges = new int[][] { { 0, 0, 1 }, { 1, 1, 1 },
+						{ 3, -1, 0 } };
+				newCategory = 11;
+			} else {
+				blockChanges = new int[][] { { 0, 0, 1 }, { 1, 1, 0 },
+						{ 3, 1, -1 } };
+				newCategory = 10;
+			}
+		}
+
+		else if (category == 13) {
+			// I (vertical)
+			
+			blockChanges = new int[][] { { 0, 1, 1 }, { 2, -1, -1 },
+					{ 3, -2, -2 } };
+			newCategory = 14;
+		}
+
+		else if (category == 14) {
+			// I (horizontal)
+			
+			blockChanges = new int[][] { { 0, 2, 2 }, { 1, 1, 1 },
+					{ 3, -1, -1 } };
+			newCategory = 13;
+		}
+
+		else if (category == 15) {
+			// 4 (Horizontal)
+			
+			blockChanges = new int[][] { { 0, 0, 1 }, { 3, -2, 1 } };
+			newCategory = 16;
+		}
+
+		else if (category == 16) {
+			// 4 (Vertical)
+			
+			blockChanges = new int[][] { { 0, 0, -1 }, { 1, 2, -1 } };
+			newCategory = 15;
+		}
+
+		else if (category == 17) {
+			// 4 Reverse (Horizontal)
+			
+			blockChanges = new int[][] { { 0, 0, -1 }, { 3, -2, -1 } };
+			newCategory = 18;
+		}
+
+		else if (category == 18) {
+			// 4 Reverse (Vertical)
+			
+			blockChanges = new int[][] { { 0, 0, 2 }, { 1, 2, 0 } };
+			newCategory = 17;
+		}
+
+		if (newCategory > 0) {
+			try {
+				moveShape(block, movement_block, blockChanges);
+				boolean validGrid = validateMove(movement_block, blockChanges);
+				System.out.println("validGrid: " + validGrid);
+				if (validGrid) {
+					setValues(contentAreas, grid, 0,
+							TextColor.Indexed.fromRGB(255, 255, 255), block);
+					setValues(contentAreas, grid, 1, color, movement_block);
+					category = newCategory;
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 
         mutex.release();
 
@@ -802,10 +362,9 @@ public class input_handler {
 
     public void object_mover(BlockGrid_Holder[][] contentAreas, int[][] grid, int move) {
 
-        int first_row, first_column, second_row, second_column, third_row, third_column, fourth_row, fourth_column;
-
-        first_row = first_column = second_row = second_column = third_row = third_column = fourth_row = fourth_column = 0;
-
+        int block[][] = new int[4][2];
+		int movement_block[][] = new int[4][2];
+		int blockChanges[][] = new int[4][3];
         boolean cant = false;
 
         try {
@@ -817,104 +376,76 @@ public class input_handler {
             }
 
             System.out.println("Mutex Acquired");
+			
+				
+			// Direction -> VERICAL
+			for (int i = 0; i < Game.ROW && !cant; i++) {
+				for (int j = 0; j < Game.COL && !cant; j++) {
+					if (grid[i][j] == 0 || grid[i][j] == 2)
+						continue;
 
-            for (int i = 0; i < 12 && !cant; i++) {
-                for (int j = 0; j < 24 && !cant; j++) {
+					if (move == 1 && j + move < Game.COL && grid[i][j] == 1
+							&& grid[i][j + move] != 2) {
 
-                    if (grid[i][j] == 0 || grid[i][j] == 2 || grid[i][j] == -1) {
-                        continue;
-                    }
+						for (int k = 0; k < block.length; k++) {
+							if (block[k][0] == 0 && block[k][1] == 0) {
+								block[k][0] = i;
+								block[k][1] = j;
+								break;
+							}
+						}
+					}
 
-                    if (move == 1 && i + move < 12 && grid[i][j] == 1 && grid[i + move][j] != 2) {
+					else if (move == -1 && j + move >= 0 && grid[i][j] == 1
+							&& grid[i][j + move] != 2) {
+						for (int k = 0; k < block.length; k++) {
+							if (block[k][0] == 0 && block[k][1] == 0) {
+								block[k][0] = i;
+								block[k][1] = j;
+								break;
+							}
+						}
+					}
 
-                        if (first_row == 0 && first_column == 0) {
+					else if (move == 2 && i < Game.ROW - 1 && grid[i][j] == 1
+							&& grid[i + 1][j] != 2) {
+						for (int k = 0; k < block.length; k++) {
+							if (block[k][0] == 0 && block[k][1] == 0) {
+								block[k][0] = i;
+								block[k][1] = j;
+								break;
+							}
+						}
+					}
 
-                            first_row = i;
-                            first_column = j;
-                        } else if (second_row == 0 && second_column == 0) {
+					else {
 
-                            second_row = i;
-                            second_column = j;
-                        } else if (third_row == 0 && third_column == 0) {
-                            third_row = i;
-                            third_column = j;
-                        } else if (fourth_row == 0 && fourth_column == 0) {
+						cant = true;
+					}
+				}
+			}
 
-                            fourth_row = i;
-                            fourth_column = j;
+			if (!cant) {
 
-                        }
+				System.out.println("Values Changed");
 
-                    } else if (move == -1 && i + move >= 0 && grid[i][j] == 1 && grid[i + move][j] != 2) {
-                        if (first_row == 0 && first_column == 0) {
+				setValues(contentAreas, grid, 0,
+						TextColor.Indexed.fromRGB(255, 255, 255), block);
 
-                            first_row = i;
-                            first_column = j;
-                        } else if (second_row == 0 && second_column == 0) {
+				if (move == 2) {
+					blockChanges = new int[][] { { 0, 1, 0 }, { 1, 1, 0 },
+							{ 2, 1, 0 }, { 3, 1, 0 } };
+					moveShape(block, movement_block, blockChanges);
+					setValues(contentAreas, grid, 1, color, movement_block);
 
-                            second_row = i;
-                            second_column = j;
-                        } else if (third_row == 0 && third_column == 0) {
-                            third_row = i;
-                            third_column = j;
-                        } else if (fourth_row == 0 && fourth_column == 0) {
+				} else {
+					blockChanges = new int[][] { { 0, 0, move },
+							{ 1, 0, move }, { 2, 0, move }, { 3, 0, move } };
+					moveShape(block, movement_block, blockChanges);
+					setValues(contentAreas, grid, 1, color, movement_block);
+				}
 
-                            fourth_row = i;
-                            fourth_column = j;
-
-                        }
-
-                    } else if (move == 2 && j < 23 && grid[i][j] == 1 && grid[i][j + 1] != 2 && grid[i][j + 1] != -1) {
-
-                        if (first_row == 0 && first_column == 0) {
-
-                            first_row = i;
-                            first_column = j;
-                        } else if (second_row == 0 && second_column == 0) {
-
-                            second_row = i;
-                            second_column = j;
-                        } else if (third_row == 0 && third_column == 0) {
-                            third_row = i;
-                            third_column = j;
-                        } else if (fourth_row == 0 && fourth_column == 0) {
-
-                            fourth_row = i;
-                            fourth_column = j;
-
-                        }
-
-                    } else {
-
-                        cant = true;
-                    }
-                }
-            }
-
-            if (!cant) {
-
-                System.out.println("Values Changed");
-
-                SetValues(contentAreas, grid, 0, TextColor.Indexed.fromRGB(255, 255, 255), first_row, first_column,
-                        second_row, second_column,
-                        third_row, third_column,
-                        fourth_row, fourth_column);
-
-                if (move == 2) {
-
-                    SetValues(contentAreas, grid, 1, color, first_row, first_column + 1,
-                            second_row, second_column + 1,
-                            third_row, third_column + 1,
-                            fourth_row, fourth_column + 1);
-
-                } else {
-                    SetValues(contentAreas, grid, 1, color, first_row + move, first_column,
-                            second_row + move, second_column,
-                            third_row + move, third_column,
-                            fourth_row + move, fourth_column);
-                }
-
-            }
+			}
 
             System.out.println("Mutex Released");
             mutex.release();
@@ -942,20 +473,22 @@ public class input_handler {
                     }
 
                     if (keyStroke.getKeyType() == KeyType.ArrowLeft) {
-                        object_mover(contentAreas, grid, 1);
+                    	// Direction -> VERICAL
+                    	object_mover(contentAreas, grid, -1);
                         System.out.println();
                     } else if (keyStroke.getKeyType() == KeyType.ArrowRight) {
-                        object_mover(contentAreas, grid, -1);
+                    	// Direction -> VERICAL
+                    	object_mover(contentAreas, grid, 1);
                     } else if (keyStroke.getKeyType() == KeyType.ArrowUp) {
                         try {
-                            rotate(contentAreas, grid, 0);
+                            rotate(contentAreas, grid, CLOCKWISE);
                         } catch (InterruptedException ex) {
                             Logger.getLogger(Generic_Block_Game.class.getName()).log(Level.SEVERE, null, ex);
                         }
 
                     } else if (keyStroke.getKeyType() == KeyType.Enter) {
                         try {
-                            rotate(contentAreas, grid, 1);
+                            rotate(contentAreas, grid, ANTI_CLOCKWISE);
                         } catch (InterruptedException ex) {
                             Logger.getLogger(Generic_Block_Game.class.getName()).log(Level.SEVERE, null, ex);
                         }
