@@ -21,10 +21,11 @@ import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.TextColor.Indexed;
 import com.googlecode.lanterna.gui2.BasicWindow;
+import com.googlecode.lanterna.gui2.Direction;
 import com.googlecode.lanterna.gui2.EmptySpace;
+import com.googlecode.lanterna.gui2.LinearLayout;
 import com.googlecode.lanterna.gui2.MultiWindowTextGUI;
 import com.googlecode.lanterna.gui2.Panel;
-import com.googlecode.lanterna.gui2.Panels;
 import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 
@@ -36,28 +37,12 @@ import javazoom.jl.decoder.JavaLayerException;
  */
 public class Game {
 
-    Indexed color = TextColor.ANSI.Indexed.fromRGB(1, 1, 1);
-
-    public void Reset(BlockGrid_Holder[][] contentAreas, int[][] grid) {
-
-        for (int i = 0; i < 12; i++) {
-
-            for (int j = 0; j < 24; j++) {
-
-                if (grid[i][j] != 2 && grid[i][j] != -1) {
-
-                    grid[i][j] = 0;
-                    contentAreas[i][j].SetBlock(TextColor.Indexed.fromRGB(255, 255, 255));
-
-                }
-            }
-
-        }
-
-    }
+    Indexed color = TextColor.ANSI.Indexed.fromRGB(1, 1, 1);    
 
     Semaphore mutex;
     int TO_WAIT = 500;
+    public final static int ROW = 12;
+	public final static int COL = 24;
     boolean break_it = false;
     int category = 0;
     input_handler input_thread;
@@ -74,6 +59,24 @@ public class Game {
     public void Update_Comments() {
 
     }
+    
+    public void Reset(BlockGrid_Holder[][] contentAreas, int[][] grid) {
+
+        for (int i = 0; i < ROW; i++) {
+
+            for (int j = 0; j < COL; j++) {
+
+                if (grid[i][j] != 2 && grid[i][j] != -1) {
+
+                    grid[i][j] = 0;
+                    contentAreas[i][j].SetBlock(TextColor.Indexed.fromRGB(255, 255, 255));
+
+                }
+            }
+
+        }
+
+    }
 
     public boolean SendingEnd(String line) throws InterruptedException {
         mutex.acquire();
@@ -86,11 +89,11 @@ public class Game {
         int starting_index = -1;
         int ending_index = -1;
 
-        for (int i = 0; i < 12; i++) {
+        for (int i = 0; i < ROW; i++) {
 
             starting_index = ending_index = -1;
 
-            for (k = 0; k < 24; k++) {
+            for (k = 0; k < COL; k++) {
 
                 if (grid[i][k] == 2) {
                     if (starting_index == -1) {
@@ -130,10 +133,10 @@ public class Game {
 
         for (int i = 0; i < number_of_lines; i++) {
 
-            for (int j = 0; j < 12; j++) {
+            for (int j = 0; j < ROW; j++) {
 
-                contentAreas[j][23 - Trashlined_rows].SetBlock(TextColor.Indexed.fromRGB(27, 30, 35));
-                grid[j][23 - Trashlined_rows] = -1;
+                contentAreas[j][COL - 1 - Trashlined_rows].SetBlock(TextColor.Indexed.fromRGB(27, 30, 35));
+                grid[j][COL - 1 - Trashlined_rows] = -1;
 
             }
 
@@ -187,76 +190,80 @@ public class Game {
 
         mutex.acquire();
         boolean instruction = false;
-        for (int i = 0; i < 10; i++) {
+        
+        	
+		// Direction -> VERTICAL
+		for (int i = 0; i < COL - 2; i++) {
 
-            for (int j = 0; j < 12; j++) {
+			for (int j = 0; j < COL; j++) {
 
-                for (int k = 0; k < columns.size(); k++) {
-                    contentAreas[j][columns.get(k)].blink(!instruction);
-                }
-            }
+				for (int k = 0; k < columns.size(); k++)
+					contentAreas[columns.get(k)][j].blink(!instruction);
+			}
 
-            Thread.sleep(100);
+			Thread.sleep(100);
 
-            instruction = !instruction;
-        }
+			instruction = !instruction;
+		}
 
-        for (int i = 0; i < 12; i++) {
+		for (int i = 0; i < COL; i++) {
 
-            for (int k = 0; k < columns.size(); k++) {
-                contentAreas[i][columns.get(k)].SetBlock(TextColor.Indexed.fromRGB(255, 255, 255));
-                grid[i][columns.get(k)] = 0;
-            }
-            Thread.sleep(80);
-        }
+			for (int k = 0; k < columns.size(); k++) {
+				contentAreas[columns.get(k)][i].SetBlock(TextColor.Indexed
+						.fromRGB(255, 255, 255));
+				grid[columns.get(k)][i] = 0;
+			}
+			Thread.sleep(80);
+		}
 
-        column--;
-        int point = column;
+		column--;
 
-        boolean inserted = false;
+		boolean inserted = false;
 
-        for (int k = 0; k < 12; k++, column--) {
-            for (int i = 0; i < 12 && column >= 0; i++) {
+		for (int k = 0; k < COL; k++, column--)
+			for (int i = 0; i < COL && column >= 0; i++) {
 
-                if (grid[i][column] == 0) {
-//                column--;
-                    continue;
-                }
+				if (grid[column][i] == 0) {
+					// column--;
+					continue;
+				}
 
-                inserted = false;
+				inserted = false;
 
-                for (int j = column; j < 23; j++) {
+				for (int j = column; j < ROW - 1; j++) {
 
-                    if (grid[i][j + 1] == 0) {
-                        continue;
-                    } else {
+					if (grid[j + 1][i] == 0) {
+						continue;
+					} else {
 
-                        Indexed indexer = contentAreas[i][column].getColor();
+						Indexed indexer = contentAreas[column][i]
+								.getColor();
 
-                        grid[i][column] = 0;
-                        contentAreas[i][column].SetBlock(TextColor.Indexed.fromRGB(255, 255, 255));
+						grid[column][i] = 0;
+						contentAreas[column][i].SetBlock(TextColor.Indexed
+								.fromRGB(255, 255, 255));
 
-                        grid[i][j] = 2;
-                        contentAreas[i][j].SetBlock(indexer);
-                        inserted = true;
-                        Thread.sleep(80);
-                        break;
-                    }
+						grid[j][i] = 2;
+						contentAreas[j][i].SetBlock(indexer);
+						inserted = true;
+						Thread.sleep(80);
+						break;
+					}
 
-                }
+				}
 
-                if (!inserted) {
+				if (!inserted) {
 
-                    Indexed indexer = contentAreas[i][column].getColor();
-                    grid[i][column] = 0;
-                    contentAreas[i][column].SetBlock(TextColor.Indexed.fromRGB(255, 255, 255));
-                    grid[i][23] = 2;
-                    contentAreas[i][23].SetBlock(indexer);
-                    Thread.sleep(80);
-                }
+					Indexed indexer = contentAreas[column][i].getColor();
+					grid[column][i] = 0;
+					contentAreas[column][i].SetBlock(TextColor.Indexed
+							.fromRGB(255, 255, 255));
+					grid[ROW - 1][i] = 2;
+					contentAreas[ROW - 1][i].SetBlock(indexer);
+					Thread.sleep(80);
+				}
 
-            }
-        }
+			}
 
         SendingEnd(columns.size());
         mutex.release();
@@ -268,33 +275,35 @@ public class Game {
         boolean isMatched = true;
 
         ArrayList<Integer> indexes = new ArrayList<>();
-        int max_column = 0;
+        
+        
+	    // Direction -> Vertical	
+		int max_row = 0;
+		for (int i = ROW - 1; i >= 0; i--) {
 
-        for (int i = 23; i >= 0; i--) {
+			isMatched = true;
 
-            isMatched = true;
+			for (int j = COL - 1; j >= 0; j--) {
 
-            for (int j = 11; j >= 0; j--) {
+				if (grid[i][j] != 2) {
+					isMatched = false;
+					break;
+				}
 
-                if (grid[j][i] != 2) {
-                    isMatched = false;
-                    break;
-                }
+			}
 
-            }
+			if (isMatched) {
 
-            if (isMatched) {
-
-                if (max_column < i) {
-                    max_column = i;
-                }
-                indexes.add(i);
-            }
-        }
-
-        if (indexes.size() > 0) {
-            Clear_Matched_Line(contentAreas, grid, indexes, max_column);
-        }
+				if (max_row < i) {
+					max_row = i;
+				}
+				indexes.add(i);
+			}
+		}
+		
+		if (indexes.size() > 0) {
+			Clear_Matched_Line(contentAreas, grid, indexes, max_row);
+		}
 
     }
 
@@ -302,544 +311,527 @@ public class Game {
 
         Random rand = new Random();
         int block_to_appear = rand.nextInt(5);
+		
+		// Direction -> VERTICAL
+		
+
+		if (block_to_appear == 0) {
+
+			color = TextColor.Indexed.fromRGB(56, 56, 56);
+
+			int orientation = rand.nextInt(4);
+			int first, second, third, fourth;
+
+			first = second = third = fourth = 0;
 
-        if (block_to_appear == 0) {
-
-            color = TextColor.Indexed.fromRGB(56, 56, 56);
-
-            int orientation = rand.nextInt(4);
-            int first, second, third, fourth;
-
-            first = second = third = fourth = 0;
-
-            int random_int = 0;
-
-            if (orientation == 0) {
-
-                category = 1;
-
-                int min = 2, max = 10;
-                int column = 0;
-                //Right side T
-                random_int = (int) Math.floor(Math.random() * (max - min + 1) + min);
-                first = random_int % 12;
-                second = first;
-                third = first;
-                fourth = first;
-
-                if (!validate(grid, first, column,
-                        second, column + 1,
-                        third, column + 2,
-                        fourth + 1, column + 1)) {
-                    return false;
-                }
-
-                SetValues(contentAreas, grid, 1, color, first, column,
-                        second, column + 1,
-                        third, column + 2,
-                        fourth + 1, column + 1);
-
-            } else if (orientation == 1) {
-
-                category = 2;
-
-                int min = 2, max = 10;
-                int column = 0;
-                //Left side T
-                random_int = (int) Math.floor(Math.random() * (max - min + 1) + min);
-                first = random_int % 12;
-                second = first;
-                third = first;
-                fourth = first;
-
-                if (!validate(grid, first, column,
-                        second, column + 1,
-                        third, column + 2,
-                        fourth - 1, column + 1)) {
-                    return false;
-                }
-
-                SetValues(contentAreas, grid, 1, color, first, column,
-                        second, column + 1,
-                        third, column + 2,
-                        fourth - 1, column + 1);
-
-            } else if (orientation == 2) {
-
-                category = 3;
-                int min = 2, max = 10;
-                int column = 0;
-                //Up T
-                random_int = (int) Math.floor(Math.random() * (max - min + 1) + min);
-                first = random_int % 12;
-                second = first;
-                third = first;
-                fourth = first;
-
-                if (!validate(grid, first, column,
-                        second - 1, column,
-                        third + 1, column,
-                        fourth, column + 1)) {
-                    return false;
-                }
-
-                SetValues(contentAreas, grid, 1, color, first, column,
-                        second - 1, column,
-                        third + 1, column,
-                        fourth, column + 1);
-            } else {
-
-                //down T
-                category = 4;
-                int min = 2, max = 10;
-                int column = 0;
-                //Right side T
-                random_int = (int) Math.floor(Math.random() * (max - min + 1) + min);
-                first = random_int % 12;
-                second = first;
-                third = first;
-                fourth = first;
-
-                if (!validate(grid, first, column + 1,
-                        second - 1, column + 1,
-                        third + 1, column + 1,
-                        fourth, column)) {
-                    return false;
-                }
-
-                SetValues(contentAreas, grid, 1, color, first, column + 1,
-                        second - 1, column + 1,
-                        third + 1, column + 1,
-                        fourth, column);
-
-            }
-
-        } else if (block_to_appear == 1) {
-
-            color = TextColor.Indexed.fromRGB(0, 255, 255);
-            //block 4 tabs
-            category = 30;
-            int first, second, third, fourth;
+			int random_int = 0;
+
+			if (orientation == 0) {
+
+				category = 3;
+
+				int min = 2, max = COL - 2;
+				int row = 0;
+				// Right side T
+				random_int = (int) Math.floor(Math.random()
+						* (max - min + 1) + min);
+				first = random_int % COL;
+				second = first;
+				third = first;
+				fourth = first;
+
+				if (!validate(grid, row, first, row + 1, second, row + 2,
+						third, row + 1, fourth + 1)) {
+					return false;
+				}
+
+				SetValues(contentAreas, grid, 1, color, row, first, row + 1, second, row + 2,
+						third, row + 1, fourth + 1);
+
+			}
+
+			else if (orientation == 1) {
 
-            first = second = third = fourth = 0;
+				category = 4;
 
-            int random_int = 0;
+				int min = 2, max = COL - 2;
+				int row = 0;
+				// Left side T
+				random_int = (int) Math.floor(Math.random()
+						* (max - min + 1) + min);
+				first = random_int % COL;
+				second = first;
+				third = first;
+				fourth = first;
 
-            int min = 2, max = 10;
-            int column = 0;
-            random_int = (int) Math.floor(Math.random() * (max - min + 1) + min);
-            first = random_int % 12;
-            second = first;
-            third = first;
-            fourth = first;
+				if (!validate(grid, row, first, row + 1, second, row + 2,
+						third, row + 1, fourth - 1)) {
+					return false;
+				}
 
-            if (!validate(grid, first, column,
-                    second + 1, column,
-                    third, column + 1,
-                    fourth + 1, column + 1)) {
-                return false;
-            }
-
-            SetValues(contentAreas, grid, 1, color, first, column,
-                    second + 1, column,
-                    third, column + 1,
-                    fourth + 1, column + 1);
-
-        } else if (block_to_appear == 2) {
-
-            color = TextColor.Indexed.fromRGB(139, 0, 0);
-
-            //Straight line
-            int orientation = rand.nextInt(2);
-
-            int first, second, third, fourth;
-
-            first = second = third = fourth = 0;
-
-            int random_int = 0;
-
-            if (orientation == 0) {
-
-                int min = 2, max = 10;
-                int column = 0;
-                category = 13;
-                random_int = (int) Math.floor(Math.random() * (max - min + 1) + min);
-                first = random_int % 12;
-                second = first;
-                third = first;
-                fourth = first;
-
-                if (!validate(grid, first, column,
-                        second, column + 1,
-                        third, column + 2,
-                        fourth, column + 3)) {
-                    return false;
-                }
-
-                SetValues(contentAreas, grid, 1, color, first, column,
-                        second, column + 1,
-                        third, column + 2,
-                        fourth, column + 3);
-            } else {
-
-                int min = 3, max = 9;
-                int column = 0;
-                category = 14;
-                random_int = (int) Math.floor(Math.random() * (max - min + 1) + min);
-                first = random_int % 12;
-                second = first;
-                third = first;
-                fourth = first;
-
-                if (!validate(grid, first, column,
-                        second + 1, column,
-                        third + 2, column,
-                        fourth - 1, column)) {
-                    return false;
-                }
-
-                SetValues(contentAreas, grid, 1, color, first, column,
-                        second + 1, column,
-                        third + 2, column,
-                        fourth - 1, column);
-
-            }
-
-        } else if (block_to_appear == 3) {
-            color = TextColor.Indexed.fromRGB(139, 0, 0);
-            //L shape
-
-            int orientation = rand.nextInt(8);
-
-            int first, second, third, fourth;
-
-            first = second = third = fourth = 0;
-
-            int random_int = 1;
-
-            if (orientation == 0) {
-
-                color = TextColor.Indexed.fromRGB(219, 48, 130);
-                //L Reverse up
-                int min = 2, max = 9;
-                int column = 0;
-
-                random_int = (int) Math.floor(Math.random() * (max - min + 1) + min);
-                first = random_int % 12;
-                second = first;
-                third = first;
-                fourth = first;
-
-                category = 11;
-
-                if (!validate(grid, first, column,
-                        second, column + 1,
-                        third + 1, column,
-                        fourth + 2, column)) {
-                    return false;
-                }
-
-                SetValues(contentAreas, grid, 1, color, first, column,
-                        second, column + 1,
-                        third + 1, column,
-                        fourth + 2, column);
-
-            } else if (orientation == 1) {
-                color = TextColor.Indexed.fromRGB(255, 255, 0);
-                int min = 3, max = 10;
-                int column = 0;
-
-                //L up
-                random_int = (int) Math.floor(Math.random() * (max - min + 1) + min);
-                first = random_int % 12;
-                second = first;
-                third = first;
-                fourth = first;
-
-                category = 6;
-
-                if (!validate(grid, first, column,
-                        second, column + 1,
-                        third - 1, column,
-                        fourth - 2, column)) {
-                    return false;
-                }
-
-                SetValues(contentAreas, grid, 1, color, first, column,
-                        second, column + 1,
-                        third - 1, column,
-                        fourth - 2, column);
-
-            } else if (orientation == 2) {
-                color = TextColor.Indexed.fromRGB(219, 48, 130);
-                int min = 2, max = 10;
-                int column = 0;
-                //L Reverse left
-                random_int = (int) Math.floor(Math.random() * (max - min + 1) + min);
-                first = random_int % 12;
-                second = first;
-                third = first;
-                fourth = first;
-
-                category = 9;
-
-                if (!validate(grid, first, column,
-                        second, column + 1,
-                        third, column + 2,
-                        fourth + 1, column + 2)) {
-                    return false;
-                }
-
-                SetValues(contentAreas, grid, 1, color, first, column,
-                        second, column + 1,
-                        third, column + 2,
-                        fourth + 1, column + 2);
-            } else if (orientation == 3) {
-                color = TextColor.Indexed.fromRGB(255, 255, 0);
-                int min = 2, max = 10;
-                int column = 0;
-                //L Right
-                random_int = (int) Math.floor(Math.random() * (max - min + 1) + min);
-                first = random_int % 12;
-                second = first;
-                third = first;
-                fourth = first;
-
-                category = 5;
-
-                if (!validate(grid, first, column,
-                        second, column + 1,
-                        third, column + 2,
-                        fourth - 1, column + 2)) {
-                    return false;
-                }
-
-                SetValues(contentAreas, grid, 1, color, first, column,
-                        second, column + 1,
-                        third, column + 2,
-                        fourth - 1, column + 2);
-            } else if (orientation == 4) {
-                color = TextColor.Indexed.fromRGB(219, 48, 130);
-
-                int min = 2, max = 10;
-                int column = 0;
-                //L Reverse Right
-                random_int = (int) Math.floor(Math.random() * (max - min + 1) + min);
-                first = random_int % 12;
-                second = first;
-                third = first;
-                fourth = first;
-
-                category = 12;
-
-                if (!validate(grid, first, column,
-                        second + 1, column,
-                        third + 1, column + 1,
-                        fourth + 1, column + 2)) {
-                    return false;
-                }
-
-                SetValues(contentAreas, grid, 1, color, first, column,
-                        second + 1, column,
-                        third + 1, column + 1,
-                        fourth + 1, column + 2);
-
-            } else if (orientation == 5) {
-                color = TextColor.Indexed.fromRGB(255, 255, 0);
-
-                int min = 2, max = 10;
-                int column = 0;
-                //L Left
-                random_int = (int) Math.floor(Math.random() * (max - min + 1) + min);
-                first = random_int % 12;
-                second = first;
-                third = first;
-                fourth = first;
-
-                category = 8;
-
-                if (!validate(grid, first, column,
-                        second - 1, column,
-                        third - 1, column + 1,
-                        fourth - 1, column + 2)) {
-                    return false;
-                }
-
-                SetValues(contentAreas, grid, 1, color, first, column,
-                        second - 1, column,
-                        third - 1, column + 1,
-                        fourth - 1, column + 2);
-
-            } else if (orientation == 6) {
-                color = TextColor.Indexed.fromRGB(219, 48, 130);
-
-                int min = 2, max = 9;
-                int column = 0;
-                //Left Reverse Down
-                random_int = (int) Math.floor(Math.random() * (max - min + 1) + min);
-                first = random_int % 12;
-                second = first;
-                third = first;
-                fourth = first;
-
-                category = 10;
-
-                if (!validate(grid, first, column,
-                        second, column + 1,
-                        third - 1, column + 1,
-                        fourth - 2, column + 1)) {
-                    return false;
-                }
-
-                SetValues(contentAreas, grid, 1, color, first, column,
-                        second, column + 1,
-                        third - 1, column + 1,
-                        fourth - 2, column + 1);
-            } else {
-
-                color = TextColor.Indexed.fromRGB(255, 255, 0);
-
-                int min = 3, max = 9;
-                int column = 0;
-                //L up
-                random_int = (int) Math.floor(Math.random() * (max - min + 1) + min);
-                first = random_int % 12;
-                second = first;
-                third = first;
-                fourth = first;
-
-                category = 7;
-
-                if (!validate(grid, first, column,
-                        second, column + 1,
-                        third + 1, column + 1,
-                        fourth + 2, column + 1)) {
-                    return false;
-                }
-
-                SetValues(contentAreas, grid, 1, color, first, column,
-                        second, column + 1,
-                        third + 1, column + 1,
-                        fourth + 2, column + 1);
-
-            }
-
-        } else {
-
-            int orientation = rand.nextInt(4);
-
-            int first, second, third, fourth;
-
-            first = second = third = fourth = 0;
-
-            int random_int = 0;
-
-            if (orientation == 0) {
-                color = TextColor.Indexed.fromRGB(144, 245, 0);
-                int min = 3, max = 9;
-                int column = 0;
-                //Right side T
-                random_int = (int) Math.floor(Math.random() * (max - min + 1) + min);
-                first = random_int % 12;
-                second = first;
-                third = first;
-                fourth = first;
-
-                category = 15;
-
-                if (!validate(grid, first, column,
-                        second + 1, column,
-                        third + 1, column + 1,
-                        fourth + 2, column + 1)) {
-                    return false;
-                }
-
-                SetValues(contentAreas, grid, 1, color, first, column,
-                        second + 1, column,
-                        third + 1, column + 1,
-                        fourth + 2, column + 1);
-
-            } else if (orientation == 1) {
-                color = TextColor.Indexed.fromRGB(0, 0, 176);
-                int min = 2, max = 9;
-                int column = 0;
-                //Right side T
-                random_int = (int) Math.floor(Math.random() * (max - min + 1) + min);
-                first = random_int % 12;
-                second = first;
-                third = first;
-                fourth = first;
-
-                category = 17;
-
-                if (!validate(grid, first, column,
-                        second - 1, column,
-                        third - 1, column + 1,
-                        fourth - 2, column + 1)) {
-                    return false;
-                }
-
-                SetValues(contentAreas, grid, 1, color, first, column,
-                        second - 1, column,
-                        third - 1, column + 1,
-                        fourth - 2, column + 1);
-
-            } else if (orientation == 2) {
-
-                color = TextColor.Indexed.fromRGB(0, 0, 176);
-
-                int min = 2, max = 10;
-                int column = 0;
-                //Right side T
-                random_int = (int) Math.floor(Math.random() * (max - min + 1) + min);
-                first = random_int % 12;
-                second = first;
-                third = first;
-                fourth = first;
-
-                category = 18;
-
-                if (!validate(grid, first, column,
-                        second, column + 1,
-                        third + 1, column + 1,
-                        fourth + 1, column + 2)) {
-                    return false;
-                }
-
-                SetValues(contentAreas, grid, 1, color, first, column,
-                        second, column + 1,
-                        third + 1, column + 1,
-                        fourth + 1, column + 2);
-
-            } else {
-                color = TextColor.Indexed.fromRGB(144, 245, 0);
-                int min = 2, max = 10;
-                int column = 0;
-                //Right side T
-                random_int = (int) Math.floor(Math.random() * (max - min + 1) + min);
-                first = random_int % 12;
-                second = first;
-                third = first;
-                fourth = first;
-
-                category = 16;
-
-                if (!validate(grid, first, column,
-                        second, column + 1,
-                        third - 1, column + 1,
-                        fourth - 1, column + 2)) {
-                    return false;
-                }
-
-                SetValues(contentAreas, grid, 1, color, first, column,
-                        second, column + 1,
-                        third - 1, column + 1,
-                        fourth - 1, column + 2);
-
-            }
-
-        }
+				SetValues(contentAreas, grid, 1, color, row, first, row + 1, second, row + 2,
+						third, row + 1, fourth - 1);
 
+			}
+
+			else if (orientation == 2) {
+
+				category = 1;
+				int min = 2, max = COL - 2;
+				int row = 0;
+				// Up T
+				random_int = (int) Math.floor(Math.random()
+						* (max - min + 1) + min);
+				first = random_int % COL;
+				second = first;
+				third = first;
+				fourth = first;
+
+				if (!validate(grid, row, first, row, second - 1, row,
+						third + 1, row + 1, fourth)) {
+					return false;
+				}
+
+				SetValues(contentAreas, grid, 1, color, row, first, row, second - 1, row,
+						third + 1, row + 1, fourth);
+			}
+
+			else {
+				
+				category = 2;
+				int min = 2, max = COL - 2;
+				int row = 0;
+				// down T
+				random_int = (int) Math.floor(Math.random()
+						* (max - min + 1) + min);
+				first = random_int % COL;
+				second = first;
+				third = first;
+				fourth = first;
+
+				if (!validate(grid, row + 1, first, row + 1, second - 1,
+						row + 1, third + 1, row, fourth)) {
+					return false;
+				}
+
+				SetValues(contentAreas, grid, 1, color, row + 1, first, row + 1, second - 1,
+						row + 1, third + 1, row, fourth);
+
+			}
+
+		}
+
+		else if (block_to_appear == 1) {
+
+			color = TextColor.Indexed.fromRGB(0, 255, 255);
+			// block 4 tabs
+			category = 30;
+			int first, second, third, fourth;
+
+			first = second = third = fourth = 0;
+
+			int random_int = 0;
+
+			int min = 2, max = COL - 2;
+			int row = 0;
+			random_int = (int) Math.floor(Math.random() * (max - min + 1)
+					+ min);
+			first = random_int % COL;
+			second = first;
+			third = first;
+			fourth = first;
+
+			if (!validate(grid, row, first, row, second + 1, row + 1, third,
+					row + 1, fourth + 1)) {
+				return false;
+			}
+
+			SetValues(contentAreas, grid, 1, color, row, first, row, second + 1, row + 1, third,
+					row + 1, fourth + 1);
+
+		}
+
+		else if (block_to_appear == 2) {
+
+			color = TextColor.Indexed.fromRGB(139, 0, 0);
+
+			// Straight line
+
+			int orientation = rand.nextInt(2);
+
+			int first, second, third, fourth;
+
+			first = second = third = fourth = 0;
+
+			int random_int = 0;
+
+			if (orientation == 0) {
+
+				int min = 2, max = COL - 2;
+				int row = 0;
+				category = 14;
+				random_int = (int) Math.floor(Math.random()
+						* (max - min + 1) + min);
+				first = random_int % COL;
+				second = first;
+				third = first;
+				fourth = first;
+
+				if (!validate(grid, row, first, row + 1, second, row + 2,
+						third, row + 3, fourth)) {
+					return false;
+				}
+
+				SetValues(contentAreas, grid, 1, color, row, first, row + 1, second, row + 2,
+						third, row + 3, fourth);
+			}
+
+			else {
+
+				int min = 3, max = COL - 3;
+				int row = 0;
+				category = 13;
+				random_int = (int) Math.floor(Math.random()
+						* (max - min + 1) + min);
+				first = random_int % COL;
+				second = first;
+				third = first;
+				fourth = first;
+
+				if (!validate(grid, row, first, row, second + 1, row,
+						third + 2, row, fourth - 1)) {
+					return false;
+				}
+
+				SetValues(contentAreas, grid, 1, color, row, first, row, second + 1, row,
+						third + 2, row, fourth - 1);
+
+			}
+
+		}
+
+		else if (block_to_appear == 3) {
+			color = TextColor.Indexed.fromRGB(139, 0, 0);
+			// L shape
+
+			int orientation = rand.nextInt(8);
+
+			int first, second, third, fourth;
+
+			first = second = third = fourth = 0;
+
+			int random_int = 1;
+
+			if (orientation == 0) {
+
+				color = TextColor.Indexed.fromRGB(219, 48, 130);
+				// L Reverse up
+				int min = 2, max = COL - 3;
+				int row = 0;
+
+				random_int = (int) Math.floor(Math.random()
+						* (max - min + 1) + min);
+				first = random_int % COL;
+				second = first;
+				third = first;
+				fourth = first;
+
+				category = 8;
+
+				if (!validate(grid, row, first, row + 1, second, row,
+						third + 1, row, fourth + 2)) {
+					return false;
+				}
+
+				SetValues(contentAreas, grid, 1, color, row, first, row + 1, second, row,
+						third + 1, row, fourth + 2);
+
+			}
+
+			else if (orientation == 1) {
+				color = TextColor.Indexed.fromRGB(255, 255, 0);
+				int min = 3, max = COL - 2;
+				int row = 0;
+
+				// L up
+
+				random_int = (int) Math.floor(Math.random()
+						* (max - min + 1) + min);
+				first = random_int % COL;
+				second = first;
+				third = first;
+				fourth = first;
+
+				category = 9;
+
+				if (!validate(grid, row, first, row + 1, second, row,
+						third - 1, row, fourth - 2)) {
+					return false;
+				}
+
+				SetValues(contentAreas, grid, 1, color, row, first, row + 1, second, row,
+						third - 1, row, fourth - 2);
+
+			}
+
+			else if (orientation == 2) {
+				color = TextColor.Indexed.fromRGB(219, 48, 130);
+				int min = 2, max = COL - 2;
+				int row = 0;
+				// L Reverse left
+				random_int = (int) Math.floor(Math.random()
+						* (max - min + 1) + min);
+				first = random_int % COL;
+				second = first;
+				third = first;
+				fourth = first;
+
+				category = 6;
+
+				if (!validate(grid, row, first, row + 1, second, row + 2,
+						third, row + 2, fourth + 1)) {
+					return false;
+				}
+
+				SetValues(contentAreas, grid, 1, color, row, first, row + 1, second, row + 2,
+						third, row + 2, fourth + 1);
+			}
+
+			else if (orientation == 3) {
+				color = TextColor.Indexed.fromRGB(255, 255, 0);
+				int min = 2, max = COL - 2;
+				int row = 0;
+				// L Right
+				random_int = (int) Math.floor(Math.random()
+						* (max - min + 1) + min);
+				first = random_int % COL;
+				second = first;
+				third = first;
+				fourth = first;
+
+				category = 10;
+
+				if (!validate(grid, row, first, row + 1, second, row + 2,
+						third, row + 2, fourth - 1)) {
+					return false;
+				}
+
+				SetValues(contentAreas, grid, 1, color, row, first, row + 1, second, row + 2,
+						third, row + 2, fourth - 1);
+			}
+
+			else if (orientation == 4) {
+				color = TextColor.Indexed.fromRGB(219, 48, 130);
+
+				int min = 2, max = COL - 2;
+				int row = 0;
+				// L Reverse Right
+				random_int = (int) Math.floor(Math.random()
+						* (max - min + 1) + min);
+				first = random_int % COL;
+				second = first;
+				third = first;
+				fourth = first;
+
+				category = 7;
+
+				if (!validate(grid, row, first, row, second + 1, row + 1,
+						third + 1, row + 2, fourth + 1)) {
+					return false;
+				}
+
+				SetValues(contentAreas, grid, 1, color, row, first, row, second + 1, row + 1,
+						third + 1, row + 2, fourth + 1);
+
+			}
+
+			else if (orientation == 5) {
+				color = TextColor.Indexed.fromRGB(255, 255, 0);
+
+				int min = 2, max = COL - 2;
+				int row = 0;
+				// L Left
+				random_int = (int) Math.floor(Math.random()
+						* (max - min + 1) + min);
+				first = random_int % COL;
+				second = first;
+				third = first;
+				fourth = first;
+
+				category = 11;
+
+				if (!validate(grid, row, first, row, second - 1, row + 1,
+						third - 1, row + 2, fourth - 1)) {
+					return false;
+				}
+
+				SetValues(contentAreas, grid, 1, color, row, first, row, second - 1, row + 1,
+						third - 1, row + 2, fourth - 1);
+
+			}
+
+			else if (orientation == 6) {
+				color = TextColor.Indexed.fromRGB(219, 48, 130);
+
+				int min = 2, max = COL - 3;
+				int row = 0;
+				// Left Reverse Down
+				random_int = (int) Math.floor(Math.random()
+						* (max - min + 1) + min);
+				first = random_int % COL;
+				second = first;
+				third = first;
+				fourth = first;
+
+				category = 5;
+
+				if (!validate(grid, row, first, row + 1, second, row + 1,
+						third - 1, row + 1, fourth - 2)) {
+					return false;
+				}
+
+				SetValues(contentAreas, grid, 1, color, row, first, row + 1, second, row + 1,
+						third - 1, row + 1, fourth - 2);
+			}
+
+			else {
+
+				color = TextColor.Indexed.fromRGB(255, 255, 0);
+
+				int min = 3, max = COL - 3;
+				int row = 0;
+				// L up
+				random_int = (int) Math.floor(Math.random()
+						* (max - min + 1) + min);
+				first = random_int % COL;
+				second = first;
+				third = first;
+				fourth = first;
+
+				category = 12;
+
+				if (!validate(grid, row, first, row + 1, second, row + 1,
+						third + 1, row + 1, fourth + 2)) {
+					return false;
+				}
+
+				SetValues(contentAreas, grid, 1, color, row, first, row + 1, second, row + 1,
+						third + 1, row + 1, fourth + 2);
+
+			}
+
+		}
+
+		else {
+
+			int orientation = rand.nextInt(4);
+
+			int first, second, third, fourth;
+
+			first = second = third = fourth = 0;
+
+			int random_int = 0;
+
+			if (orientation == 0) {
+				color = TextColor.Indexed.fromRGB(144, 245, 0);
+				int min = 3, max = COL - 3;
+				int row = 0;
+				// Right side T
+				random_int = (int) Math.floor(Math.random()
+						* (max - min + 1) + min);
+				first = random_int % COL;
+				second = first;
+				third = first;
+				fourth = first;
+
+				category = 18;
+
+				if (!validate(grid, row, first, row, second + 1, row + 1,
+						third + 1, row + 1, fourth + 2)) {
+					return false;
+				}
+
+				SetValues(contentAreas, grid, 1, color, row, first, row, second + 1, row + 1,
+						third + 1, row + 1, fourth + 2);
+
+			}
+
+			else if (orientation == 1) {
+				color = TextColor.Indexed.fromRGB(0, 0, 176);
+				int min = 2, max = COL - 3;
+				int row = 0;
+				// Right side T
+				random_int = (int) Math.floor(Math.random()
+						* (max - min + 1) + min);
+				first = random_int % COL;
+				second = first;
+				third = first;
+				fourth = first;
+
+				category = 16;
+
+				if (!validate(grid, row, first, row, second - 1, row + 1,
+						third - 1, row + 1, fourth - 2)) {
+					return false;
+				}
+
+				SetValues(contentAreas, grid, 1, color, row, first, row, second - 1, row + 1,
+						third - 1, row + 1, fourth - 2);
+
+			}
+
+			else if (orientation == 2) {
+
+				color = TextColor.Indexed.fromRGB(0, 0, 176);
+
+				int min = 2, max = COL - 2;
+				int row = 0;
+				// Right side T
+				random_int = (int) Math.floor(Math.random()
+						* (max - min + 1) + min);
+				first = random_int % COL;
+				second = first;
+				third = first;
+				fourth = first;
+
+				category = 15;
+
+				if (!validate(grid, row, first, row + 1, second, row + 1,
+						third + 1, row + 2, fourth + 1)) {
+					return false;
+				}
+
+				SetValues(contentAreas, grid, 1, color, row, first, row + 1, second, row + 1,
+						third + 1, row + 2, fourth + 1);
+
+			}
+
+			else {
+				color = TextColor.Indexed.fromRGB(144, 245, 0);
+				int min = 2, max = COL - 2;
+				int row = 0;
+				// Right side T
+				random_int = (int) Math.floor(Math.random()
+						* (max - min + 1) + min);
+				first = random_int % COL;
+				second = first;
+				third = first;
+				fourth = first;
+
+				category = 17;
+
+				if (!validate(grid, row, first, row + 1,
+						second, row + 1, third - 1, row + 2, fourth - 1)) {
+					return false;
+				}
+
+				SetValues(contentAreas, grid, 1, color, row, first, row + 1,
+						second, row + 1, third - 1, row + 2, fourth - 1);
+
+			}
+
+		}
+		
         input_thread.setCategory(category);
         input_thread.setColor(color);
 
@@ -852,7 +844,7 @@ public class Game {
     }
 
     public Game(Socket socket) throws IOException {
-        this.socket = socket;
+    	this.socket = socket;
         out = new DataOutputStream(this.socket.getOutputStream());
     }
 
@@ -863,23 +855,15 @@ public class Game {
     public void SetMainInterface() {
 
         mainPanel.removeAllComponents();
-        for (int i = 0; i < 12; i++) {
-
-            mainPanel.addComponent(Panels.horizontal(contentAreas[i][0].getPanel(), contentAreas[i][1].getPanel(),
-                    contentAreas[i][2].getPanel(), contentAreas[i][3].getPanel(),
-                    contentAreas[i][4].getPanel(), contentAreas[i][5].getPanel(),
-                    contentAreas[i][6].getPanel(), contentAreas[i][7].getPanel(),
-                    contentAreas[i][8].getPanel(), contentAreas[i][9].getPanel(),
-                    contentAreas[i][10].getPanel(), contentAreas[i][11].getPanel(),
-                    contentAreas[i][12].getPanel(), contentAreas[i][13].getPanel(),
-                    contentAreas[i][14].getPanel(), contentAreas[i][15].getPanel(),
-                    contentAreas[i][16].getPanel(), contentAreas[i][17].getPanel(),
-                    contentAreas[i][18].getPanel(), contentAreas[i][19].getPanel(),
-                    contentAreas[i][20].getPanel(), contentAreas[i][21].getPanel(),
-                    contentAreas[i][22].getPanel(), contentAreas[i][23].getPanel()
-            ));
-
-            if (i + 1 < 12) {
+        for (int i = 0; i < ROW; i++) {
+        	
+        	Panel horizontal = new Panel();
+			horizontal.setLayoutManager(new LinearLayout(Direction.HORIZONTAL));
+			for(int j = 0; j < COL; j++) {
+				horizontal.addComponent(contentAreas[i][j].getPanel());
+			}
+			mainPanel.addComponent(horizontal);
+            if (i + 1 < ROW) {
                 mainPanel.addComponent(new Panel().addComponent(new EmptySpace(TextColor.ANSI.WHITE, new TerminalSize(2, 1))));
             }
 
@@ -900,13 +884,13 @@ public class Game {
 
             mainPanel = new Panel();
 
-            grid = new int[12][24];
-            contentAreas = new BlockGrid_Holder[12][];
+            grid = new int[ROW][COL];
+            contentAreas = new BlockGrid_Holder[ROW][];
 
-            for (int i = 0; i < 12; i++) {
-                contentAreas[i] = new BlockGrid_Holder[24];
+            for (int i = 0; i < ROW; i++) {
+                contentAreas[i] = new BlockGrid_Holder[COL];
 
-                for (int j = 0; j < 24; j++) {
+                for (int j = 0; j < COL; j++) {
 
                     grid[i][j] = 0;
 
@@ -947,154 +931,109 @@ public class Game {
                             mutex.acquire();
 
                             //Reset(contentAreas);
-                            int first_row, second_row, third_row, fourth_row;
-                            int first_column, second_column, third_column, fourth_column;
+                            int shape[][] = new int[4][2];
+        					int prev_shape[][] = new int[4][2];
 
-                            int prev_first_row, prev_second_row, prev_third_row, prev_fourth_row;
-                            int prev_first_column, prev_second_column, prev_third_column, prev_fourth_column;
+        					for (int i = 0; i < prev_shape.length; i++) {
+        						prev_shape[i][0] = -1;
+        						prev_shape[i][1] = -1;
+        					}
 
-                            first_row = second_row = third_row = fourth_row = 0;
+        					
+    						// Direction -> VERTICAL
+    						
+    						for (int i = 0; i < ROW; i++) {
 
-                            first_column = second_column = third_column = fourth_column = 0;
+    							if (break_it)
+    								break;
 
-                            prev_first_row = prev_second_row = prev_third_row = prev_fourth_row = -1;
+    							for (int j = 0; j < COL && !break_it; j++) {
 
-                            prev_first_column = prev_second_column = prev_third_column = prev_fourth_column = -1;
+    								if (grid[i][j] == 1) {
+    									boolean match = false;
+    									for (int k = 0; k < shape.length; k++) {
 
-                            for (int i = 0; i < 12; i++) {
+    										if (shape[k][0] == 0
+    												&& shape[k][1] == 0) {
+    											prev_shape[k][0] = i;
+    											prev_shape[k][1] = j;
+    											if (i + 1 < ROW
+    													&& grid[i + 1][j] != 2) {
+    												shape[k][0] = i + 1;
+    												shape[k][1] = j;
+    											} else {
+    												break_it = true;
+    											}
+    											match = true;
+    											break;
+    										}
+    									}
 
-                                if (break_it) {
-                                    break;
-                                }
+    									if (!match) {
+    										break_it = true;
+    									}
+    								}
+    							}
+    						}
 
-                                for (int j = 0; j < 24 && !break_it; j++) {
+    						if (break_it) {
+    							// do nothing
 
-                                    if (grid[i][j] == 1) {
+    							for (int i = 0; i < ROW; i++) {
 
-                                        if (first_row == 0 && first_column == 0) {
+    								for (int j = 0; j < COL; j++) {
 
-                                            prev_first_row = i;
-                                            prev_first_column = j;
+    									if (grid[i][j] == 1)
+    										grid[i][j] = 2;
+    								}
+    							}
+    							// Reset(contentAreas, grid);
 
-                                            if (j + 1 < 24 && grid[i][j + 1] != 2 && grid[i][j + 1] != -1) {
+    							category = 0;
+    						} else {
+    							Reset(contentAreas, grid);
+    							boolean condition1 = false;
+    							boolean condition2 = false;
+    							for (int k = 0; k < shape.length; k++) {
+    								int r = shape[k][0];
+    								int c = shape[k][1];
+    								contentAreas[r][c].SetBlock(color);
+    								if (r + 1 >= ROW) {
+    									condition1 = true;
+    								}
+    							}
+    							if (!condition1) {
+    								for (int k = 0; k < shape.length; k++) {
+    									int r = shape[k][0];
+    									int c = shape[k][1];
+    									if (grid[r + 1][c] == 2) {
+    										condition2 = true;
+    									}
+    								}
+    							}
 
-                                                first_row = i;
-                                                first_column = j + 1;
-
-                                                // grid[i][j] = 0;
-                                            } else {
-                                                break_it = true;
-                                            }
-                                        } else if (second_row == 0 && second_column == 0) {
-
-                                            prev_second_row = i;
-                                            prev_second_column = j;
-
-                                            if (j + 1 < 24 && grid[i][j + 1] != 2 && grid[i][j + 1] != -1) {
-
-                                                second_row = i;
-                                                second_column = j + 1;
-
-                                                //grid[i][j] = 0;
-                                            } else {
-                                                break_it = true;
-                                            }
-
-                                        } else if (third_row == 0 && third_column == 0) {
-
-                                            prev_third_row = i;
-                                            prev_third_column = j;
-
-                                            if (j + 1 < 24 && grid[i][j + 1] != 2 && grid[i][j + 1] != -1) {
-
-                                                third_row = i;
-                                                third_column = j + 1;
-
-                                                //grid[i][j] = 0;
-                                            } else {
-                                                break_it = true;
-                                            }
-
-                                        } else if (fourth_row == 0 && fourth_column == 0) {
-
-                                            prev_fourth_row = i;
-                                            prev_fourth_column = j;
-
-                                            if (j + 1 < 24 && grid[i][j + 1] != 2 && grid[i][j + 1] != -1) {
-                                                fourth_row = i;
-                                                fourth_column = j + 1;
-
-                                                //grid[i][j] = 0;
-                                            } else {
-                                                break_it = true;
-                                            }
-
-                                        } else {
-                                            break_it = true;
-                                        }
-
-                                    }
-
-                                }
-                            }
-
-                            if (break_it) {
-                                //do nothing    
-
-                                for (int i = 0; i < 12; i++) {
-
-                                    for (int j = 0; j < 24; j++) {
-
-                                        if (grid[i][j] == 1) {
-                                            grid[i][j] = 2;
-                                        }
-                                    }
-                                }
-                                //Reset(contentAreas, grid);
-
-                                category = 0;
-                                input_thread.setCategory(category);
-                            } else {
-                                Reset(contentAreas, grid);
-
-                                contentAreas[first_row][first_column].SetBlock(color);
-                                contentAreas[second_row][second_column].SetBlock(color);
-                                contentAreas[third_row][third_column].SetBlock(color);
-                                contentAreas[fourth_row][fourth_column].SetBlock(color);
-
-                                if (first_column + 1 >= 24 || second_column + 1 >= 24 || third_column + 1 >= 24 || fourth_column + 1 >= 24) {
-                                    grid[first_row][first_column] = 2;
-                                    grid[second_row][second_column] = 2;
-                                    grid[third_row][third_column] = 2;
-                                    grid[fourth_row][fourth_column] = 2;
-                                    category = 0;
-                                    break_it = true;
-                                } else if (grid[first_row][first_column + 1] == 2
-                                        || grid[second_row][second_column + 1] == 2
-                                        || grid[third_row][third_column + 1] == 2
-                                        || grid[fourth_row][fourth_column + 1] == 2) {
-
-                                    grid[first_row][first_column] = 2;
-                                    grid[second_row][second_column] = 2;
-                                    grid[third_row][third_column] = 2;
-                                    grid[fourth_row][fourth_column] = 2;
-                                    category = 0;
-                                    break_it = true;
-                                } else {
-
-                                    grid[prev_first_row][prev_first_column] = 0;
-                                    grid[prev_second_row][prev_second_column] = 0;
-                                    grid[prev_third_row][prev_third_column] = 0;
-                                    grid[prev_fourth_row][prev_fourth_column] = 0;
-
-                                    grid[first_row][first_column] = 1;
-                                    grid[second_row][second_column] = 1;
-                                    grid[third_row][third_column] = 1;
-                                    grid[fourth_row][fourth_column] = 1;
-                                }
-
-                            }
-
+    							if (condition1 || condition2) {
+    								for (int k = 0; k < shape.length; k++) {
+    									int r = shape[k][0];
+    									int c = shape[k][1];
+    									grid[r][c] = 2;
+    								}
+    								category = 0;
+    								break_it = true;
+    							} else {
+    								for (int k = 0; k < prev_shape.length; k++) {
+    									int pr = prev_shape[k][0];
+    									int pc = prev_shape[k][1];
+    									grid[pr][pc] = 0;
+    								}
+    								for (int k = 0; k < shape.length; k++) {
+    									int r = shape[k][0];
+    									int c = shape[k][1];
+    									grid[r][c] = 1;
+    								}
+    							}
+    						}
+    						
                             mutex.release();
 
                             Matched_Lines(contentAreas, grid);
@@ -1129,9 +1068,9 @@ public class Game {
 
         mutex.acquire();
 
-        for (int i = 0; i < 12; i++) {
+        for (int i = 0; i < ROW; i++) {
 
-            for (int j = 0; j < 24; j++) {
+            for (int j = 0; j < COL; j++) {
                 grid[i][j] = -1;
 
                 contentAreas[i][j].getPanel().removeAllComponents();
