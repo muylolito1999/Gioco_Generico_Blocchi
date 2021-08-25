@@ -257,7 +257,7 @@ public class Server {
             Socket socket = server.accept();
             System.out.println("Client accepted");
 
-            if (sockets.size() >= 0 && sockets.size() <= 8) {
+            if (sockets.size() >= 0 && sockets.size() <= 4) {
                 sockets.add(socket);
             } else {
                 pending_sockets.add(socket);
