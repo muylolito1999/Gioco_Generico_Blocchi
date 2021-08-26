@@ -40,7 +40,7 @@ public class Game {
     Indexed color = TextColor.ANSI.Indexed.fromRGB(1, 1, 1);    
 
     Semaphore mutex;
-    int TO_WAIT = 500;
+    int TO_WAIT = 600;
     public final static int ROW = 12;
 	public final static int COL = 24;
     boolean break_it = false;
