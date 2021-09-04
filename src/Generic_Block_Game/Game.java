@@ -873,10 +873,13 @@ public class Game {
     public void StartGame() throws UnsupportedAudioFileException, IOException, LineUnavailableException, JavaLayerException {
 
         mutex = new Semaphore(1);
+	    
+	Terminal terminal = new DefaultTerminalFactory().setInitialTerminalSize(new TerminalSize(105,41)).createTerminal();
+	TerminalSize terminalSize = new TerminalSize(12, 24);
+	screen = new TerminalScreen(terminal);
 
-        screen = new DefaultTerminalFactory().createScreen();
         screen.startScreen();
-
+	   
         textGUI = new MultiWindowTextGUI(screen);
 
         try {
