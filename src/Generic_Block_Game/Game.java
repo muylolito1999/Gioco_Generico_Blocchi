@@ -43,8 +43,8 @@ public class Game {
 
     Semaphore mutex;
     int TO_WAIT = 800;
-    public final static int ROW = 12;
-	public final static int COL = 24;
+    public final static int ROW = 24;
+    public final static int COL = 12;
     boolean break_it = false;
     int category = 0;
     input_handler input_thread;
@@ -873,15 +873,13 @@ public class Game {
     }
 
     public void StartGame() throws UnsupportedAudioFileException, IOException, LineUnavailableException, JavaLayerException {
-
         mutex = new Semaphore(1);
 	    
-	Terminal terminal = new DefaultTerminalFactory().setInitialTerminalSize(new TerminalSize(105,41)).createTerminal();
-	TerminalSize terminalSize = new TerminalSize(12, 24);
+	Terminal terminal = new DefaultTerminalFactory().setInitialTerminalSize(new TerminalSize(60,52)).createTerminal();
 	screen = new TerminalScreen(terminal);
 
         screen.startScreen();
-	   
+
         textGUI = new MultiWindowTextGUI(screen);
 
         try {
