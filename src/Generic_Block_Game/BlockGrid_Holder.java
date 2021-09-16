@@ -42,9 +42,9 @@ public class BlockGrid_Holder {
             if (color.toColor().getRed() == 255
                     && color.toColor().getBlue() == 255
                     && color.toColor().getGreen() == 255) {
-                panel.addComponent(new EmptySpace(TextColor.ANSI.WHITE, new TerminalSize(3, 2)));
+                panel.addComponent(new EmptySpace(TextColor.ANSI.WHITE, new TerminalSize(1, 1)));
             } else {
-                panel.addComponent(new EmptySpace(indexed_color, new TerminalSize(3, 2)));
+                panel.addComponent(new EmptySpace(indexed_color, new TerminalSize(1, 1)));
             }
 
         }
@@ -62,10 +62,10 @@ public class BlockGrid_Holder {
 
         if (instruction) {
             panel.removeAllComponents();
-            panel.addComponent(new EmptySpace(TextColor.ANSI.WHITE, new TerminalSize(3, 2)));
+            panel.addComponent(new EmptySpace(TextColor.ANSI.WHITE, new TerminalSize(1, 1)));
         } else {
             panel.removeAllComponents();
-            panel.addComponent(new EmptySpace(indexed_color, new TerminalSize(3, 2)));
+            panel.addComponent(new EmptySpace(indexed_color, new TerminalSize(1, 1)));
         }
 
     }
