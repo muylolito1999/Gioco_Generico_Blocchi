@@ -473,11 +473,11 @@ public class input_handler {
                     }
 
                     if (keyStroke.getKeyType() == KeyType.ArrowLeft) {
-                    	// Direction -> VERICAL
+                    	// Direction -> VERTICAL
                     	object_mover(contentAreas, grid, -1);
                         System.out.println();
                     } else if (keyStroke.getKeyType() == KeyType.ArrowRight) {
-                    	// Direction -> VERICAL
+                    	// Direction -> VERTICAL
                     	object_mover(contentAreas, grid, 1);
                     } else if (keyStroke.getKeyType() == KeyType.ArrowUp) {
                         try {
