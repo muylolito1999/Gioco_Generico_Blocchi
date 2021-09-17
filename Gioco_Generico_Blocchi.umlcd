@@ -1,0 +1,2144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.yattasolutions.uml.diagrams.classifier:ClassDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.yattasolutions.diagrams="http://ns.yatta-solutions.com/umllab/diagrams/1.1.0" xmlns:com.yattasolutions.uml.diagrams.classifier="http://ns.yatta-solutions.com/umllab/diagrams/classifier/1.1.0" xmi:id="_RhTb0BeZEey_afmD-ISFlg">
+  <modelElement href="Gioco_Generico_Blocchi.uml#_YcSQ8BeZEey_afmD-ISFlg"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_ZP-XsBeZEey_afmD-ISFlg" targetItem="_ZQSgwBeZEey_afmD-ISFlg" sourceItem="_ZP9woBeZEey_afmD-ISFlg"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_ZQOPUBeZEey_afmD-ISFlg" source="_ZQSgwBeZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_Y1QKkBeZEey_afmD-ISFlg"/>
+    <stereotypes xmi:id="_ZQOPUReZEey_afmD-ISFlg" name="Reference">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1QxoBeZEey_afmD-ISFlg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_ZQOPUheZEey_afmD-ISFlg" text=""/>
+    <sourceRole xmi:id="_ZQOPUxeZEey_afmD-ISFlg" aggregationKind="NONE" name="">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1QKkReZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZQOPVBeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZQOPVReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_ZQOPVheZEey_afmD-ISFlg" aggregationKind="NONE" name="panel" navigable="true">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Yzf3EBeZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZQOPVxeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZQOPWBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_ZQRSoBeZEey_afmD-ISFlg" source="_ZQSgwBeZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_Y1RYsBeZEey_afmD-ISFlg"/>
+    <stereotypes xmi:id="_ZQRSoReZEey_afmD-ISFlg" name="Reference">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1R_wBeZEey_afmD-ISFlg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_ZQRSoheZEey_afmD-ISFlg" text=""/>
+    <sourceRole xmi:id="_ZQRSoxeZEey_afmD-ISFlg" aggregationKind="NONE" name="">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1RYsReZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZQRSpBeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZQRSpReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_ZQRSpheZEey_afmD-ISFlg" aggregationKind="NONE" name="indexed_color" navigable="true">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YzgeIBeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6j3aQBeZEeyRqrWO88nblw" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YzhFMBeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZQRSpxeZEey_afmD-ISFlg" label="-"/>
+      <cardinality xmi:id="_ZQRSqBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_ZSYygReZEey_afmD-ISFlg" targetItem="_ZSncCReZEey_afmD-ISFlg" sourceItem="_ZSYygBeZEey_afmD-ISFlg"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_ZSguUBeZEey_afmD-ISFlg" source="_ZSncCReZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_Y1R_wReZEey_afmD-ISFlg"/>
+    <stereotypes xmi:id="_ZSguUReZEey_afmD-ISFlg" name="Reference">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1Sm0BeZEey_afmD-ISFlg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_ZSguUheZEey_afmD-ISFlg" text=""/>
+    <sourceRole xmi:id="_ZSguUxeZEey_afmD-ISFlg" aggregationKind="NONE" name="">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1R_wheZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZSguVBeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZSguVReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_ZSguVheZEey_afmD-ISFlg" aggregationKind="NONE" name="socket" navigable="true">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YzhsQBeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6j8SwBeZEeyRqrWO88nblw" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yzi6YBeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZSguVxeZEey_afmD-ISFlg" label="-"/>
+      <cardinality xmi:id="_ZSguWBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_ZSh8cBeZEey_afmD-ISFlg" source="_ZSncCReZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_Y1TN4BeZEey_afmD-ISFlg"/>
+    <stereotypes xmi:id="_ZSh8cReZEey_afmD-ISFlg" name="Reference">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1T08BeZEey_afmD-ISFlg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_ZSh8cheZEey_afmD-ISFlg" text=""/>
+    <sourceRole xmi:id="_ZSh8cxeZEey_afmD-ISFlg" aggregationKind="NONE" name="">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1TN4ReZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZSh8dBeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZSh8dReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_ZSh8dheZEey_afmD-ISFlg" aggregationKind="NONE" name="input" navigable="true">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Yzi6YReZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6j9g4BeZEeyRqrWO88nblw" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YzjhcBeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZSh8dxeZEey_afmD-ISFlg" label="-"/>
+      <cardinality xmi:id="_ZSh8eBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_ZSijgBeZEey_afmD-ISFlg" source="_ZSncCReZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_Y1T08ReZEey_afmD-ISFlg"/>
+    <stereotypes xmi:id="_ZSijgReZEey_afmD-ISFlg" name="Reference">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1WRMBeZEey_afmD-ISFlg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_ZSijgheZEey_afmD-ISFlg" text=""/>
+    <sourceRole xmi:id="_ZSijgxeZEey_afmD-ISFlg" aggregationKind="NONE" name="">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1T08heZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZSijhBeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZSijhReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_ZSijhheZEey_afmD-ISFlg" aggregationKind="NONE" name="out" navigable="true">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YzkIgBeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6j_WEBeZEeyRqrWO88nblw" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YzlWoBeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZSijhxeZEey_afmD-ISFlg" label="-"/>
+      <cardinality xmi:id="_ZSijiBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_ZSlm0BeZEey_afmD-ISFlg" source="_ZSncCReZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_Y1WRMReZEey_afmD-ISFlg"/>
+    <stereotypes xmi:id="_ZSlm0ReZEey_afmD-ISFlg" name="Reference">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1W4QBeZEey_afmD-ISFlg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_ZSlm0heZEey_afmD-ISFlg" text=""/>
+    <sourceRole xmi:id="_ZSlm0xeZEey_afmD-ISFlg" aggregationKind="NONE" name="">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1WRMheZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZSmN4BeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZSmN4ReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_ZSmN4heZEey_afmD-ISFlg" aggregationKind="NONE" name="sock_in" navigable="true">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Yzl9sBeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6kAkMBeZEeyRqrWO88nblw" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YzmkwBeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZSmN4xeZEey_afmD-ISFlg" label="-"/>
+      <cardinality xmi:id="_ZSmN5BeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_ZSncABeZEey_afmD-ISFlg" sourceAnchor="0.0,104.0" targetAnchor="680.0,806.0" target="_ZT51eBeZEey_afmD-ISFlg" source="_ZSncCReZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_Y1XfUBeZEey_afmD-ISFlg"/>
+    <bendpoints xmi:id="_Zs6yYBeZEey_afmD-ISFlg" sourceX="-766" targetY="159"/>
+    <stereotypes xmi:id="_ZSncAReZEey_afmD-ISFlg" name="Reference">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1YtcBeZEey_afmD-ISFlg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_ZSncAheZEey_afmD-ISFlg" text="">
+      <visualProperties xmi:id="_ZtBgEBeZEey_afmD-ISFlg" position="617.9170963254518,-5.628529999065222"/>
+    </nameVisual>
+    <sourceRole xmi:id="_ZSncAxeZEey_afmD-ISFlg" aggregationKind="NONE" name="">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1XfUReZEey_afmD-ISFlg"/>
+      <visualProperties xmi:id="_Zs_q4BeZEey_afmD-ISFlg" position="-64.25355887697788,-17.1662149396077"/>
+      <visibility xmi:id="_ZSncBBeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZSncBReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_ZSncBheZEey_afmD-ISFlg" aggregationKind="NONE" name="game" navigable="true">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YznL0BeZEey_afmD-ISFlg"/>
+      <visualProperties xmi:id="_ZtCHIBeZEey_afmD-ISFlg" position="545.1528798803254,141.72467707599822"/>
+      <stereotypes xmi:id="_6kCZYBeZEeyRqrWO88nblw" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yzny4BeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZSncBxeZEey_afmD-ISFlg" label="-"/>
+      <cardinality xmi:id="_ZSncCBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_ZTJngBeZEey_afmD-ISFlg" sourceAnchor="893.0,0.0" targetAnchor="20.0,208.0" target="_ZQSgwBeZEey_afmD-ISFlg" source="_ZT51eBeZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_Y1jFgReZEey_afmD-ISFlg"/>
+    <stereotypes xmi:id="_ZTPHEReZEey_afmD-ISFlg" name="Reference">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1kToBeZEey_afmD-ISFlg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_ZTOgAReZEey_afmD-ISFlg" text="">
+      <visualProperties xmi:id="_ZtEjYBeZEey_afmD-ISFlg" position="-15.19184019596105,196.9094191325546"/>
+    </nameVisual>
+    <sourceRole xmi:id="_ZTOgAheZEey_afmD-ISFlg" aggregationKind="NONE" name="">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1jFgheZEey_afmD-ISFlg"/>
+      <visualProperties xmi:id="_ZtD8UBeZEey_afmD-ISFlg" position="1.826916114064943,-71.42332678430898"/>
+      <visibility xmi:id="_ZTe-tBeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZTe-sxeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_ZTPHEBeZEey_afmD-ISFlg" aggregationKind="NONE" name="contentAreas" navigable="true">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Yz4RkBeZEey_afmD-ISFlg"/>
+      <visualProperties xmi:id="_ZtFKcBeZEey_afmD-ISFlg" position="-41.70862466590154,425.9006744525391"/>
+      <stereotypes xmi:id="_6kE1oBeZEeyRqrWO88nblw" name="Array">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yz44oBeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6kFcsBeZEeyRqrWO88nblw" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yz6GwBeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZTflwReZEey_afmD-ISFlg" label="~"/>
+      <cardinality xmi:id="_ZTflwBeZEey_afmD-ISFlg" label="1..*" max="-1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_ZTLcsReZEey_afmD-ISFlg" targetItem="_ZT51eBeZEey_afmD-ISFlg" sourceItem="_ZTLcsBeZEey_afmD-ISFlg"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_ZTMq0BeZEey_afmD-ISFlg" source="_ZT51eBeZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_Y1YtcReZEey_afmD-ISFlg"/>
+    <stereotypes xmi:id="_ZTdwkReZEey_afmD-ISFlg" name="Reference">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1ZUgBeZEey_afmD-ISFlg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_ZTcicBeZEey_afmD-ISFlg" text=""/>
+    <sourceRole xmi:id="_ZTdJgBeZEey_afmD-ISFlg" aggregationKind="NONE" name="">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1YtcheZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZTlsYBeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZTlFUBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_ZTdwkBeZEey_afmD-ISFlg" aggregationKind="NONE" name="color" navigable="true">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YzoZ8BeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6kIgABeZEeyRqrWO88nblw" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YzpBAReZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZTlsYheZEey_afmD-ISFlg" label="~"/>
+      <cardinality xmi:id="_ZTlsYReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_ZTMq0ReZEey_afmD-ISFlg" source="_ZT51eBeZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_Y1cX0ReZEey_afmD-ISFlg"/>
+    <stereotypes xmi:id="_ZTeXoBeZEey_afmD-ISFlg" name="Reference">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1c-4BeZEey_afmD-ISFlg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_ZTdwkheZEey_afmD-ISFlg" text=""/>
+    <sourceRole xmi:id="_ZTdwkxeZEey_afmD-ISFlg" aggregationKind="NONE" name="">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1cX0heZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZTmTcheZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZTmTcReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_ZTdwlBeZEey_afmD-ISFlg" aggregationKind="NONE" name="mainPanel" navigable="true">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Yzxj4BeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6kKVMBeZEeyRqrWO88nblw" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YzyK8BeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZTm6gBeZEey_afmD-ISFlg" label="~"/>
+      <cardinality xmi:id="_ZTmTcxeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_ZTN48BeZEey_afmD-ISFlg" source="_ZT51eBeZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_Y1hQUBeZEey_afmD-ISFlg"/>
+    <stereotypes xmi:id="_ZTeXpBeZEey_afmD-ISFlg" name="Reference">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1h3YBeZEey_afmD-ISFlg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_ZTeXoReZEey_afmD-ISFlg" text=""/>
+    <sourceRole xmi:id="_ZTeXoheZEey_afmD-ISFlg" aggregationKind="NONE" name="">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1hQUReZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZTm6gxeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZTm6gheZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_ZTeXoxeZEey_afmD-ISFlg" aggregationKind="NONE" name="socket" navigable="true">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Yz0nMReZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6kLjUBeZEeyRqrWO88nblw" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yz1OQBeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZTnhkReZEey_afmD-ISFlg" label="-"/>
+      <cardinality xmi:id="_ZTnhkBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_ZTOgABeZEey_afmD-ISFlg" source="_ZT51eBeZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_Y1iecBeZEey_afmD-ISFlg"/>
+    <stereotypes xmi:id="_ZTe-sheZEey_afmD-ISFlg" name="Reference">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1jFgBeZEey_afmD-ISFlg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_ZTeXpReZEey_afmD-ISFlg" text=""/>
+    <sourceRole xmi:id="_ZTe-sBeZEey_afmD-ISFlg" aggregationKind="NONE" name="">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1iecReZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZTnhlBeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZTnhkxeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_ZTe-sReZEey_afmD-ISFlg" aggregationKind="NONE" name="out" navigable="true">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Yz11UBeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6kMxcBeZEeyRqrWO88nblw" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yz11UReZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZToIoReZEey_afmD-ISFlg" label="-"/>
+      <cardinality xmi:id="_ZToIoBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_ZTtoMBeZEey_afmD-ISFlg" source="_ZT51eBeZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_Y1ZUgReZEey_afmD-ISFlg"/>
+    <stereotypes xmi:id="_ZTtoMReZEey_afmD-ISFlg" name="Reference">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1aioBeZEey_afmD-ISFlg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_ZTtoMheZEey_afmD-ISFlg" text=""/>
+    <sourceRole xmi:id="_ZTtoMxeZEey_afmD-ISFlg" aggregationKind="NONE" name="">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1ZUgheZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZTtoNBeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZTtoNReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_ZTtoNheZEey_afmD-ISFlg" aggregationKind="NONE" name="mutex" navigable="true">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YzpoEBeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6kN_kBeZEeyRqrWO88nblw" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YzpoEReZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZTtoNxeZEey_afmD-ISFlg" label="~"/>
+      <cardinality xmi:id="_ZTtoOBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_ZTu2UBeZEey_afmD-ISFlg" sourceAnchor="1345.0,0.0" targetAnchor="437.0,484.0" target="_ZXIIkBeZEey_afmD-ISFlg" source="_ZT51eBeZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_Y1aioReZEey_afmD-ISFlg"/>
+    <stereotypes xmi:id="_ZTu2UReZEey_afmD-ISFlg" name="Reference">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1bJsBeZEey_afmD-ISFlg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_ZTu2UheZEey_afmD-ISFlg" text="">
+      <visualProperties xmi:id="_ZtJb4BeZEey_afmD-ISFlg" position="-17.06045978152099,-567.967879086609"/>
+    </nameVisual>
+    <sourceRole xmi:id="_ZTu2UxeZEey_afmD-ISFlg" aggregationKind="NONE" name="">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1aioheZEey_afmD-ISFlg"/>
+      <visualProperties xmi:id="_ZtG_oBeZEey_afmD-ISFlg" position="0.6821262814942202,-70.53336709150449"/>
+      <visibility xmi:id="_ZTu2VBeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZTu2VReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_ZTu2VheZEey_afmD-ISFlg" aggregationKind="NONE" name="input_thread" navigable="true">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Yzt5gBeZEey_afmD-ISFlg"/>
+      <visualProperties xmi:id="_ZtKC8BeZEey_afmD-ISFlg" position="-41.17621173099576,-1103.7264205493314"/>
+      <stereotypes xmi:id="_6kPNsBeZEeyRqrWO88nblw" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YzugkBeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZTu2VxeZEey_afmD-ISFlg" label="~"/>
+      <cardinality xmi:id="_ZTu2WBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_ZTwrgBeZEey_afmD-ISFlg" sourceAnchor="218.0,0.0" targetAnchor="118.0,254.0" target="_ZWlWABeZEey_afmD-ISFlg" source="_ZT51eBeZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_Y1bwwBeZEey_afmD-ISFlg"/>
+    <stereotypes xmi:id="_ZTwrgReZEey_afmD-ISFlg" name="Reference">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1cX0BeZEey_afmD-ISFlg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_ZTwrgheZEey_afmD-ISFlg" text="">
+      <visualProperties xmi:id="_ZtL4IBeZEey_afmD-ISFlg" position="-17.392027921856027,-153.90520913524392"/>
+    </nameVisual>
+    <sourceRole xmi:id="_ZTwrgxeZEey_afmD-ISFlg" aggregationKind="NONE" name="">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1bwwReZEey_afmD-ISFlg"/>
+      <visualProperties xmi:id="_ZtKqABeZEey_afmD-ISFlg" position="0.14335795954167452,-69.16456193388774"/>
+      <visibility xmi:id="_ZTwrhBeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZTwrhReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_ZTwrhheZEey_afmD-ISFlg" aggregationKind="NONE" name="sound" navigable="true">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YzvHoBeZEey_afmD-ISFlg"/>
+      <visualProperties xmi:id="_ZtL4IReZEey_afmD-ISFlg" position="-19.873269621794805,-274.3529546871456"/>
+      <stereotypes xmi:id="_6kQb0BeZEeyRqrWO88nblw" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yzw80BeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZTwrhxeZEey_afmD-ISFlg" label="~"/>
+      <cardinality xmi:id="_ZTwriBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_ZTygsBeZEey_afmD-ISFlg" source="_ZT51eBeZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_Y1c-4ReZEey_afmD-ISFlg"/>
+    <stereotypes xmi:id="_ZTygsReZEey_afmD-ISFlg" name="Reference">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1eNABeZEey_afmD-ISFlg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_ZTygsheZEey_afmD-ISFlg" text=""/>
+    <sourceRole xmi:id="_ZTygsxeZEey_afmD-ISFlg" aggregationKind="NONE" name="">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1c-4heZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZTygtBeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZTygtReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_ZTygtheZEey_afmD-ISFlg" aggregationKind="NONE" name="window" navigable="true">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YzyK8ReZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6kRC4BeZEeyRqrWO88nblw" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YzyyABeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZTygtxeZEey_afmD-ISFlg" label="~"/>
+      <cardinality xmi:id="_ZTyguBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_ZT0V4BeZEey_afmD-ISFlg" source="_ZT51eBeZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_Y1eNAReZEey_afmD-ISFlg"/>
+    <stereotypes xmi:id="_ZT0V4ReZEey_afmD-ISFlg" name="Reference">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1fbIBeZEey_afmD-ISFlg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_ZT0V4heZEey_afmD-ISFlg" text=""/>
+    <sourceRole xmi:id="_ZT0V4xeZEey_afmD-ISFlg" aggregationKind="NONE" name="">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1eNAheZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZT0V5BeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZT0V5ReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_ZT0V5heZEey_afmD-ISFlg" aggregationKind="NONE" name="main_thread" navigable="true">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YzyyAReZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6kS4EBeZEeyRqrWO88nblw" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yz0AIBeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZT0V5xeZEey_afmD-ISFlg" label="~"/>
+      <cardinality xmi:id="_ZT0V6BeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_ZT2yIBeZEey_afmD-ISFlg" source="_ZT51eBeZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_Y1gCMBeZEey_afmD-ISFlg"/>
+    <stereotypes xmi:id="_ZT3ZMBeZEey_afmD-ISFlg" name="Reference">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1gpQBeZEey_afmD-ISFlg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_ZT3ZMReZEey_afmD-ISFlg" text=""/>
+    <sourceRole xmi:id="_ZT3ZMheZEey_afmD-ISFlg" aggregationKind="NONE" name="">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1gCMReZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZT3ZMxeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZT3ZNBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_ZT3ZNReZEey_afmD-ISFlg" aggregationKind="NONE" name="textGUI" navigable="true">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Yz0AIReZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6kUGMBeZEeyRqrWO88nblw" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yz0nMBeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZT3ZNheZEey_afmD-ISFlg" label="~"/>
+      <cardinality xmi:id="_ZT3ZNxeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_ZT5OYBeZEey_afmD-ISFlg" source="_ZT51eBeZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_Y1kToReZEey_afmD-ISFlg"/>
+    <stereotypes xmi:id="_ZT51cBeZEey_afmD-ISFlg" name="Reference">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1k6sBeZEey_afmD-ISFlg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_ZT51cReZEey_afmD-ISFlg" text=""/>
+    <sourceRole xmi:id="_ZT51cheZEey_afmD-ISFlg" aggregationKind="NONE" name="">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1kToheZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZT51cxeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZT51dBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_ZT51dReZEey_afmD-ISFlg" aggregationKind="NONE" name="screen" navigable="true">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Yz7U4ReZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6kV7YBeZEeyRqrWO88nblw" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yz778BeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZT51dheZEey_afmD-ISFlg" label="~"/>
+      <cardinality xmi:id="_ZT51dxeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_ZV1vIReZEey_afmD-ISFlg" targetItem="_ZV29QBeZEey_afmD-ISFlg" sourceItem="_ZV1vIBeZEey_afmD-ISFlg"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_ZV7OsBeZEey_afmD-ISFlg" targetItem="_ZWIqEBeZEey_afmD-ISFlg" sourceItem="_ZV6noBeZEey_afmD-ISFlg"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_ZV71wBeZEey_afmD-ISFlg" source="_ZWIqEBeZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_Y1lhwReZEey_afmD-ISFlg"/>
+    <stereotypes xmi:id="_ZV-SAxeZEey_afmD-ISFlg" name="Reference">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1mv4BeZEey_afmD-ISFlg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_ZV-SABeZEey_afmD-ISFlg" text=""/>
+    <sourceRole xmi:id="_ZV-SAReZEey_afmD-ISFlg" aggregationKind="NONE" name="">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1lhwheZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZWAHMReZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZWAHMBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_ZV-SAheZEey_afmD-ISFlg" aggregationKind="NONE" name="sockets" navigable="true">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Yz-YMBeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6kXJgBeZEeyRqrWO88nblw" name="Generics">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yz-_QBeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6kXJgReZEeyRqrWO88nblw" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yz_mUBeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZWAHMxeZEey_afmD-ISFlg" label="-"/>
+      <cardinality xmi:id="_ZWAHMheZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_ZV71wReZEey_afmD-ISFlg" source="_ZWIqEBeZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_Y1mv4ReZEey_afmD-ISFlg"/>
+    <stereotypes xmi:id="_ZV-5EheZEey_afmD-ISFlg" name="Reference">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1nW8BeZEey_afmD-ISFlg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_ZV-SBBeZEey_afmD-ISFlg" text=""/>
+    <sourceRole xmi:id="_ZV-5EBeZEey_afmD-ISFlg" aggregationKind="NONE" name="">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1mv4heZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZWAuQxeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZWAuQheZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_ZV-5EReZEey_afmD-ISFlg" aggregationKind="NONE" name="pending_sockets" navigable="true">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Yz_mUReZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6kYXoBeZEeyRqrWO88nblw" name="Generics">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Y0A0cBeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6kYXoReZEeyRqrWO88nblw" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Y0A0cReZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZWBVUReZEey_afmD-ISFlg" label="-"/>
+      <cardinality xmi:id="_ZWBVUBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_ZV71wheZEey_afmD-ISFlg" sourceAnchor="150.0,0.0" targetAnchor="0.0,127.0" target="_ZWlWABeZEey_afmD-ISFlg" source="_ZWIqEBeZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_Y1n-ABeZEey_afmD-ISFlg"/>
+    <bendpoints xmi:id="_Zs_D0BeZEey_afmD-ISFlg" sourceY="-251" targetX="-344"/>
+    <stereotypes xmi:id="_ZV_gIReZEey_afmD-ISFlg" name="Reference">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1olEBeZEey_afmD-ISFlg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_ZV-5ExeZEey_afmD-ISFlg" text="">
+      <visualProperties xmi:id="_ZtO7cBeZEey_afmD-ISFlg" position="-19.05389304718426,117.52078227437516"/>
+    </nameVisual>
+    <sourceRole xmi:id="_ZV-5FBeZEey_afmD-ISFlg" aggregationKind="NONE" name="">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1n-AReZEey_afmD-ISFlg"/>
+      <visualProperties xmi:id="_ZtNtUBeZEey_afmD-ISFlg" position="-0.20121694245176514,-68.60266393825714"/>
+      <visibility xmi:id="_ZWB8YheZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZWB8YReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_ZV_gIBeZEey_afmD-ISFlg" aggregationKind="NONE" name="sound" navigable="true">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y0BbgBeZEey_afmD-ISFlg"/>
+      <visualProperties xmi:id="_ZtO7cReZEey_afmD-ISFlg" position="-364.7789045763442,18.685191500022484"/>
+      <stereotypes xmi:id="_6kZlwBeZEeyRqrWO88nblw" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Y0BbgReZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZWCjcBeZEey_afmD-ISFlg" label="-"/>
+      <cardinality xmi:id="_ZWB8YxeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_ZWHb8BeZEey_afmD-ISFlg" source="_ZWIqEBeZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_Y1k6sReZEey_afmD-ISFlg"/>
+    <stereotypes xmi:id="_ZWHb8ReZEey_afmD-ISFlg" name="Reference">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1lhwBeZEey_afmD-ISFlg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_ZWHb8heZEey_afmD-ISFlg" text=""/>
+    <sourceRole xmi:id="_ZWHb8xeZEey_afmD-ISFlg" aggregationKind="NONE" name="">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1k6sheZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZWHb9BeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZWHb9ReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_ZWHb9heZEey_afmD-ISFlg" aggregationKind="NONE" name="server" navigable="true">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Yz8jABeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6kaz4BeZEeyRqrWO88nblw" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yz9KEBeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZWHb9xeZEey_afmD-ISFlg" label="-"/>
+      <cardinality xmi:id="_ZWHb-BeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_ZWWFcBeZEey_afmD-ISFlg" targetItem="_ZWlWABeZEey_afmD-ISFlg" sourceItem="_ZWVeYBeZEey_afmD-ISFlg"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_ZWWsgBeZEey_afmD-ISFlg" source="_ZWlWABeZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_Y1s2gReZEey_afmD-ISFlg"/>
+    <stereotypes xmi:id="_ZWblAReZEey_afmD-ISFlg" name="Reference">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1tdkBeZEey_afmD-ISFlg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_ZWa98BeZEey_afmD-ISFlg" text=""/>
+    <sourceRole xmi:id="_ZWa98ReZEey_afmD-ISFlg" aggregationKind="NONE" name="">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1s2gheZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZWcMEReZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZWcMEBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_ZWblABeZEey_afmD-ISFlg" aggregationKind="NONE" name="thread" navigable="true">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y0HiIReZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6kcCABeZEeyRqrWO88nblw" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Y0IJMBeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZWczIReZEey_afmD-ISFlg" label="~"/>
+      <cardinality xmi:id="_ZWczIBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_ZWfPYBeZEey_afmD-ISFlg" source="_ZWlWABeZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_Y1olEReZEey_afmD-ISFlg"/>
+    <stereotypes xmi:id="_ZWfPYReZEey_afmD-ISFlg" name="Reference">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1qaQBeZEey_afmD-ISFlg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_ZWfPYheZEey_afmD-ISFlg" text=""/>
+    <sourceRole xmi:id="_ZWfPYxeZEey_afmD-ISFlg" aggregationKind="NONE" name="">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1olEheZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZWfPZBeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZWfPZReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_ZWf2cBeZEey_afmD-ISFlg" aggregationKind="NONE" name="soundFile" navigable="true">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y0CCkBeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6kdQIBeZEeyRqrWO88nblw" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Y0CpoBeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZWf2cReZEey_afmD-ISFlg" label="~"/>
+      <cardinality xmi:id="_ZWf2cheZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_ZWhEkBeZEey_afmD-ISFlg" source="_ZWlWABeZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_Y1rBUBeZEey_afmD-ISFlg"/>
+    <stereotypes xmi:id="_ZWhEkReZEey_afmD-ISFlg" name="Reference">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1roYBeZEey_afmD-ISFlg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_ZWhEkheZEey_afmD-ISFlg" text=""/>
+    <sourceRole xmi:id="_ZWhEkxeZEey_afmD-ISFlg" aggregationKind="NONE" name="">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1rBUReZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZWhElBeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZWhElReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_ZWhElheZEey_afmD-ISFlg" aggregationKind="NONE" name="audioIn" navigable="true">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y0DQsBeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6keeQBeZEeyRqrWO88nblw" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Y0FF4BeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZWhElxeZEey_afmD-ISFlg" label="~"/>
+      <cardinality xmi:id="_ZWhEmBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_ZWiSsBeZEey_afmD-ISFlg" source="_ZWlWABeZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_Y1roYReZEey_afmD-ISFlg"/>
+    <stereotypes xmi:id="_ZWiSsReZEey_afmD-ISFlg" name="Reference">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1sPcBeZEey_afmD-ISFlg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_ZWiSsheZEey_afmD-ISFlg" text=""/>
+    <sourceRole xmi:id="_ZWiSsxeZEey_afmD-ISFlg" aggregationKind="NONE" name="">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1roYheZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZWiStBeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZWiStReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_ZWiStheZEey_afmD-ISFlg" aggregationKind="NONE" name="clip" navigable="true">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y0FF4ReZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6kfsYBeZEeyRqrWO88nblw" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Y0Fs8BeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZWiStxeZEey_afmD-ISFlg" label="~"/>
+      <cardinality xmi:id="_ZWiSuBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_ZWku8BeZEey_afmD-ISFlg" source="_ZWlWABeZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_Y1sPcReZEey_afmD-ISFlg"/>
+    <stereotypes xmi:id="_ZWku8ReZEey_afmD-ISFlg" name="Reference">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1s2gBeZEey_afmD-ISFlg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_ZWku8heZEey_afmD-ISFlg" text=""/>
+    <sourceRole xmi:id="_ZWku8xeZEey_afmD-ISFlg" aggregationKind="NONE" name="">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1sPcheZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZWku9BeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZWku9ReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_ZWku9heZEey_afmD-ISFlg" aggregationKind="NONE" name="player" navigable="true">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y0G7EBeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6kg6gBeZEeyRqrWO88nblw" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Y0HiIBeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZWku9xeZEey_afmD-ISFlg" label="~"/>
+      <cardinality xmi:id="_ZWku-BeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_ZWyxYBeZEey_afmD-ISFlg" sourceAnchor="124.0,0.0" targetAnchor="159.0,208.0" target="_ZQSgwBeZEey_afmD-ISFlg" source="_ZXIIkBeZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_Y1ursReZEey_afmD-ISFlg"/>
+    <stereotypes xmi:id="_ZW10sBeZEey_afmD-ISFlg" name="Reference">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1vSwBeZEey_afmD-ISFlg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_ZW1NoReZEey_afmD-ISFlg" text="">
+      <visualProperties xmi:id="_ZtQwoBeZEey_afmD-ISFlg" position="-25.76965186413969,-1.72113162260149"/>
+    </nameVisual>
+    <sourceRole xmi:id="_ZW1NoheZEey_afmD-ISFlg" aggregationKind="NONE" name="">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1ursheZEey_afmD-ISFlg"/>
+      <visualProperties xmi:id="_ZtQJkBeZEey_afmD-ISFlg" position="-18.123278581110412,-83.2473697206355"/>
+      <visibility xmi:id="_ZW9JdBeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZW9JcxeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_ZW1NoxeZEey_afmD-ISFlg" aggregationKind="NONE" name="contentAreas" navigable="true">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y0KlcBeZEey_afmD-ISFlg"/>
+      <visualProperties xmi:id="_ZtRXsBeZEey_afmD-ISFlg" position="-61.345928482997806,51.49078348674118"/>
+      <stereotypes xmi:id="_6kiIoBeZEeyRqrWO88nblw" name="Array">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Y0LMgBeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_6kiIoReZEeyRqrWO88nblw" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Y0LzkBeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZW9wgReZEey_afmD-ISFlg" label="-"/>
+      <cardinality xmi:id="_ZW9wgBeZEey_afmD-ISFlg" label="1..*" max="-1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_ZW0mkReZEey_afmD-ISFlg" targetItem="_ZXIIkBeZEey_afmD-ISFlg" sourceItem="_ZW0mkBeZEey_afmD-ISFlg"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_ZW0mkheZEey_afmD-ISFlg" source="_ZXIIkBeZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_Y1tdkReZEey_afmD-ISFlg"/>
+    <stereotypes xmi:id="_ZW8iYxeZEey_afmD-ISFlg" name="Reference">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1uEoBeZEey_afmD-ISFlg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_ZW8iYBeZEey_afmD-ISFlg" text=""/>
+    <sourceRole xmi:id="_ZW8iYReZEey_afmD-ISFlg" aggregationKind="NONE" name="">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1tdkheZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZXAz0BeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZXAMwBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_ZW8iYheZEey_afmD-ISFlg" aggregationKind="NONE" name="screen" navigable="true">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y0IwQBeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6kjWwBeZEeyRqrWO88nblw" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Y0JXUBeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZXAz0heZEey_afmD-ISFlg" label="-"/>
+      <cardinality xmi:id="_ZXAz0ReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_ZW1NoBeZEey_afmD-ISFlg" source="_ZXIIkBeZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_Y1uEoReZEey_afmD-ISFlg"/>
+    <stereotypes xmi:id="_ZW9JcheZEey_afmD-ISFlg" name="Reference">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1ursBeZEey_afmD-ISFlg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_ZW8iZBeZEey_afmD-ISFlg" text=""/>
+    <sourceRole xmi:id="_ZW9JcBeZEey_afmD-ISFlg" aggregationKind="NONE" name="">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1uEoheZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZXCpABeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZXCB8BeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_ZW9JcReZEey_afmD-ISFlg" aggregationKind="NONE" name="input_handler" navigable="true">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y0JXUReZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6klL8BeZEeyRqrWO88nblw" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Y0J-YBeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZXDQEBeZEey_afmD-ISFlg" label="-"/>
+      <cardinality xmi:id="_ZXCpAReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_ZW10sReZEey_afmD-ISFlg" source="_ZXIIkBeZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_Y1vSwReZEey_afmD-ISFlg"/>
+    <stereotypes xmi:id="_ZW-XkxeZEey_afmD-ISFlg" name="Reference">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1v50BeZEey_afmD-ISFlg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_ZW-XkBeZEey_afmD-ISFlg" text=""/>
+    <sourceRole xmi:id="_ZW-XkReZEey_afmD-ISFlg" aggregationKind="NONE" name="">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1vSwheZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZXEeMReZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZXEeMBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_ZW-XkheZEey_afmD-ISFlg" aggregationKind="NONE" name="mutex" navigable="true">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y0OP0BeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6kmaEBeZEeyRqrWO88nblw" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Y0O24BeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZXFFQReZEey_afmD-ISFlg" label="-"/>
+      <cardinality xmi:id="_ZXFFQBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_ZXHhgBeZEey_afmD-ISFlg" source="_ZXIIkBeZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_Y1v50ReZEey_afmD-ISFlg"/>
+    <stereotypes xmi:id="_ZXHhgReZEey_afmD-ISFlg" name="Reference">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1wg4BeZEey_afmD-ISFlg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_ZXHhgheZEey_afmD-ISFlg" text=""/>
+    <sourceRole xmi:id="_ZXHhgxeZEey_afmD-ISFlg" aggregationKind="NONE" name="">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y1v50heZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZXHhhBeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZXHhhReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_ZXHhhheZEey_afmD-ISFlg" aggregationKind="NONE" name="color" navigable="true">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y0QFAReZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6knoMBeZEeyRqrWO88nblw" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Y0QsEBeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZXHhhxeZEey_afmD-ISFlg" label="~"/>
+      <cardinality xmi:id="_ZXHhiBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_ZP9woBeZEey_afmD-ISFlg" sourceConnectionVisual="_ZP-XsBeZEey_afmD-ISFlg" text="*&#xD;&#xA;@author LolloB" item="_ZQSgwBeZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_Y0_E0BeZEey_afmD-ISFlg"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_ZSYygBeZEey_afmD-ISFlg" sourceConnectionVisual="_ZSYygReZEey_afmD-ISFlg" text="*&#xD;&#xA;@author LolloB" item="_ZSncCReZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_Y0_E0ReZEey_afmD-ISFlg"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_ZTLcsBeZEey_afmD-ISFlg" sourceConnectionVisual="_ZTLcsReZEey_afmD-ISFlg" text="*&#xD;&#xA;@author LolloB" item="_ZT51eBeZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_Y0_r4BeZEey_afmD-ISFlg"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_ZV1vIBeZEey_afmD-ISFlg" sourceConnectionVisual="_ZV1vIReZEey_afmD-ISFlg" text="*&#xD;&#xA;@author LolloB" item="_ZV29QBeZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_Y1CIIBeZEey_afmD-ISFlg"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_ZV6noBeZEey_afmD-ISFlg" sourceConnectionVisual="_ZV7OsBeZEey_afmD-ISFlg" text="*&#xD;&#xA;@author LolloB" item="_ZWIqEBeZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_Y1CIIReZEey_afmD-ISFlg"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_ZWVeYBeZEey_afmD-ISFlg" sourceConnectionVisual="_ZWWFcBeZEey_afmD-ISFlg" text="*&#xD;&#xA;@author LolloB" item="_ZWlWABeZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_Y1CvMBeZEey_afmD-ISFlg"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_ZW0mkBeZEey_afmD-ISFlg" sourceConnectionVisual="_ZW0mkReZEey_afmD-ISFlg" text="*&#xD;&#xA;@author LolloB" item="_ZXIIkBeZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_Y1CvMReZEey_afmD-ISFlg"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_ZQSgwBeZEey_afmD-ISFlg" comments="_ZP9woBeZEey_afmD-ISFlg" targetConnectionVisual="_ZP-XsBeZEey_afmD-ISFlg" name="BlockGrid_Holder" associationsIn="_ZTJngBeZEey_afmD-ISFlg _ZWyxYBeZEey_afmD-ISFlg" associationsOut="_ZQOPUBeZEey_afmD-ISFlg _ZQRSoBeZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_YeOKoBeZEey_afmD-ISFlg"/>
+    <visualProperties xmi:id="_ZQSgwReZEey_afmD-ISFlg" position="269.0,195.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_ZQSgwheZEey_afmD-ISFlg" label="+"/>
+    <attributes xmi:id="_ZQSgwxeZEey_afmD-ISFlg" name="panel">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Yzf3EBeZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZQSgxBeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZQSgxReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <type xmi:id="_ZQSgxheZEey_afmD-ISFlg" name="Panel">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yw9gcReZEey_afmD-ISFlg"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_ZQSgxxeZEey_afmD-ISFlg" name="indexed_color">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YzgeIBeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6l2XQBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6l5akBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6nTIwBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <visibility xmi:id="_ZQSgyReZEey_afmD-ISFlg" label="-"/>
+      <cardinality xmi:id="_ZQSgyheZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <type xmi:id="_ZQSgyxeZEey_afmD-ISFlg" name="Indexed">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yw52EBeZEey_afmD-ISFlg"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_ZQSgzBeZEey_afmD-ISFlg" name="BlockGrid_Holder">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YegegBeZEey_afmD-ISFlg"/>
+      <keywords xmi:id="_ZQSgzReZEey_afmD-ISFlg" keyword="create"/>
+      <visibility xmi:id="_ZQSgzheZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZQSgzxeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_ZQSg0BeZEey_afmD-ISFlg">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yei6wReZEey_afmD-ISFlg"/>
+        <type xmi:id="_ZQSg0ReZEey_afmD-ISFlg" name="BlockGrid_Holder">
+          <modelElement href="Gioco_Generico_Blocchi.uml#_YeOKoBeZEey_afmD-ISFlg"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_ZQSg0heZEey_afmD-ISFlg" name="EmptyBlock">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YekI4BeZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZQSg0xeZEey_afmD-ISFlg" label="-"/>
+      <cardinality xmi:id="_ZQSg1BeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_ZQSg1ReZEey_afmD-ISFlg" name="getColor">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Yekv8BeZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZQSg1heZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZQSg1xeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_ZQSg2BeZEey_afmD-ISFlg">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yyw3QBeZEey_afmD-ISFlg"/>
+        <type xmi:id="_ZQSg2ReZEey_afmD-ISFlg" name="Indexed">
+          <modelElement href="Gioco_Generico_Blocchi.uml#_Yw52EBeZEey_afmD-ISFlg"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_ZQSg2heZEey_afmD-ISFlg" name="blink">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YenMMBeZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZQSg2xeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZQSg3BeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <parameters xmi:id="_ZQSg3ReZEey_afmD-ISFlg" name="instruction">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YenzQBeZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZQSg3heZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+        <type xmi:id="_ZQSg3xeZEey_afmD-ISFlg" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_ZQSg4BeZEey_afmD-ISFlg" name="SetBlock">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YyvpIBeZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZQSg4ReZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZQSg4heZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <parameters xmi:id="_ZQSg4xeZEey_afmD-ISFlg" name="color">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YywQMBeZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZQSg5BeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+        <type xmi:id="_ZQSg5ReZEey_afmD-ISFlg" name="Indexed">
+          <modelElement href="Gioco_Generico_Blocchi.uml#_Yw52EBeZEey_afmD-ISFlg"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_ZSncCReZEey_afmD-ISFlg" comments="_ZSYygBeZEey_afmD-ISFlg" targetConnectionVisual="_ZSYygReZEey_afmD-ISFlg" name="Client" associationsOut="_ZSguUBeZEey_afmD-ISFlg _ZSh8cBeZEey_afmD-ISFlg _ZSijgBeZEey_afmD-ISFlg _ZSlm0BeZEey_afmD-ISFlg _ZSncABeZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_YesrwBeZEey_afmD-ISFlg"/>
+    <visualProperties xmi:id="_ZSoDEBeZEey_afmD-ISFlg" position="842.0,1858.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_ZSoDEReZEey_afmD-ISFlg" label="+"/>
+    <attributes xmi:id="_ZSoDEheZEey_afmD-ISFlg" defaultValue="null" name="socket">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YzhsQBeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6l720BeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6l9sABeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6nUW4BeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <visibility xmi:id="_ZSoDFBeZEey_afmD-ISFlg" label="-"/>
+      <cardinality xmi:id="_ZSoDFReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <type xmi:id="_ZSoDFheZEey_afmD-ISFlg" name="Socket">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YxJGoBeZEey_afmD-ISFlg"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_ZSoDFxeZEey_afmD-ISFlg" defaultValue="null" name="input">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Yzi6YReZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6l_hMBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6mBWYBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6nVlABeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <visibility xmi:id="_ZSoDGReZEey_afmD-ISFlg" label="-"/>
+      <cardinality xmi:id="_ZSoDGheZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <type xmi:id="_ZSoDGxeZEey_afmD-ISFlg" name="DataInputStream">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YxDnEBeZEey_afmD-ISFlg"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_ZSoDHBeZEey_afmD-ISFlg" defaultValue="null" name="out" staticAttribute="true">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YzkIgBeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6mCkgBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6mDyoBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6nXaMBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <visibility xmi:id="_ZSoDHheZEey_afmD-ISFlg" label="-"/>
+      <cardinality xmi:id="_ZSoDHxeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <type xmi:id="_ZSoDIBeZEey_afmD-ISFlg" name="DataOutputStream">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YxGDUBeZEey_afmD-ISFlg"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_ZSoDIReZEey_afmD-ISFlg" defaultValue="null" name="sock_in">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Yzl9sBeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6mFAwBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6mGO4BeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6nYoUBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <visibility xmi:id="_ZSoDIxeZEey_afmD-ISFlg" label="-"/>
+      <cardinality xmi:id="_ZSoDJBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <type xmi:id="_ZSoDJReZEey_afmD-ISFlg" name="DataInputStream">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YxDnEBeZEey_afmD-ISFlg"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_ZSoDJheZEey_afmD-ISFlg" name="game">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YznL0BeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6mHdABeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6mIrIBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6nZ2cBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <visibility xmi:id="_ZSoDKBeZEey_afmD-ISFlg" label="-"/>
+      <cardinality xmi:id="_ZSoDKReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <type xmi:id="_ZSoDKheZEey_afmD-ISFlg" name="Game">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Ye8jYBeZEey_afmD-ISFlg"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_ZSoDKxeZEey_afmD-ISFlg" name="isGameOver">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YevIABeZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZSoDLBeZEey_afmD-ISFlg" label="-"/>
+      <cardinality xmi:id="_ZSoDLReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_ZSoDLheZEey_afmD-ISFlg" name="ReceivingEnd">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YevvEBeZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZSoDLxeZEey_afmD-ISFlg" label="-"/>
+      <cardinality xmi:id="_ZSoDMBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_ZSoDMReZEey_afmD-ISFlg" name="Client">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YeyyYBeZEey_afmD-ISFlg"/>
+      <keywords xmi:id="_ZSoDMheZEey_afmD-ISFlg" keyword="create"/>
+      <visibility xmi:id="_ZSoDMxeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZSoDNBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_ZSoDNReZEey_afmD-ISFlg">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Ye0AgheZEey_afmD-ISFlg"/>
+        <type xmi:id="_ZSoDNheZEey_afmD-ISFlg" name="Client">
+          <modelElement href="Gioco_Generico_Blocchi.uml#_YesrwBeZEey_afmD-ISFlg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_ZSoDNxeZEey_afmD-ISFlg" name="address">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YezZcBeZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZSoDOBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+        <type xmi:id="_ZSoDOReZEey_afmD-ISFlg" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ZSoDOheZEey_afmD-ISFlg" name="port">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YezZcReZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZSoDOxeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+        <type xmi:id="_ZSoDPBeZEey_afmD-ISFlg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_ZS36sBeZEey_afmD-ISFlg" name="UnsupportedAudioFileException">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_YxSQkBeZEey_afmD-ISFlg"/>
+    <visualProperties xmi:id="_ZS36sReZEey_afmD-ISFlg" position="-43.0,2135.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_ZS36sheZEey_afmD-ISFlg" name="Reference">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YxTesBeZEey_afmD-ISFlg"/>
+    </stereotypes>
+    <visibility xmi:id="_ZS36sxeZEey_afmD-ISFlg" label="+"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_ZS_PcBeZEey_afmD-ISFlg" name="LineUnavailableException">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_YxP0UReZEey_afmD-ISFlg"/>
+    <visualProperties xmi:id="_ZS_PcReZEey_afmD-ISFlg" position="-19.0,2261.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_ZS_PcheZEey_afmD-ISFlg" name="Reference">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YxRpgBeZEey_afmD-ISFlg"/>
+    </stereotypes>
+    <visibility xmi:id="_ZS_PcxeZEey_afmD-ISFlg" label="+"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_ZTDg4BeZEey_afmD-ISFlg" name="JavaLayerException">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_YxTesReZEey_afmD-ISFlg"/>
+    <visualProperties xmi:id="_ZTDg4ReZEey_afmD-ISFlg" position="1.0,2375.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_ZTDg4heZEey_afmD-ISFlg" name="Reference">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YxUs0BeZEey_afmD-ISFlg"/>
+    </stereotypes>
+    <visibility xmi:id="_ZTDg4xeZEey_afmD-ISFlg" label="+"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_ZT51eBeZEey_afmD-ISFlg" comments="_ZTLcsBeZEey_afmD-ISFlg" targetConnectionVisual="_ZTLcsReZEey_afmD-ISFlg" name="Game" associationsIn="_ZSncABeZEey_afmD-ISFlg" associationsOut="_ZTJngBeZEey_afmD-ISFlg _ZTMq0BeZEey_afmD-ISFlg _ZTMq0ReZEey_afmD-ISFlg _ZTN48BeZEey_afmD-ISFlg _ZTOgABeZEey_afmD-ISFlg _ZTtoMBeZEey_afmD-ISFlg _ZTu2UBeZEey_afmD-ISFlg _ZTwrgBeZEey_afmD-ISFlg _ZTygsBeZEey_afmD-ISFlg _ZT0V4BeZEey_afmD-ISFlg _ZT2yIBeZEey_afmD-ISFlg _ZT5OYBeZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_Ye8jYBeZEey_afmD-ISFlg"/>
+    <visualProperties xmi:id="_ZT51eReZEey_afmD-ISFlg" position="-604.0,997.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_ZT51eheZEey_afmD-ISFlg" label="+"/>
+    <attributes xmi:id="_ZT51exeZEey_afmD-ISFlg" defaultValue="TextColor.ANSI.Indexed.fromRGB(1, 1, 1)" name="color">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YzoZ8BeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6mNjoBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6mOxwBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6nbEkBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <visibility xmi:id="_ZT51fReZEey_afmD-ISFlg" label="~"/>
+      <cardinality xmi:id="_ZT51fheZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <type xmi:id="_ZT51fxeZEey_afmD-ISFlg" name="Indexed">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yw52EBeZEey_afmD-ISFlg"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_ZT51gBeZEey_afmD-ISFlg" name="mutex">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YzpoEBeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6mZJ0BeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6maX8BeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6nbroBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <visibility xmi:id="_ZT51gheZEey_afmD-ISFlg" label="~"/>
+      <cardinality xmi:id="_ZT51gxeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <type xmi:id="_ZT51hBeZEey_afmD-ISFlg" name="Semaphore">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YxbagBeZEey_afmD-ISFlg"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_ZT51hReZEey_afmD-ISFlg" defaultValue="800" name="TO_WAIT">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YzqPIBeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_ZT51hheZEey_afmD-ISFlg" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YzqPIheZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZT51hxeZEey_afmD-ISFlg" label="~"/>
+      <cardinality xmi:id="_ZT51iBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <type xmi:id="_ZT51iReZEey_afmD-ISFlg" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_ZT51iheZEey_afmD-ISFlg" defaultValue="24" name="ROW" staticAttribute="true">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Yzq2MBeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_ZT51ixeZEey_afmD-ISFlg" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YzrdQBeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZT51jBeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZT51jReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <type xmi:id="_ZT51jheZEey_afmD-ISFlg" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_ZT51jxeZEey_afmD-ISFlg" defaultValue="12" name="COL" staticAttribute="true">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YzrdQReZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_ZT51kBeZEey_afmD-ISFlg" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YzsEUBeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZT51kReZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZT51kheZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <type xmi:id="_ZT51kxeZEey_afmD-ISFlg" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_ZT51lBeZEey_afmD-ISFlg" defaultValue="false" name="break_it">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YzsEUReZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_ZT51lReZEey_afmD-ISFlg" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YzsrYReZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZT51lheZEey_afmD-ISFlg" label="~"/>
+      <cardinality xmi:id="_ZT51lxeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <type xmi:id="_ZT51mBeZEey_afmD-ISFlg" name="boolean">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_ZT51mReZEey_afmD-ISFlg" defaultValue="0" name="category">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YzsrYheZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_ZT51mheZEey_afmD-ISFlg" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YztScReZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZT51mxeZEey_afmD-ISFlg" label="~"/>
+      <cardinality xmi:id="_ZT51nBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <type xmi:id="_ZT51nReZEey_afmD-ISFlg" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_ZT51nheZEey_afmD-ISFlg" name="input_thread">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Yzt5gBeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6mcNIBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6meCUBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6neH4BeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <visibility xmi:id="_ZT51oBeZEey_afmD-ISFlg" label="~"/>
+      <cardinality xmi:id="_ZT51oReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <type xmi:id="_ZT51oheZEey_afmD-ISFlg" name="input_handler">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Ygk7EBeZEey_afmD-ISFlg"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_ZT51oxeZEey_afmD-ISFlg" name="sound">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YzvHoBeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6mfQcBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6mhFoBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6nfWABeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <visibility xmi:id="_ZT51pReZEey_afmD-ISFlg" label="~"/>
+      <cardinality xmi:id="_ZT51pheZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <type xmi:id="_ZT51pxeZEey_afmD-ISFlg" name="Sound">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YgZU4BeZEey_afmD-ISFlg"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_ZT51qBeZEey_afmD-ISFlg" name="mainPanel">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Yzxj4BeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6mQm8BeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6mR1EBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6ngkIBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <visibility xmi:id="_ZT51qheZEey_afmD-ISFlg" label="~"/>
+      <cardinality xmi:id="_ZT51qxeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <type xmi:id="_ZT51rBeZEey_afmD-ISFlg" name="Panel">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yw9gcReZEey_afmD-ISFlg"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_ZT51rReZEey_afmD-ISFlg" name="window">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YzyK8ReZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6mi60BeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6mkI8BeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6nhyQBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <visibility xmi:id="_ZT51rxeZEey_afmD-ISFlg" label="~"/>
+      <cardinality xmi:id="_ZT51sBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <type xmi:id="_ZT51sReZEey_afmD-ISFlg" name="BasicWindow">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YxdPsBeZEey_afmD-ISFlg"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_ZT51sheZEey_afmD-ISFlg" name="main_thread">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YzyyAReZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6mlXEBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6mmlMBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6njAYBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <visibility xmi:id="_ZT51tBeZEey_afmD-ISFlg" label="~"/>
+      <cardinality xmi:id="_ZT51tReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <type xmi:id="_ZT51theZEey_afmD-ISFlg" name="Thread">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yy3k8BeZEey_afmD-ISFlg"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_ZT51txeZEey_afmD-ISFlg" name="textGUI">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Yz0AIReZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6moaYBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6mpogBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6nkOgBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <visibility xmi:id="_ZT6cgReZEey_afmD-ISFlg" label="~"/>
+      <cardinality xmi:id="_ZT6cgheZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <type xmi:id="_ZT6cgxeZEey_afmD-ISFlg" name="MultiWindowTextGUI">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YxjWUBeZEey_afmD-ISFlg"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_ZT6chBeZEey_afmD-ISFlg" defaultValue="null" name="socket">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Yz0nMReZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6mTDMBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6mURUBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6nlcoBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <visibility xmi:id="_ZT6chheZEey_afmD-ISFlg" label="-"/>
+      <cardinality xmi:id="_ZT6chxeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <type xmi:id="_ZT6ciBeZEey_afmD-ISFlg" name="Socket">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YxJGoBeZEey_afmD-ISFlg"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_ZT6ciReZEey_afmD-ISFlg" name="out">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Yz11UBeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6mWGgBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6mXUoBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6nmqwBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <visibility xmi:id="_ZT6cixeZEey_afmD-ISFlg" label="-"/>
+      <cardinality xmi:id="_ZT6cjBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <type xmi:id="_ZT6cjReZEey_afmD-ISFlg" name="DataOutputStream">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YxGDUBeZEey_afmD-ISFlg"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_ZT6cjheZEey_afmD-ISFlg" defaultValue="false" name="GameOver">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Yz2cYBeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_ZT6cjxeZEey_afmD-ISFlg" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yz3DcBeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZT6ckBeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZT6ckReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <type xmi:id="_ZT6ckheZEey_afmD-ISFlg" name="boolean">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_ZT6ckxeZEey_afmD-ISFlg" defaultValue="0" name="Trashlined_rows">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Yz3DcReZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_ZT6clBeZEey_afmD-ISFlg" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yz3qgReZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZT6clReZEey_afmD-ISFlg" label="-"/>
+      <cardinality xmi:id="_ZT6clheZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <type xmi:id="_ZT6clxeZEey_afmD-ISFlg" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_ZT6cmBeZEey_afmD-ISFlg" name="contentAreas">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Yz4RkBeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6mKgUBeZEeyRqrWO88nblw" name="Array"/>
+      <stereotypes xmi:id="_6mKgUReZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6mLucBeZEeyRqrWO88nblw" name="Array"/>
+      <stereotypes xmi:id="_6mMVgBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6nof8BeZEeyRqrWO88nblw" name="Array"/>
+      <stereotypes xmi:id="_6npHABeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <visibility xmi:id="_ZT6cmxeZEey_afmD-ISFlg" label="~"/>
+      <cardinality xmi:id="_ZT6cnBeZEey_afmD-ISFlg" label="1..*" max="-1" min="1"/>
+      <type xmi:id="_ZT6cnReZEey_afmD-ISFlg" name="BlockGrid_Holder">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YeOKoBeZEey_afmD-ISFlg"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_ZT6cnheZEey_afmD-ISFlg" name="grid">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Yz6t0BeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_ZT6cnxeZEey_afmD-ISFlg" name="Array">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yz6t0heZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_ZT6coBeZEey_afmD-ISFlg" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yz7U4BeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZT6coReZEey_afmD-ISFlg" label="~"/>
+      <cardinality xmi:id="_ZT6coheZEey_afmD-ISFlg" label="1..*" max="-1" min="1"/>
+      <type xmi:id="_ZT6coxeZEey_afmD-ISFlg" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_ZT6cpBeZEey_afmD-ISFlg" name="screen">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Yz7U4ReZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6mqPkBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6mrdsBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6nq8MBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <visibility xmi:id="_ZT6cpheZEey_afmD-ISFlg" label="~"/>
+      <cardinality xmi:id="_ZT6cpxeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <type xmi:id="_ZT6cqBeZEey_afmD-ISFlg" name="Screen">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YxlLgBeZEey_afmD-ISFlg"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_ZT6cqReZEey_afmD-ISFlg" name="Update_Comments">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YfFtUBeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_ZT6cqheZEey_afmD-ISFlg" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YfIwoBeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZT6cqxeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZT6crBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_ZT6crReZEey_afmD-ISFlg" name="SendingEnd">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YfMbABeZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZT6crheZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZT6crxeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_ZT6csBeZEey_afmD-ISFlg">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YfNCEBeZEey_afmD-ISFlg"/>
+        <type xmi:id="_ZT6csReZEey_afmD-ISFlg" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_ZT6csheZEey_afmD-ISFlg" name="line">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YfMbAReZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZT6csxeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+        <type xmi:id="_ZT6ctBeZEey_afmD-ISFlg" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_ZT6ctReZEey_afmD-ISFlg" name="SendingEnd">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YfOQMBeZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZT6ctheZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZT6ctxeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <parameters xmi:id="_ZT6cuBeZEey_afmD-ISFlg" name="number_of_lines">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YfPeUBeZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZT6cuReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+        <type xmi:id="_ZT6cuheZEey_afmD-ISFlg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_ZT6cuxeZEey_afmD-ISFlg" name="validate">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YfR6kBeZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZT6cvBeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZT6cvReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_ZT6cvheZEey_afmD-ISFlg">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YfUW0BeZEey_afmD-ISFlg"/>
+        <type xmi:id="_ZT6cvxeZEey_afmD-ISFlg" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_ZT6cwBeZEey_afmD-ISFlg" name="grid">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YfR6kReZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZT6cwReZEey_afmD-ISFlg" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_ZT6cwheZEey_afmD-ISFlg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ZT6cwxeZEey_afmD-ISFlg" name="row1">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YfShoBeZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZT6cxBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+        <type xmi:id="_ZT6cxReZEey_afmD-ISFlg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ZT6cxheZEey_afmD-ISFlg" name="column1">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YfShoReZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZT6cxxeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+        <type xmi:id="_ZT6cyBeZEey_afmD-ISFlg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ZT6cyReZEey_afmD-ISFlg" name="row2">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YfTIsBeZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZT6cyheZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+        <type xmi:id="_ZT6cyxeZEey_afmD-ISFlg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ZT6czBeZEey_afmD-ISFlg" name="column2">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YfTIsReZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZT6czReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+        <type xmi:id="_ZT6czheZEey_afmD-ISFlg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ZT6czxeZEey_afmD-ISFlg" name="row3">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YfTIsheZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZT6c0BeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+        <type xmi:id="_ZT6c0ReZEey_afmD-ISFlg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ZT6c0heZEey_afmD-ISFlg" name="column3">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YfTvwBeZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZT6c0xeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+        <type xmi:id="_ZT6c1BeZEey_afmD-ISFlg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ZT6c1ReZEey_afmD-ISFlg" name="row4">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YfTvwReZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZT6c1heZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+        <type xmi:id="_ZT6c1xeZEey_afmD-ISFlg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ZT6c2BeZEey_afmD-ISFlg" name="column4">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YfTvwheZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZT6c2ReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+        <type xmi:id="_ZT6c2heZEey_afmD-ISFlg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_ZT6c2xeZEey_afmD-ISFlg" name="SetMainInterface">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YfgkEBeZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZT6c3BeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZT6c3ReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_ZT6c3heZEey_afmD-ISFlg" name="StartGame">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YfhLIBeZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZT6c3xeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZT6c4BeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_ZT6c4ReZEey_afmD-ISFlg" name="Windup">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YfkOcBeZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZT6c4heZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZT6c4xeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_ZT6c5BeZEey_afmD-ISFlg" name="Pause">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YflckBeZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZT6c5ReZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZT6c5heZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_ZT6c5xeZEey_afmD-ISFlg" name="Resume">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YfmDoBeZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZT6c6BeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZT6c6ReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_ZT6c6heZEey_afmD-ISFlg" name="Reset">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YxtHUBeZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZT6c6xeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZT6c7BeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <parameters xmi:id="_ZT6c7ReZEey_afmD-ISFlg" name="contentAreas">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YxtuYBeZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZT6c7heZEey_afmD-ISFlg" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_ZT6c7xeZEey_afmD-ISFlg" name="BlockGrid_Holder">
+          <modelElement href="Gioco_Generico_Blocchi.uml#_YeOKoBeZEey_afmD-ISFlg"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ZT6c8BeZEey_afmD-ISFlg" name="grid">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YxtuYReZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZT6c8ReZEey_afmD-ISFlg" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_ZT6c8heZEey_afmD-ISFlg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_ZT6c8xeZEey_afmD-ISFlg" name="Matched_Lines">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YxwxsBeZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZT6c9BeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZT6c9ReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <parameters xmi:id="_ZT6c9heZEey_afmD-ISFlg" name="contentAreas">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YxwxsReZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZT6c9xeZEey_afmD-ISFlg" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_ZT6c-BeZEey_afmD-ISFlg" name="BlockGrid_Holder">
+          <modelElement href="Gioco_Generico_Blocchi.uml#_YeOKoBeZEey_afmD-ISFlg"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ZT6c-ReZEey_afmD-ISFlg" name="grid">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YxxYwBeZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZT6c-heZEey_afmD-ISFlg" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_ZT6c-xeZEey_afmD-ISFlg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_ZT6c_BeZEey_afmD-ISFlg" name="block_generator">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Yxz1ABeZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZT6c_ReZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZT6c_heZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_ZT6c_xeZEey_afmD-ISFlg">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yx1qMBeZEey_afmD-ISFlg"/>
+        <type xmi:id="_ZT6dABeZEey_afmD-ISFlg" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_ZT6dAReZEey_afmD-ISFlg" name="contentAreas">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yx0cEBeZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZT6dAheZEey_afmD-ISFlg" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_ZT6dAxeZEey_afmD-ISFlg" name="BlockGrid_Holder">
+          <modelElement href="Gioco_Generico_Blocchi.uml#_YeOKoBeZEey_afmD-ISFlg"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ZT6dBBeZEey_afmD-ISFlg" name="grid">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yx0cEReZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZT6dBReZEey_afmD-ISFlg" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_ZT6dBheZEey_afmD-ISFlg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_ZT6dBxeZEey_afmD-ISFlg" name="SetValues">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Yy9EgBeZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZT6dCBeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZT6dCReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <parameters xmi:id="_ZT6dCheZEey_afmD-ISFlg" name="contentAreas">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yy9rkBeZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZT6dCxeZEey_afmD-ISFlg" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_ZT6dDBeZEey_afmD-ISFlg" name="BlockGrid_Holder">
+          <modelElement href="Gioco_Generico_Blocchi.uml#_YeOKoBeZEey_afmD-ISFlg"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ZT6dDReZEey_afmD-ISFlg" name="grid">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yy9rkReZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZT6dDheZEey_afmD-ISFlg" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_ZT6dDxeZEey_afmD-ISFlg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ZT6dEBeZEey_afmD-ISFlg" name="value">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yy9rkheZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZT6dEReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+        <type xmi:id="_ZT6dEheZEey_afmD-ISFlg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ZT6dExeZEey_afmD-ISFlg" name="indexed_color">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yy9rkxeZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZT6dFBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+        <type xmi:id="_ZT6dFReZEey_afmD-ISFlg" name="Indexed">
+          <modelElement href="Gioco_Generico_Blocchi.uml#_Yw52EBeZEey_afmD-ISFlg"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ZT6dFheZEey_afmD-ISFlg" name="row1">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yy-SoBeZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZT6dFxeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+        <type xmi:id="_ZT6dGBeZEey_afmD-ISFlg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ZT6dGReZEey_afmD-ISFlg" name="column1">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yy-SoReZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZT6dGheZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+        <type xmi:id="_ZT6dGxeZEey_afmD-ISFlg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ZT6dHBeZEey_afmD-ISFlg" name="row2">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yy-SoheZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZT6dHReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+        <type xmi:id="_ZT6dHheZEey_afmD-ISFlg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ZT6dHxeZEey_afmD-ISFlg" name="column2">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yy-SoxeZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZT6dIBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+        <type xmi:id="_ZT6dIReZEey_afmD-ISFlg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ZT6dIheZEey_afmD-ISFlg" name="row3">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yy-5sBeZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZT6dIxeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+        <type xmi:id="_ZT6dJBeZEey_afmD-ISFlg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ZT6dJReZEey_afmD-ISFlg" name="column3">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yy-5sReZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZT6dJheZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+        <type xmi:id="_ZT6dJxeZEey_afmD-ISFlg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ZT6dKBeZEey_afmD-ISFlg" name="row4">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yy-5sheZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZT6dKReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+        <type xmi:id="_ZT6dKheZEey_afmD-ISFlg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ZT6dKxeZEey_afmD-ISFlg" name="column4">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yy-5sxeZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZT6dLBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+        <type xmi:id="_ZT6dLReZEey_afmD-ISFlg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_ZT6dLheZEey_afmD-ISFlg" name="Clear_Matched_Line">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YzB9ABeZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZT6dLxeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZT6dMBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <parameters xmi:id="_ZT6dMReZEey_afmD-ISFlg" name="contentAreas">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YzB9AReZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZT6dMheZEey_afmD-ISFlg" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_ZT6dMxeZEey_afmD-ISFlg" name="BlockGrid_Holder">
+          <modelElement href="Gioco_Generico_Blocchi.uml#_YeOKoBeZEey_afmD-ISFlg"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ZT6dNBeZEey_afmD-ISFlg" name="grid">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YzB9AheZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZT6dNReZEey_afmD-ISFlg" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_ZT6dNheZEey_afmD-ISFlg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ZT6dNxeZEey_afmD-ISFlg" name="columns">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YzB9AxeZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZT6dOBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+        <type xmi:id="_ZT6dOReZEey_afmD-ISFlg" name="ArrayList">
+          <modelElement href="Gioco_Generico_Blocchi.uml#_YxYXMBeZEey_afmD-ISFlg"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ZT6dOheZEey_afmD-ISFlg" name="column">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YzB9BBeZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZT6dOxeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+        <type xmi:id="_ZT6dPBeZEey_afmD-ISFlg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_ZT6dPReZEey_afmD-ISFlg" name="StartInputThread">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YzFAUBeZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZT6dPheZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZT6dPxeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <parameters xmi:id="_ZT6dQBeZEey_afmD-ISFlg" name="screen">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YzFAUReZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZT6dQReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+        <type xmi:id="_ZT6dQheZEey_afmD-ISFlg" name="Screen">
+          <modelElement href="Gioco_Generico_Blocchi.uml#_YxlLgBeZEey_afmD-ISFlg"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ZT6dQxeZEey_afmD-ISFlg" name="contentAreas">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YzFAUheZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZT6dRBeZEey_afmD-ISFlg" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_ZT6dRReZEey_afmD-ISFlg" name="BlockGrid_Holder">
+          <modelElement href="Gioco_Generico_Blocchi.uml#_YeOKoBeZEey_afmD-ISFlg"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ZT6dRheZEey_afmD-ISFlg" name="grid">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YzFAUxeZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZT6dRxeZEey_afmD-ISFlg" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_ZT6dSBeZEey_afmD-ISFlg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_ZT6dSReZEey_afmD-ISFlg" name="Game">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YzIqsBeZEey_afmD-ISFlg"/>
+      <keywords xmi:id="_ZT6dSheZEey_afmD-ISFlg" keyword="create"/>
+      <visibility xmi:id="_ZT6dSxeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZT6dTBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_ZT6dTReZEey_afmD-ISFlg">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YzJRwxeZEey_afmD-ISFlg"/>
+        <type xmi:id="_ZT6dTheZEey_afmD-ISFlg" name="Game">
+          <modelElement href="Gioco_Generico_Blocchi.uml#_Ye8jYBeZEey_afmD-ISFlg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_ZT6dTxeZEey_afmD-ISFlg" name="socket">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YzJRwBeZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZT6dUBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+        <type xmi:id="_ZT6dUReZEey_afmD-ISFlg" name="Socket">
+          <modelElement href="Gioco_Generico_Blocchi.uml#_YxJGoBeZEey_afmD-ISFlg"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_ZVtzUBeZEey_afmD-ISFlg" name="InterruptedException">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_Yy6BMBeZEey_afmD-ISFlg"/>
+    <visualProperties xmi:id="_ZVtzUReZEey_afmD-ISFlg" position="233.0,2254.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_ZVtzUheZEey_afmD-ISFlg" name="Reference">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Yy6oQBeZEey_afmD-ISFlg"/>
+    </stereotypes>
+    <visibility xmi:id="_ZVtzUxeZEey_afmD-ISFlg" label="+"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_ZVzS4BeZEey_afmD-ISFlg" name="IOException">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_YxHRcReZEey_afmD-ISFlg"/>
+    <visualProperties xmi:id="_ZVzS4ReZEey_afmD-ISFlg" position="-197.0,2150.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_ZVzS4heZEey_afmD-ISFlg" name="Reference">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YxIfkBeZEey_afmD-ISFlg"/>
+    </stereotypes>
+    <visibility xmi:id="_ZVzS4xeZEey_afmD-ISFlg" label="+"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_ZV29QBeZEey_afmD-ISFlg" comments="_ZV1vIBeZEey_afmD-ISFlg" targetConnectionVisual="_ZV1vIReZEey_afmD-ISFlg" name="Generic_Block_Game">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_YgATUBeZEey_afmD-ISFlg"/>
+    <visualProperties xmi:id="_ZV29QReZEey_afmD-ISFlg" position="-298.0,2278.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_ZV29QheZEey_afmD-ISFlg" label="+"/>
+    <operations xmi:id="_ZV29QxeZEey_afmD-ISFlg" name="main" staticOperation="true">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YgDWoBeZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZV29RBeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZV29RReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <parameters xmi:id="_ZV29RheZEey_afmD-ISFlg" name="args">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YgD9sBeZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZV29RxeZEey_afmD-ISFlg" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_ZV29SBeZEey_afmD-ISFlg" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_ZWIqEBeZEey_afmD-ISFlg" comments="_ZV6noBeZEey_afmD-ISFlg" targetConnectionVisual="_ZV7OsBeZEey_afmD-ISFlg" name="Server" associationsOut="_ZV71wBeZEey_afmD-ISFlg _ZV71wReZEey_afmD-ISFlg _ZV71wheZEey_afmD-ISFlg _ZWHb8BeZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_YgGZ8BeZEey_afmD-ISFlg"/>
+    <visualProperties xmi:id="_ZWIqEReZEey_afmD-ISFlg" position="-998.0,1066.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_ZWIqEheZEey_afmD-ISFlg" label="+"/>
+    <attributes xmi:id="_ZWIqExeZEey_afmD-ISFlg" name="server">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Yz8jABeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6m3q8BeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6m4SABeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6nsxYBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <visibility xmi:id="_ZWIqFReZEey_afmD-ISFlg" label="-"/>
+      <cardinality xmi:id="_ZWIqFheZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <type xmi:id="_ZWIqFxeZEey_afmD-ISFlg" name="ServerSocket">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YyDsoBeZEey_afmD-ISFlg"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_ZWIqGBeZEey_afmD-ISFlg" name="port">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Yz9xIBeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_ZWIqGReZEey_afmD-ISFlg" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yz9xIReZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZWIqGheZEey_afmD-ISFlg" label="-"/>
+      <cardinality xmi:id="_ZWIqGxeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <type xmi:id="_ZWIqHBeZEey_afmD-ISFlg" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_ZWIqHReZEey_afmD-ISFlg" name="sockets">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Yz-YMBeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6msr0BeZEeyRqrWO88nblw" name="Generics"/>
+      <stereotypes xmi:id="_6mt58BeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6mvIEBeZEeyRqrWO88nblw" name="Generics"/>
+      <stereotypes xmi:id="_6mvIEReZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6numkBeZEeyRqrWO88nblw" name="Generics"/>
+      <stereotypes xmi:id="_6numkReZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <visibility xmi:id="_ZWIqIBeZEey_afmD-ISFlg" label="-"/>
+      <cardinality xmi:id="_ZWIqIReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <type xmi:id="_ZWIqIheZEey_afmD-ISFlg" name="ArrayList">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YxYXMBeZEey_afmD-ISFlg"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_ZWIqIxeZEey_afmD-ISFlg" name="pending_sockets">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Yz_mUReZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6mw9QBeZEeyRqrWO88nblw" name="Generics"/>
+      <stereotypes xmi:id="_6mxkUBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6myycBeZEeyRqrWO88nblw" name="Generics"/>
+      <stereotypes xmi:id="_6mzZgBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6nv0sBeZEeyRqrWO88nblw" name="Generics"/>
+      <stereotypes xmi:id="_6nwbwBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <visibility xmi:id="_ZWIqJheZEey_afmD-ISFlg" label="-"/>
+      <cardinality xmi:id="_ZWIqJxeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <type xmi:id="_ZWIqKBeZEey_afmD-ISFlg" name="ArrayList">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YxYXMBeZEey_afmD-ISFlg"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_ZWIqKReZEey_afmD-ISFlg" name="sound">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y0BbgBeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6m1OsBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6m2c0BeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6nxp4BeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <visibility xmi:id="_ZWIqKxeZEey_afmD-ISFlg" label="-"/>
+      <cardinality xmi:id="_ZWIqLBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <type xmi:id="_ZWIqLReZEey_afmD-ISFlg" name="Sound">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YgZU4BeZEey_afmD-ISFlg"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_ZWIqLheZEey_afmD-ISFlg" name="Server">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YgI2MBeZEey_afmD-ISFlg"/>
+      <keywords xmi:id="_ZWIqLxeZEey_afmD-ISFlg" keyword="create"/>
+      <visibility xmi:id="_ZWIqMBeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZWIqMReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_ZWIqMheZEey_afmD-ISFlg">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YgJdQxeZEey_afmD-ISFlg"/>
+        <type xmi:id="_ZWIqMxeZEey_afmD-ISFlg" name="Server">
+          <modelElement href="Gioco_Generico_Blocchi.uml#_YgGZ8BeZEey_afmD-ISFlg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_ZWIqNBeZEey_afmD-ISFlg" name="port">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YgJdQBeZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZWIqNReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+        <type xmi:id="_ZWIqNheZEey_afmD-ISFlg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_ZWIqNxeZEey_afmD-ISFlg" name="Initialize">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YgKrYBeZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZWIqOBeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZWIqOReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_ZWIqOheZEey_afmD-ISFlg" name="Broadcast_Message">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YgMgkBeZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZWIqOxeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZWIqPBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <parameters xmi:id="_ZWIqPReZEey_afmD-ISFlg" name="line">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YgNHoBeZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZWIqPheZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+        <type xmi:id="_ZWIqPxeZEey_afmD-ISFlg" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_ZWIqQBeZEey_afmD-ISFlg" name="Server_Instructions_Broadcaster">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YgNusBeZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZWIqQReZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZWIqQheZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_ZWIqQxeZEey_afmD-ISFlg" name="Client_handler">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YgOVwBeZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZWIqRBeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZWIqRReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_ZWIqRheZEey_afmD-ISFlg" name="main" staticOperation="true">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YgPj4BeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_ZWIqRxeZEey_afmD-ISFlg" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YgQyABeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZWIqSBeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZWIqSReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <parameters xmi:id="_ZWIqSheZEey_afmD-ISFlg" name="args">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YgPj4ReZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZWIqSxeZEey_afmD-ISFlg" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_ZWIqTBeZEey_afmD-ISFlg" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_ZWIqTReZEey_afmD-ISFlg" name="Server_Thread">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YzOKQBeZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZWIqTheZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZWIqTxeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <parameters xmi:id="_ZWIqUBeZEey_afmD-ISFlg" name="new_Socket">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YzOKQReZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZWIqUReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+        <type xmi:id="_ZWIqUheZEey_afmD-ISFlg" name="Socket">
+          <modelElement href="Gioco_Generico_Blocchi.uml#_YxJGoBeZEey_afmD-ISFlg"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_ZWlWABeZEey_afmD-ISFlg" comments="_ZWVeYBeZEey_afmD-ISFlg" targetConnectionVisual="_ZWWFcBeZEey_afmD-ISFlg" name="Sound" associationsIn="_ZTwrgBeZEey_afmD-ISFlg _ZV71wheZEey_afmD-ISFlg" associationsOut="_ZWWsgBeZEey_afmD-ISFlg _ZWfPYBeZEey_afmD-ISFlg _ZWhEkBeZEey_afmD-ISFlg _ZWiSsBeZEey_afmD-ISFlg _ZWku8BeZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_YgZU4BeZEey_afmD-ISFlg"/>
+    <visualProperties xmi:id="_ZWlWAReZEey_afmD-ISFlg" position="-504.0,688.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_ZWlWAheZEey_afmD-ISFlg" label="+"/>
+    <attributes xmi:id="_ZWlWAxeZEey_afmD-ISFlg" name="soundFile">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y0CCkBeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6m78YBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6m8jcBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6nyQ8BeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <visibility xmi:id="_ZWlWBReZEey_afmD-ISFlg" label="~"/>
+      <cardinality xmi:id="_ZWlWBheZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <type xmi:id="_ZWlWBxeZEey_afmD-ISFlg" name="File">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YyMPgBeZEey_afmD-ISFlg"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_ZWlWCBeZEey_afmD-ISFlg" name="audioIn">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y0DQsBeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6m9xkBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6m-YoBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6nzfEBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <visibility xmi:id="_ZWlWCheZEey_afmD-ISFlg" label="~"/>
+      <cardinality xmi:id="_ZWlWCxeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <type xmi:id="_ZWlWDBeZEey_afmD-ISFlg" name="AudioInputStream">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YyPS0ReZEey_afmD-ISFlg"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_ZWlWDReZEey_afmD-ISFlg" name="clip">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y0FF4ReZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6m_mwBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6nA04BeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6n0tMBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <visibility xmi:id="_ZWlWDxeZEey_afmD-ISFlg" label="~"/>
+      <cardinality xmi:id="_ZWlWEBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <type xmi:id="_ZWlWEReZEey_afmD-ISFlg" name="Clip">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YyQg8BeZEey_afmD-ISFlg"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_ZWlWEheZEey_afmD-ISFlg" name="stop">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y0Fs8ReZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_ZWlWExeZEey_afmD-ISFlg" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Y0GUABeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZWlWFBeZEey_afmD-ISFlg" label="~"/>
+      <cardinality xmi:id="_ZWlWFReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <type xmi:id="_ZWlWFheZEey_afmD-ISFlg" name="boolean">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_ZWlWFxeZEey_afmD-ISFlg" name="player">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y0G7EBeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6nCDABeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6nDRIBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6n1UQBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <visibility xmi:id="_ZWlWGReZEey_afmD-ISFlg" label="~"/>
+      <cardinality xmi:id="_ZWlWGheZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <type xmi:id="_ZWlWGxeZEey_afmD-ISFlg" name="Player">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YySWIBeZEey_afmD-ISFlg"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_ZWlWHBeZEey_afmD-ISFlg" name="thread">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y0HiIReZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6m5gIBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6m6uQBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6n2iYBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <visibility xmi:id="_ZWlWHheZEey_afmD-ISFlg" label="~"/>
+      <cardinality xmi:id="_ZWlWHxeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <type xmi:id="_ZWlWIBeZEey_afmD-ISFlg" name="Thread">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yy3k8BeZEey_afmD-ISFlg"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_ZWlWIReZEey_afmD-ISFlg" name="Sound">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YgbxIBeZEey_afmD-ISFlg"/>
+      <keywords xmi:id="_ZWlWIheZEey_afmD-ISFlg" keyword="create"/>
+      <visibility xmi:id="_ZWlWIxeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZWlWJBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_ZWlWJReZEey_afmD-ISFlg">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YgcYMheZEey_afmD-ISFlg"/>
+        <type xmi:id="_ZWlWJheZEey_afmD-ISFlg" name="Sound">
+          <modelElement href="Gioco_Generico_Blocchi.uml#_YgZU4BeZEey_afmD-ISFlg"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_ZWlWJxeZEey_afmD-ISFlg" name="StopSound">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YgdmUBeZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZWlWKBeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZWlWKReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_ZWlWKheZEey_afmD-ISFlg" name="StartSound">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YgeNYBeZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZWlWKxeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZWlWLBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_ZXIIkBeZEey_afmD-ISFlg" comments="_ZW0mkBeZEey_afmD-ISFlg" targetConnectionVisual="_ZW0mkReZEey_afmD-ISFlg" name="input_handler" associationsIn="_ZTu2UBeZEey_afmD-ISFlg" associationsOut="_ZWyxYBeZEey_afmD-ISFlg _ZW0mkheZEey_afmD-ISFlg _ZW1NoBeZEey_afmD-ISFlg _ZW10sReZEey_afmD-ISFlg _ZXHhgBeZEey_afmD-ISFlg">
+    <modelElement href="Gioco_Generico_Blocchi.uml#_Ygk7EBeZEey_afmD-ISFlg"/>
+    <visualProperties xmi:id="_ZXIIkReZEey_afmD-ISFlg" position="304.0,458.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_ZXIIkheZEey_afmD-ISFlg" label="+"/>
+    <attributes xmi:id="_ZXIIkxeZEey_afmD-ISFlg" name="screen">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y0IwQBeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6nIwsBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6nJ-0BeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6n3wgBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <visibility xmi:id="_ZXIIlReZEey_afmD-ISFlg" label="-"/>
+      <cardinality xmi:id="_ZXIIlheZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <type xmi:id="_ZXIIlxeZEey_afmD-ISFlg" name="Screen">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YxlLgBeZEey_afmD-ISFlg"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_ZXIImBeZEey_afmD-ISFlg" name="input_handler">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y0JXUReZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6nLM8BeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6nL0ABeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6n4-oBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <visibility xmi:id="_ZXIImheZEey_afmD-ISFlg" label="-"/>
+      <cardinality xmi:id="_ZXIImxeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <type xmi:id="_ZXIInBeZEey_afmD-ISFlg" name="Thread">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yy3k8BeZEey_afmD-ISFlg"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_ZXIInReZEey_afmD-ISFlg" name="contentAreas">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y0KlcBeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6nFGUBeZEeyRqrWO88nblw" name="Array"/>
+      <stereotypes xmi:id="_6nFtYBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6nG7gBeZEeyRqrWO88nblw" name="Array"/>
+      <stereotypes xmi:id="_6nG7gReZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6n6z0BeZEeyRqrWO88nblw" name="Array"/>
+      <stereotypes xmi:id="_6n6z0ReZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <visibility xmi:id="_ZXIIoBeZEey_afmD-ISFlg" label="-"/>
+      <cardinality xmi:id="_ZXIIoReZEey_afmD-ISFlg" label="1..*" max="-1" min="1"/>
+      <type xmi:id="_ZXIIoheZEey_afmD-ISFlg" name="BlockGrid_Holder">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YeOKoBeZEey_afmD-ISFlg"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_ZXIIoxeZEey_afmD-ISFlg" name="grid">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y0LzkReZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_ZXIIpBeZEey_afmD-ISFlg" name="Array">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Y0MaoBeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_ZXIIpReZEey_afmD-ISFlg" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Y0NBsBeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZXIIpheZEey_afmD-ISFlg" label="-"/>
+      <cardinality xmi:id="_ZXIIpxeZEey_afmD-ISFlg" label="1..*" max="-1" min="1"/>
+      <type xmi:id="_ZXIIqBeZEey_afmD-ISFlg" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_ZXIIqReZEey_afmD-ISFlg" name="mutex">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y0OP0BeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6nNpMBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6nO3UBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6n8pABeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <visibility xmi:id="_ZXIIqxeZEey_afmD-ISFlg" label="-"/>
+      <cardinality xmi:id="_ZXIIrBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <type xmi:id="_ZXIIrReZEey_afmD-ISFlg" name="Semaphore">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YxbagBeZEey_afmD-ISFlg"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_ZXIIrheZEey_afmD-ISFlg" name="category">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y0Pd8BeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_ZXIIrxeZEey_afmD-ISFlg" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Y0QFABeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZXIIsBeZEey_afmD-ISFlg" label="-"/>
+      <cardinality xmi:id="_ZXIIsReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <type xmi:id="_ZXIIsheZEey_afmD-ISFlg" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_ZXIIsxeZEey_afmD-ISFlg" name="color">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y0QFAReZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_6nQFcBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6nRTkBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_6n9QEBeZEeyRqrWO88nblw" name="LegacyStyledElement"/>
+      <visibility xmi:id="_ZXIItReZEey_afmD-ISFlg" label="~"/>
+      <cardinality xmi:id="_ZXIItheZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <type xmi:id="_ZXIItxeZEey_afmD-ISFlg" name="Indexed">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YyZq4BeZEey_afmD-ISFlg"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_ZXIIuBeZEey_afmD-ISFlg" defaultValue="0" name="CLOCKWISE" staticAttribute="true">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y0RTIBeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_ZXIIuReZEey_afmD-ISFlg" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Y0R6MBeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZXIIuheZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZXIIuxeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <type xmi:id="_ZXIIvBeZEey_afmD-ISFlg" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_ZXIIvReZEey_afmD-ISFlg" defaultValue="1" name="ANTI_CLOCKWISE" staticAttribute="true">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Y0R6MReZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_ZXIIvheZEey_afmD-ISFlg" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Y0ShQReZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZXIIvxeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZXIIwBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <type xmi:id="_ZXIIwReZEey_afmD-ISFlg" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_ZXIIwheZEey_afmD-ISFlg" name="setCategory">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YgolcBeZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZXIIwxeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZXIIxBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <parameters xmi:id="_ZXIIxReZEey_afmD-ISFlg" name="category">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YgolcReZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZXIIxheZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+        <type xmi:id="_ZXIIxxeZEey_afmD-ISFlg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_ZXIIyBeZEey_afmD-ISFlg" name="StopThread">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YgpMgBeZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZXIIyReZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZXIIyheZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_ZXIIyxeZEey_afmD-ISFlg" name="IsValid">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Ygs24BeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_ZXIIzBeZEey_afmD-ISFlg" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YgusEBeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZXIIzReZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZXIIzheZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_ZXIIzxeZEey_afmD-ISFlg">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Ygtd8BeZEey_afmD-ISFlg"/>
+        <type xmi:id="_ZXII0BeZEey_afmD-ISFlg" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_ZXII0ReZEey_afmD-ISFlg" name="block">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Ygs24ReZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZXII0heZEey_afmD-ISFlg" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_ZXII0xeZEey_afmD-ISFlg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_ZXII1BeZEey_afmD-ISFlg" name="validateMove">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Ygv6MBeZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZXII1ReZEey_afmD-ISFlg" label="-"/>
+      <cardinality xmi:id="_ZXII1heZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_ZXII1xeZEey_afmD-ISFlg">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YgxIUBeZEey_afmD-ISFlg"/>
+        <type xmi:id="_ZXII2BeZEey_afmD-ISFlg" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_ZXII2ReZEey_afmD-ISFlg" name="movement_block">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YgwhQBeZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZXII2heZEey_afmD-ISFlg" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_ZXII2xeZEey_afmD-ISFlg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ZXII3BeZEey_afmD-ISFlg" name="blockChanges">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YgwhQReZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZXII3ReZEey_afmD-ISFlg" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_ZXII3heZEey_afmD-ISFlg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_ZXII3xeZEey_afmD-ISFlg" name="moveShape">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Yg0LoBeZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZXII4BeZEey_afmD-ISFlg" label="-"/>
+      <cardinality xmi:id="_ZXII4ReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <parameters xmi:id="_ZXII4heZEey_afmD-ISFlg" name="block">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yg0LoReZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZXII4xeZEey_afmD-ISFlg" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_ZXII5BeZEey_afmD-ISFlg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ZXII5ReZEey_afmD-ISFlg" name="movement_block">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yg2A0BeZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZXII5heZEey_afmD-ISFlg" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_ZXII5xeZEey_afmD-ISFlg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ZXII6BeZEey_afmD-ISFlg" name="blockChanges">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_Yg2A0ReZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZXII6ReZEey_afmD-ISFlg" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_ZXII6heZEey_afmD-ISFlg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_ZXII6xeZEey_afmD-ISFlg" name="Start_Input_Handler_Thread">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_Yg6SQBeZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZXII7BeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZXII7ReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_ZXII7heZEey_afmD-ISFlg" name="rotate">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YybgEBeZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZXII7xeZEey_afmD-ISFlg" label="-"/>
+      <cardinality xmi:id="_ZXII8BeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <parameters xmi:id="_ZXII8ReZEey_afmD-ISFlg" name="contentAreas">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YybgEReZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZXII8heZEey_afmD-ISFlg" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_ZXII8xeZEey_afmD-ISFlg" name="BlockGrid_Holder">
+          <modelElement href="Gioco_Generico_Blocchi.uml#_YeOKoBeZEey_afmD-ISFlg"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ZXII9BeZEey_afmD-ISFlg" name="grid">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YybgEheZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZXII9ReZEey_afmD-ISFlg" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_ZXII9heZEey_afmD-ISFlg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ZXII9xeZEey_afmD-ISFlg" name="movement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YybgExeZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZXII-BeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+        <type xmi:id="_ZXII-ReZEey_afmD-ISFlg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_ZXII-heZEey_afmD-ISFlg" name="object_mover">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YyejYBeZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZXII-xeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZXII_BeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <parameters xmi:id="_ZXII_ReZEey_afmD-ISFlg" name="contentAreas">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YyfKcBeZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZXII_heZEey_afmD-ISFlg" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_ZXII_xeZEey_afmD-ISFlg" name="BlockGrid_Holder">
+          <modelElement href="Gioco_Generico_Blocchi.uml#_YeOKoBeZEey_afmD-ISFlg"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ZXIJABeZEey_afmD-ISFlg" name="grid">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YyfKcReZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZXIJAReZEey_afmD-ISFlg" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_ZXIJAheZEey_afmD-ISFlg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ZXIJAxeZEey_afmD-ISFlg" name="move">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YyfxgBeZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZXIJBBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+        <type xmi:id="_ZXIJBReZEey_afmD-ISFlg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_ZXIJBheZEey_afmD-ISFlg" name="input_handler">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YzTp0BeZEey_afmD-ISFlg"/>
+      <keywords xmi:id="_ZXIJBxeZEey_afmD-ISFlg" keyword="create"/>
+      <visibility xmi:id="_ZXIJCBeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZXIJCReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_ZXIJCheZEey_afmD-ISFlg">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YzU38BeZEey_afmD-ISFlg"/>
+        <type xmi:id="_ZXIJCxeZEey_afmD-ISFlg" name="input_handler">
+          <modelElement href="Gioco_Generico_Blocchi.uml#_Ygk7EBeZEey_afmD-ISFlg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_ZXIJDBeZEey_afmD-ISFlg" name="screen">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YzUQ4BeZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZXIJDReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+        <type xmi:id="_ZXIJDheZEey_afmD-ISFlg" name="Screen">
+          <modelElement href="Gioco_Generico_Blocchi.uml#_YxlLgBeZEey_afmD-ISFlg"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ZXIJDxeZEey_afmD-ISFlg" name="contentAreas">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YzUQ4ReZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZXIJEBeZEey_afmD-ISFlg" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_ZXIJEReZEey_afmD-ISFlg" name="BlockGrid_Holder">
+          <modelElement href="Gioco_Generico_Blocchi.uml#_YeOKoBeZEey_afmD-ISFlg"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ZXIJEheZEey_afmD-ISFlg" name="grid">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YzUQ4heZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZXIJExeZEey_afmD-ISFlg" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_ZXIJFBeZEey_afmD-ISFlg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ZXIJFReZEey_afmD-ISFlg" name="mutex">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YzUQ4xeZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZXIJFheZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+        <type xmi:id="_ZXIJFxeZEey_afmD-ISFlg" name="Semaphore">
+          <modelElement href="Gioco_Generico_Blocchi.uml#_YxbagBeZEey_afmD-ISFlg"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ZXIJGBeZEey_afmD-ISFlg" name="color">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YzUQ5BeZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZXIJGReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+        <type xmi:id="_ZXIJGheZEey_afmD-ISFlg" name="Indexed">
+          <modelElement href="Gioco_Generico_Blocchi.uml#_YyZq4BeZEey_afmD-ISFlg"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_ZXIJGxeZEey_afmD-ISFlg" name="setColor">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YzWGEReZEey_afmD-ISFlg"/>
+      <visibility xmi:id="_ZXIJHBeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZXIJHReZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <parameters xmi:id="_ZXIJHheZEey_afmD-ISFlg" name="color">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YzWGEheZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZXIJHxeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+        <type xmi:id="_ZXIJIBeZEey_afmD-ISFlg" name="Indexed">
+          <modelElement href="Gioco_Generico_Blocchi.uml#_Yw52EBeZEey_afmD-ISFlg"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_ZXIJIReZEey_afmD-ISFlg" name="setValues">
+      <modelElement href="Gioco_Generico_Blocchi.uml#_YzXUMBeZEey_afmD-ISFlg"/>
+      <stereotypes xmi:id="_ZXIJIheZEey_afmD-ISFlg" name="LegacyStyledElement">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YzX7QBeZEey_afmD-ISFlg"/>
+      </stereotypes>
+      <visibility xmi:id="_ZXIJIxeZEey_afmD-ISFlg" label="+"/>
+      <cardinality xmi:id="_ZXIJJBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+      <parameters xmi:id="_ZXIJJReZEey_afmD-ISFlg" name="contentAreas">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YzXUMReZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZXIJJheZEey_afmD-ISFlg" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_ZXIJJxeZEey_afmD-ISFlg" name="BlockGrid_Holder">
+          <modelElement href="Gioco_Generico_Blocchi.uml#_YeOKoBeZEey_afmD-ISFlg"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ZXIJKBeZEey_afmD-ISFlg" name="grid">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YzXUMheZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZXIJKReZEey_afmD-ISFlg" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_ZXIJKheZEey_afmD-ISFlg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ZXIJKxeZEey_afmD-ISFlg" name="value">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YzXUMxeZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZXIJLBeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+        <type xmi:id="_ZXIJLReZEey_afmD-ISFlg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ZXIJLheZEey_afmD-ISFlg" name="indexed_color">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YzXUNBeZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZXIJLxeZEey_afmD-ISFlg" label="1" max="1" min="1"/>
+        <type xmi:id="_ZXIJMBeZEey_afmD-ISFlg" name="Indexed">
+          <modelElement href="Gioco_Generico_Blocchi.uml#_Yw52EBeZEey_afmD-ISFlg"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ZXIJMReZEey_afmD-ISFlg" name="block">
+        <modelElement href="Gioco_Generico_Blocchi.uml#_YzXUNReZEey_afmD-ISFlg"/>
+        <cardinality xmi:id="_ZXIJMheZEey_afmD-ISFlg" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_ZXIJMxeZEey_afmD-ISFlg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+</com.yattasolutions.uml.diagrams.classifier:ClassDiagram>
