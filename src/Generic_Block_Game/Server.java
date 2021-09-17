@@ -173,14 +173,12 @@ public class Server {
                     }
                     Broadcast_Message(line);
 
-                } else {
+                } else if (line.equals("Exit")) {
+					Broadcast_Message(line);
+					isStarted=false;
+				}else {
                     System.out.println("Invalid Command!");
                 }
-
-                if (line.equals("Exit")) {
-                    break;
-                }
-
             }
 
         });
