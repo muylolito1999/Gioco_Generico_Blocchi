@@ -135,10 +135,10 @@ public class Game {
 
         for (int i = 0; i < number_of_lines; i++) {
 
-            for (int j = 0; j < ROW; j++) {
+            for (int j = 0; j < COL; j++) {
 
-                contentAreas[j][COL - 1 - Trashlined_rows].SetBlock(TextColor.Indexed.fromRGB(27, 30, 35));
-                grid[j][COL - 1 - Trashlined_rows] = -1;
+                contentAreas[ROW - 1 - Trashlined_rows][j].SetBlock(TextColor.Indexed.fromRGB(27, 30, 35));
+                grid[ROW - 1 - Trashlined_rows][j] = -1;
 
             }
 
