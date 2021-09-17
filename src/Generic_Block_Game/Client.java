@@ -55,7 +55,7 @@ public class Client {
             String line = "";
 
             // keep reading until "Over" is input
-            while (!line.equals("Exit")) {
+            while (true) {
                 try {
                     line = sock_in.readUTF();
 
