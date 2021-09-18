@@ -131,6 +131,9 @@ public class Client {
                             if (!status) {
                                 game.Windup();
                             }
+                        }else if (line.equals("Exit")) {
+                        	game.Windup();
+                        	isStarted=false;
                         }
                     }
 
