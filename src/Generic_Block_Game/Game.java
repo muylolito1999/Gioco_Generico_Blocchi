@@ -138,9 +138,26 @@ public class Game {
             }
 
         }*/
-	if(gameId == enemyId) {   
+	if(gameId == enemyId) {  
+		
+	int trashLines;
+			
+			switch(number_of_lines) {
+			case 2:
+				trashLines = 1;
+				break;
+			case 3:
+				trashLines = 2;
+				break;
+			case 4:
+				trashLines = 4;
+				break;
+			default:
+				trashLines = 0;
+			
+			}
 
-            for (int i = 0; i < number_of_lines; i++) {
+            for (int i = 0; i < trashLines; i++) {
 
                 for (int j = 0; j < COL; j++) {
 
