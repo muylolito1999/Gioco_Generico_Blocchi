@@ -86,12 +86,12 @@ public class Game {
 
     }
 
-    public boolean SendingTrash(String line, int enemyId) throws InterruptedException {
+    public void SendingTrash(String line, int enemyId) throws InterruptedException {
         mutex.acquire();
 
-        /*int number_of_lines = Integer.valueOf(line);
+        int number_of_lines = Integer.valueOf(line);
 
-        //int column = 23 - Trashlined_rows;
+        /*int column = 23 - Trashlined_rows;
         int k = 0;
 
         int starting_index = -1;
