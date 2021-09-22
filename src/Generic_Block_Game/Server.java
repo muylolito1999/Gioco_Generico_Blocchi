@@ -108,6 +108,7 @@ public class Server {
                             }
                             Broadcast_Message(line);
                             isStarted = true;
+			    sendId();	
                         } else {
                             System.out.println("At least 2 players should arrive for the game to start");
                         }
@@ -174,9 +175,9 @@ public class Server {
                     Broadcast_Message(line);
 
                 } else if (line.equals("Exit")) {
-					Broadcast_Message(line);
-					isStarted=false;
-				}else {
+		    Broadcast_Message(line);
+  		    isStarted=false;
+		}else {
                     System.out.println("Invalid Command!");
                 }
             }
@@ -248,6 +249,23 @@ public class Server {
         thread.start();
 
     }
+	
+    public void sendId() {
+	for(int i=0;i<sockets.size();i++) {
+	    if (sockets.get(i).isConnected() && !sockets.get(i).isOutputShutdown()) {
+		DataOutputStream out = null;
+		try {
+		    out = new DataOutputStream(sockets.get(i).getOutputStream());
+		    out.writeInt(i);
+
+		} catch (IOException ex) {
+		Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
+		}
+
+	     }
+	}
+     }
+	
 
     public void Client_handler() throws IOException {
 
