@@ -22,6 +22,11 @@ public class Generic_Block_Game {
     public static void main(String[] args) throws UnsupportedAudioFileException, LineUnavailableException, JavaLayerException {
 
         Client client = new Client("127.0.0.1", 5000);
+        int enemyId = client.getId()-1;
+        if(client.getId()==0) {
+            enemyId = 1;
+        }
+        client.setEnemyId(enemyId);
 
     }
 
