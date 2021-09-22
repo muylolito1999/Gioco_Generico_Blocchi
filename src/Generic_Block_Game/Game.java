@@ -921,7 +921,7 @@ public class Game {
                         boolean block = block_generator(contentAreas, grid);
 
                         if (!block) {
-                            SendingEnd("Game Over");
+                           // SendingEnd("Game Over");
                             Thread.sleep(2000);
 
                             GameOver = true;
