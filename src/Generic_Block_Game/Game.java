@@ -57,10 +57,16 @@ public class Game {
     private DataOutputStream out;
     public boolean GameOver = false;
     private int Trashlined_rows = 0;
+    private int gameId;	
 
     public void Update_Comments() {
 
     }
+	
+    public void setGameId(int id) {
+		gameId=id;
+    }
+	    
     
     public void Reset(BlockGrid_Holder[][] contentAreas, int[][] grid) {
 
@@ -80,10 +86,10 @@ public class Game {
 
     }
 
-    public boolean SendingEnd(String line) throws InterruptedException {
+    public boolean SendingTrash(String line, int enemyId) throws InterruptedException {
         mutex.acquire();
 
-        int number_of_lines = Integer.valueOf(line);
+        /*int number_of_lines = Integer.valueOf(line);
 
         //int column = 23 - Trashlined_rows;
         int k = 0;
@@ -131,23 +137,24 @@ public class Game {
                 starting_index++;
             }
 
+        }*/
+	if(gameId == enemyId) {   
+
+            for (int i = 0; i < number_of_lines; i++) {
+
+                for (int j = 0; j < COL; j++) {
+
+                    contentAreas[ROW - 1 - Trashlined_rows][j].SetBlock(TextColor.Indexed.fromRGB(27, 30, 35));
+                    grid[ROW - 1 - Trashlined_rows][j] = -1;
+
+                }
+
+                Trashlined_rows++;
+
+	    }
         }
-
-        for (int i = 0; i < number_of_lines; i++) {
-
-            for (int j = 0; j < COL; j++) {
-
-                contentAreas[ROW - 1 - Trashlined_rows][j].SetBlock(TextColor.Indexed.fromRGB(27, 30, 35));
-                grid[ROW - 1 - Trashlined_rows][j] = -1;
-
-            }
-
-            Trashlined_rows++;
-
-        }
-
         mutex.release();
-        return true;
+	
     }
 
     public void SendingEnd(int number_of_lines) throws IOException {
