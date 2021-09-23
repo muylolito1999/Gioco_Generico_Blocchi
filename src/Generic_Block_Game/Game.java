@@ -64,6 +64,10 @@ public class Game {
 
     }
 	
+    public void setEnemyId(int id) {
+    	enemyId=id;
+    }
+	
     public void setGameId(int id) {
 		gameId=id;
     }
