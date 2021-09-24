@@ -23,6 +23,7 @@ public class Server {
     private ArrayList<Socket> sockets;
     private ArrayList<Socket> pending_sockets;
     private Sound sound;
+    DataInputStream in;
     private int numberOfPlayers = 0;
 
     public Server(int port) throws IOException {
@@ -180,7 +181,7 @@ public class Server {
 
     public void Server_Thread(Socket new_Socket) throws IOException {
 
-        DataInputStream in = new DataInputStream(
+        in = new DataInputStream(
                 new BufferedInputStream(new_Socket.getInputStream()));
 
         Thread thread = new Thread(() -> {
@@ -289,6 +290,10 @@ public class Server {
 
         }
 
+    }
+
+    public void receiveNumberOfPlayers() throws IOException {
+        numberOfPlayers = in.readInt();
     }
 
     public static void main(String args[]) throws IOException {

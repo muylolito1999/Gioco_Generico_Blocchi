@@ -52,10 +52,6 @@ public class Game {
     private int gameId;	
     private int enemyId;
 
-    public void Update_Comments() {
-
-    }
-	
     public void setEnemyId(int id) {
     	enemyId=id;
     }
@@ -173,7 +169,7 @@ public class Game {
 
         if (!this.socket.isOutputShutdown()) {
            String line = String.valueOf(number_of_lines) + String.valueOf(enemyId);
-	   out.writeUTF(String.valueOf(line));
+	   out.writeUTF(line);
         }
 
     }
@@ -870,6 +866,10 @@ public class Game {
         out = new DataOutputStream(this.socket.getOutputStream());
     }
 
+    public void sendGameOver() throws IOException {
+    	out.writeUTF("Game Over");
+	}
+
     BlockGrid_Holder[][] contentAreas;
     int[][] grid;
     Screen screen;
@@ -945,6 +945,7 @@ public class Game {
                             Thread.sleep(2000);
 
                             GameOver = true;
+                            sendGameOver();
                             break;
                         }
 

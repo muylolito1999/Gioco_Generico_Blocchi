@@ -131,7 +131,10 @@ public class Client {
                     } else if (line.equals("Exit")) {
 			game.Windup();
 			isStarted=false;
-		    } else {
+		    } else if (line.equals("Game Over")) {
+                        numberOfPlayers--;
+                        System.out.println("Game Over");
+                    } else {
 			int enemyIdOfSender = Integer.valueOf(line)%10;
 			if(enemyIdOfSender==id) {
 			    int clearedLines = Integer.valueOf(line)/10;
@@ -190,6 +193,10 @@ public class Client {
 
     public void receiveNumberOfPLayers() throws IOException{
         numberOfPlayers = sock_in.readInt();
+    }
+
+    public void sendNumberOfPLayers() throws IOException {
+        out.writeInt(numberOfPlayers);
     }
 
 }
