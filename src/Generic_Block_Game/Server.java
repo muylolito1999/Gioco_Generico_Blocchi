@@ -23,6 +23,7 @@ public class Server {
     private ArrayList<Socket> sockets;
     private ArrayList<Socket> pending_sockets;
     private Sound sound;
+    private int numberOfPlayers = 0;
 
     public Server(int port) throws IOException {
         this.port = port;
@@ -96,7 +97,8 @@ public class Server {
                             }
                             Broadcast_Message(line);
                             isStarted = true;
-			    sendId();	
+			    sendId();
+			    sendNumberOfPLayers();
                         } else {
                             System.out.println("At least 2 players should arrive for the game to start");
                         }
@@ -253,7 +255,20 @@ public class Server {
 	     }
 	}
      }
-	
+
+    public void sendNumberOfPLayers(){
+        for (int i = 0; i < sockets.size(); i++){
+            if (sockets.get(i).isConnected() && !sockets.get(i).isOutputShutdown()){
+                DataOutputStream out = null;
+                try {
+                    out = new DataOutputStream(sockets.get(i).getOutputStream());
+                    out.writeInt(numberOfPlayers);
+                } catch (IOException e){
+                    Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, e);
+                }
+            }
+        }
+    }
 
     public void Client_handler() throws IOException {
 
@@ -269,7 +284,7 @@ public class Server {
             } else {
                 pending_sockets.add(socket);
             }
-
+            numberOfPlayers++;
             Server_Thread(socket);
 
         }
