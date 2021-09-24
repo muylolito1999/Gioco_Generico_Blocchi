@@ -29,14 +29,8 @@ public class Client {
     private DataInputStream sock_in = null;
     private Game game;
     private int id;
-	private int enemyId;
+    private int enemyId;
     
-    public void setEnemyId(int id) {
-		enemyId = id;
-	}
-    public int getId() {
-		return id;
-	}
 
     private void isGameOver() {
         Thread thread = new Thread(() -> {
@@ -74,12 +68,13 @@ public class Client {
 
                         game = new Game(this.socket);
                         setId();
-						game.setGameId(id);
+			game.setGameId(id);
 						
-						if(id==0) {
-							enemyId=1;
-						} else 
-							enemyId = id-1;
+			if(id!=0) {
+			    enemyId=id-1;
+			} else 
+			    enemyId = 1;
+			game.setEnemyId(enemyId);
 
                         isGameOver();
 
@@ -141,12 +136,15 @@ public class Client {
                             isPaused = false;
                         }
                     } else if (line.equals("Exit")) {
-						game.Windup();
-						isStarted=false;
-					} else /*if (!line.equals("Exit"))*/ {
-						game.SendingTrash(line,enemyId);
-
-					}
+			game.Windup();
+			isStarted=false;
+		    } else {
+			int enemyIdOfSender = Integer.valueOf(line)%10;
+			if(enemyIdOfSender==id) {
+			    int clearedLines = Integer.valueOf(line)/10;
+			    game.SendingTrash(clearedLines);
+			}
+		    }
 
                 } catch (IOException i) {
                     System.out.println(i);
@@ -171,7 +169,7 @@ public class Client {
     }
     private void setId() throws IOException {
 		id = sock_in.readInt();
-		System.out.println(id);
+		System.out.println("Client ID: " + id);
 	}
 
     // constructor to put ip address and port
