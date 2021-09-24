@@ -22,7 +22,7 @@ public class Client {
     private Game game;
     private int id;
     private int enemyId;
-    
+    private int numberOfPlayers;
 
     private void isGameOver() {
         Thread thread = new Thread(() -> {
@@ -60,6 +60,7 @@ public class Client {
 
                         game = new Game(this.socket);
                         setId();
+                        receiveNumberOfPLayers();
 			game.setGameId(id);
 						
 			if(id!=0) {
@@ -186,4 +187,9 @@ public class Client {
         }
 
     }
+
+    public void receiveNumberOfPLayers() throws IOException{
+        numberOfPlayers = sock_in.readInt();
+    }
+
 }
