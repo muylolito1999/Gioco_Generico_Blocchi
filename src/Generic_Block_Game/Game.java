@@ -58,9 +58,14 @@ public class Game {
     public boolean GameOver = false;
     private int Trashlined_rows = 0;
     private int gameId;	
+    private int enemyId;
 
     public void Update_Comments() {
 
+    }
+	
+    public void setEnemyId(int id) {
+    	enemyId=id;
     }
 	
     public void setGameId(int id) {
@@ -86,11 +91,9 @@ public class Game {
 
     }
 
-    public void SendingTrash(String line, int enemyId) throws InterruptedException {
+    public void SendingTrash(int lines) throws InterruptedException {
         mutex.acquire();
-
-        int number_of_lines = Integer.valueOf(line);
-
+	    
         /*int column = 23 - Trashlined_rows;
         int k = 0;
 
@@ -138,11 +141,11 @@ public class Game {
             }
 
         }*/
-	if(gameId == enemyId) {  
+	  
 		
 	int trashLines;
 			
-			switch(number_of_lines) {
+			switch(lines) {
 			case 2:
 				trashLines = 1;
 				break;
@@ -169,7 +172,7 @@ public class Game {
                 Trashlined_rows++;
 
 	    }
-        }
+        
         mutex.release();
 	
     }
@@ -177,7 +180,8 @@ public class Game {
     public void SendingEnd(int number_of_lines) throws IOException {
 
         if (!this.socket.isOutputShutdown()) {
-            out.writeUTF(String.valueOf(number_of_lines));
+           String line = String.valueOf(number_of_lines) + String.valueOf(enemyId);
+	   out.writeUTF(String.valueOf(line));
         }
 
     }
