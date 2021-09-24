@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Generic_Block_Game;
 
 import com.googlecode.lanterna.TerminalSize;
@@ -11,10 +7,7 @@ import com.googlecode.lanterna.TextColor.Indexed;
 import com.googlecode.lanterna.gui2.EmptySpace;
 import com.googlecode.lanterna.gui2.Panel;
 
-/**
- *
- * @author LolloB
- */
+
 public class BlockGrid_Holder {
 
     private Panel panel;
