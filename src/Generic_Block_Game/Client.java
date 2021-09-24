@@ -61,6 +61,7 @@ public class Client {
                         game = new Game(this.socket);
                         setId();
                         receiveNumberOfPLayers();
+                        System.out.println(numberOfPlayers); // ricorda di eliminare
 			game.setGameId(id);
 						
 			if(id!=0) {
@@ -95,6 +96,7 @@ public class Client {
                             System.out.println("Paused");
                             game.Pause();
                             isPaused = true;
+                            System.out.println(numberOfPlayers); // ricorda di eliminare
                         }
                     } else if (line.equals("Restart")) {
 
@@ -133,7 +135,7 @@ public class Client {
 			isStarted=false;
 		    } else if (line.equals("Game Over")) {
                         numberOfPlayers--;
-                        System.out.println("Game Over");
+                        System.out.println("Someone Lost. Players remaining: " + numberOfPlayers);
                     } else {
 			int enemyIdOfSender = Integer.valueOf(line)%10;
 			if(enemyIdOfSender==id) {

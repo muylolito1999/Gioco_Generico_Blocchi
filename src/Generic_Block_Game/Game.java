@@ -1,6 +1,18 @@
 
 package Generic_Block_Game;
 
+import com.googlecode.lanterna.TerminalSize;
+import com.googlecode.lanterna.TextColor;
+import com.googlecode.lanterna.TextColor.Indexed;
+import com.googlecode.lanterna.gui2.*;
+import com.googlecode.lanterna.screen.Screen;
+import com.googlecode.lanterna.screen.TerminalScreen;
+import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
+import com.googlecode.lanterna.terminal.Terminal;
+import javazoom.jl.decoder.JavaLayerException;
+
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
@@ -9,25 +21,6 @@ import java.util.Random;
 import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
-
-import com.googlecode.lanterna.TerminalSize;
-import com.googlecode.lanterna.TextColor;
-import com.googlecode.lanterna.TextColor.Indexed;
-import com.googlecode.lanterna.gui2.BasicWindow;
-import com.googlecode.lanterna.gui2.Direction;
-import com.googlecode.lanterna.gui2.EmptySpace;
-import com.googlecode.lanterna.gui2.LinearLayout;
-import com.googlecode.lanterna.gui2.MultiWindowTextGUI;
-import com.googlecode.lanterna.gui2.Panel;
-import com.googlecode.lanterna.screen.Screen;
-import com.googlecode.lanterna.screen.TerminalScreen;
-import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
-
-import com.googlecode.lanterna.terminal.Terminal;
-import javazoom.jl.decoder.JavaLayerException;
 
 public class Game {
 
@@ -1145,4 +1138,5 @@ public class Game {
 
         mutex.release();
     }
+
 }
