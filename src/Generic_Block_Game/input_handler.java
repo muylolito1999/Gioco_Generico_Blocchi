@@ -5,7 +5,10 @@ import com.googlecode.lanterna.TextColor.Indexed;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
 import com.googlecode.lanterna.screen.Screen;
+
+import java.io.DataOutputStream;
 import java.io.IOException;
+import java.net.Socket;
 import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,14 +24,16 @@ public class input_handler {
     TextColor.Indexed color;
 	public final static int CLOCKWISE = 0;
 	public final static int ANTI_CLOCKWISE = 1;
+	private DataOutputStream out;
 
-    public input_handler(Screen screen, BlockGrid_Holder[][] contentAreas, int[][] grid, Semaphore mutex, TextColor.Indexed color) {
+    public input_handler(Screen screen, BlockGrid_Holder[][] contentAreas, int[][] grid, Semaphore mutex, TextColor.Indexed color, DataOutputStream out) {
         this.screen = screen;
         this.contentAreas = contentAreas;
         this.grid = grid;
         this.mutex = mutex;
         this.category = 0;
         this.color = color;
+        this.out = out;
 
         Start_Input_Handler_Thread();
 
@@ -460,6 +465,7 @@ public class input_handler {
                         keyStroke = screen.readInput();
                     }
                     if (keyStroke.getKeyType() == KeyType.Escape || keyStroke.getKeyType() == KeyType.EOF) {
+                    	out.writeUTF("Game Over");
                         break;
                     }
 

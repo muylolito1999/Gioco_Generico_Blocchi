@@ -1,6 +1,7 @@
 
 package Generic_Block_Game;
 
+import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.TextColor.Indexed;
@@ -35,6 +36,8 @@ public class Game {
     input_handler input_thread;
     Sound sound;
     Panel mainPanel;
+    Panel gamePanel;
+    Panel buttonPanel;
     BasicWindow window;
     Thread main_thread;
     MultiWindowTextGUI textGUI;
@@ -44,9 +47,14 @@ public class Game {
     private int Trashlined_rows = 0;
     private int gameId;	
     private int enemyId;
+    private int playersConnected;
 
     public void setEnemyId(int id) {
-    	enemyId=id;
+    	while (id > playersConnected-1){
+    		id--;
+			System.out.println("Player: " + id + " doesn't exist, i'm trying to select player " + (id-1) + " as enemy");
+		}
+    	enemyId = id;
     }
 	
     public void setGameId(int id) {
@@ -72,7 +80,7 @@ public class Game {
 
     }
 
-    public void SendingTrash(int lines) throws InterruptedException {
+    public void SendingTrash(int lines) throws InterruptedException, IOException {
         mutex.acquire();
 	    
         /*int column = 23 - Trashlined_rows;
@@ -881,7 +889,7 @@ public class Game {
 
     public void StartInputThread(Screen screen, BlockGrid_Holder[][] contentAreas, int[][] grid) {
 
-        input_thread = new input_handler(screen, contentAreas, grid, mutex, color);
+        input_thread = new input_handler(screen, contentAreas, grid, mutex, color, out);
     }
 
     public Game(Socket socket) throws IOException {
@@ -899,7 +907,7 @@ public class Game {
 
     public void SetMainInterface() {
 
-        mainPanel.removeAllComponents();
+        gamePanel.removeAllComponents();
         for (int i = 0; i < ROW; i++) {
         	
         	Panel horizontal = new Panel();
@@ -907,9 +915,9 @@ public class Game {
 			for(int j = 0; j < COL; j++) {
 				horizontal.addComponent(contentAreas[i][j].getPanel());
 			}
-			mainPanel.addComponent(horizontal);
+			gamePanel.addComponent(horizontal);
             if (i + 1 < ROW) {
-                mainPanel.addComponent(new Panel().addComponent(new EmptySpace(TextColor.ANSI.WHITE, new TerminalSize(2, 1))));
+                gamePanel.addComponent(new Panel().addComponent(new EmptySpace(TextColor.ANSI.WHITE, new TerminalSize(2, 1))));
             }
 
         }
@@ -918,8 +926,8 @@ public class Game {
     public void StartGame() throws UnsupportedAudioFileException, IOException, LineUnavailableException, JavaLayerException {
         mutex = new Semaphore(1);
 	    
-	Terminal terminal = new DefaultTerminalFactory().setInitialTerminalSize(new TerminalSize(60,52)).createTerminal();
-	screen = new TerminalScreen(terminal);
+		Terminal terminal = new DefaultTerminalFactory().setInitialTerminalSize(new TerminalSize(60,52)).createTerminal();
+		screen = new TerminalScreen(terminal);
 
         screen.startScreen();
 
@@ -928,7 +936,34 @@ public class Game {
         try {
             window = new BasicWindow("Generic Block Game");
 
+            gamePanel = new Panel();
+
             mainPanel = new Panel();
+            mainPanel.setLayoutManager(new LinearLayout(Direction.HORIZONTAL));
+
+            gamePanel = new Panel();
+            mainPanel.addComponent(gamePanel.withBorder(Borders.singleLine("Your Game")));
+
+            buttonPanel = new Panel();
+            buttonPanel.addComponent(new Button("Opponent 1", () -> {
+            	if (gameId == 0)
+            		setEnemyId(1);
+            	else
+            		setEnemyId(0);
+			}));
+			buttonPanel.addComponent(new Button("Opponent 2", () -> {
+				if (gameId == 1)
+					setEnemyId(2);
+				else
+					setEnemyId(1);
+			}));
+			buttonPanel.addComponent(new Button("Opponent 3", () -> {
+				if (gameId == 2)
+					setEnemyId(3);
+				else
+					setEnemyId(2);
+			}));
+            mainPanel.addComponent(buttonPanel.withBorder(Borders.singleLine("Select who has to receive the trash line")));
 
             grid = new int[ROW][COL];
             contentAreas = new BlockGrid_Holder[ROW][];
@@ -949,7 +984,7 @@ public class Game {
 
             SetMainInterface();
 
-            window.setComponent(mainPanel);
+            window.setComponent(gamePanel);
 
             StartInputThread(screen, contentAreas, grid);
 
@@ -1127,9 +1162,9 @@ public class Game {
 
         contentAreas = null;
 
-        mainPanel.removeAllComponents();
+        gamePanel.removeAllComponents();
 
-        mainPanel = null;
+        gamePanel = null;
 
         screen.stopScreen();
 

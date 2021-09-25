@@ -20,7 +20,6 @@ public class Client {
     private DataInputStream sock_in = null;
     private Game game;
     private int id;
-    private int enemyId;
     private int numberOfPlayers;
 
     private void isGameOver() {
@@ -61,12 +60,8 @@ public class Client {
                         receiveNumberOfPLayers();
                         System.out.println(numberOfPlayers); // ricorda di eliminare
 			game.setGameId(id);
-						
-			if(id!=0) {
-			    enemyId=id-1;
-			} else 
-			    enemyId = 1;
-			game.setEnemyId(enemyId);
+
+			game.setEnemyId(0); // default player
 
                         isGameOver();
 
@@ -94,7 +89,7 @@ public class Client {
                             System.out.println("Paused");
                             game.Pause();
                             isPaused = true;
-                            System.out.println(numberOfPlayers); // ricorda di eliminare
+                            System.out.println(numberOfPlayers); // elimina alla fine
                         }
                     } else if (line.equals("Restart")) {
 
@@ -132,6 +127,10 @@ public class Client {
 			game.Windup();
 			isStarted=false;
 		    } else if (line.equals("Game Over")) {
+                        if (numberOfPlayers == 2){
+                            game.Pause();
+                            System.out.println("YOU WON!");
+                        }
                         numberOfPlayers--;
                         System.out.println("Someone Lost. Players remaining: " + numberOfPlayers);
                     } else {
