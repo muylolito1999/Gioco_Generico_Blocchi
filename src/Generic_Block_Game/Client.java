@@ -58,10 +58,15 @@ public class Client {
                         game = new Game(this.socket);
                         setId();
                         receiveNumberOfPLayers();
+			game.setPlayersConnected(numberOfPlayers);
                         System.out.println(numberOfPlayers); // ricorda di eliminare
 			game.setGameId(id);
+			
 
-			game.setEnemyId(0); // default player
+			if(id!=0)
+			    game.setEnemyId(0); // default player
+			else 
+			    game.setEnemyId(1);
 
                         isGameOver();
 
