@@ -140,6 +140,34 @@ public class Game {
 				trashLines = 0;
 			
 			}
+	    boolean reachedTop = false;
+		for (int i=0; i<grid.length;i++) {
+			for(int j=0; j<grid[i].length;j++) {
+				if (grid[i][j]==2) {
+					Indexed index = contentAreas[i][j].getColor();
+					contentAreas[i][j].SetBlock(TextColor.Indexed
+						.fromRGB(255, 255, 255));
+					grid[i][j] = 0;
+					if(i+trashLines<=0) {
+						reachedTop = true;
+					} else {
+						contentAreas[i-trashLines][j].SetBlock(index);
+						grid[i-trashLines][j] = 2;
+					}
+				} else if (grid[i][j]==1){
+					Indexed index = contentAreas[i][j].getColor();
+					contentAreas[i][j].SetBlock(TextColor.Indexed
+							.fromRGB(255, 255, 255));
+					grid[i][j] = 0;
+					if(i+trashLines<=0) {
+						reachedTop = true;
+					} else {
+						contentAreas[i-trashLines][j].SetBlock(index);
+						grid[i-trashLines][j] = 1;
+					}
+				}
+			}
+		}
 
             for (int i = 0; i < trashLines; i++) {
 
@@ -153,7 +181,9 @@ public class Game {
                 Trashlined_rows++;
 
 	    }
-        
+        if(reachedTop) {
+	    sendGameOver();
+	}
         mutex.release();
 	
     }
