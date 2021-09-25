@@ -92,7 +92,8 @@ public class Client {
 
                         if (!isPaused) {
                             System.out.println("Paused");
-                            game.Pause();
+			    if (!isPaused)
+                                game.Pause();
                             isPaused = true;
                             System.out.println(numberOfPlayers); // elimina alla fine
                         }
