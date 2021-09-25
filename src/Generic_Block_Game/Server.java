@@ -291,10 +291,6 @@ public class Server {
 
     }
 
-    public void receiveNumberOfPlayers() throws IOException {
-        numberOfPlayers = in.readInt();
-    }
-
     public static void main(String args[]) throws IOException {
         Server server = new Server(5000);
     }
