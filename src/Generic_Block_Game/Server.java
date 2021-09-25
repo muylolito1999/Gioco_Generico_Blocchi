@@ -214,7 +214,7 @@ public class Server {
                             }
                         }
 
-                        System.out.println(line);
+                       // System.out.println(line);
                     }
 
                 } catch (IOException i) {
@@ -289,10 +289,6 @@ public class Server {
 
         }
 
-    }
-
-    public void receiveNumberOfPlayers() throws IOException {
-        numberOfPlayers = in.readInt();
     }
 
     public static void main(String args[]) throws IOException {
