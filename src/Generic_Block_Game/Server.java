@@ -211,7 +211,6 @@ public class Server {
                                     DataOutputStream out = new DataOutputStream(sockets.get(i).getOutputStream());
                                     out.writeUTF(line);
                                 }
-                                //send to all connected clients
                             }
                         }
 
@@ -273,12 +272,12 @@ public class Server {
 
     public void Client_handler() throws IOException {
 
-        System.out.println("Waiting for a client ...");
+        System.out.println("In attesa di un client...");
 
         while (true) {
 
             Socket socket = server.accept();
-            System.out.println("Client accepted");
+            System.out.println("Client accettato");
 
             if (sockets.size() >= 0 && sockets.size() <= 4) {
                 sockets.add(socket);
