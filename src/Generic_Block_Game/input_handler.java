@@ -504,7 +504,7 @@ public class input_handler {
             }
 
 
-            //System.out.println("Input thread Ended");
+            System.out.println("Input thread Ended");
 
         });
 
