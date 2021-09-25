@@ -50,7 +50,7 @@ public class Game {
     private int playersConnected;
 
     public void setEnemyId(int id) {
-    	while (id > playersConnected-1){
+    	while (id < playersConnected-1){
     		id--;
 			System.out.println("Player: " + id + " doesn't exist, i'm trying to select player " + (id-1) + " as enemy");
 		}
@@ -168,7 +168,7 @@ public class Game {
 							.fromRGB(255, 255, 255));
 					grid[i][j] = 0;
 					if(i+trashLines<=0) {
-						reachedTop = true;
+						continue;
 					} else {
 						contentAreas[i-trashLines][j].SetBlock(index);
 						grid[i-trashLines][j] = 1;
