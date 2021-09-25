@@ -50,7 +50,7 @@ public class Game {
     private int playersConnected;
 
     public void setEnemyId(int id) {
-    	while (id < playersConnected-1){
+    	while (id > playersConnected-1){
     		id--;
 			System.out.println("Player: " + id + " doesn't exist, i'm trying to select player " + (id-1) + " as enemy");
 		}
