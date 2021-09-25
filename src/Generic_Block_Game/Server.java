@@ -191,7 +191,7 @@ public class Server {
             while (new_Socket.isConnected() && !line.equals("Exit")) {
                 try {
 
-                    System.out.println("Receive here on Top");
+                    System.out.println("Client ricevuto");
                     if (!new_Socket.isInputShutdown()) {
 
                         line = in.readUTF();
