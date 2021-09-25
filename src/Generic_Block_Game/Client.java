@@ -13,7 +13,6 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 import javazoom.jl.decoder.JavaLayerException;
 
 public class Client {
-    // initialize socket and input output streams
 
     private Socket socket = null;
     private DataInputStream input = null;
@@ -49,7 +48,6 @@ public class Client {
             boolean isPaused = false;
             String line = "";
 
-            // keep reading until "Over" is input
             while (true) {
                 try {
                     line = sock_in.readUTF();
@@ -151,7 +149,6 @@ public class Client {
                 }
             }
 
-            // close the connection
             try {
                 input.close();
                 out.close();
@@ -170,16 +167,12 @@ public class Client {
 		System.out.println("Client ID: " + id);
 	}
 
-    // constructor to put ip address and port
     public Client(String address, int port) throws UnsupportedAudioFileException, LineUnavailableException, JavaLayerException {
-        // establish a connection
         try {
             socket = new Socket(address, port);
-            System.out.println("Connected");
+            System.out.println("Connesso");
 
-            // takes input from terminal
             input = new DataInputStream(System.in);
-            // sends output to the socket
             out = new DataOutputStream(socket.getOutputStream());
 
             sock_in = new DataInputStream(socket.getInputStream());
