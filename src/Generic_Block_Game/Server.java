@@ -37,7 +37,7 @@ public class Server {
     public void Initialize() throws IOException {
 
         server = new ServerSocket(port);
-        System.out.println("Server started");
+        System.out.println("Server avviato");
 
         Server_Instructions_Broadcaster();
 
