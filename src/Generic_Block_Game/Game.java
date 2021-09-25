@@ -984,7 +984,7 @@ public class Game {
 
             SetMainInterface();
 
-            window.setComponent(gamePanel);
+            window.setComponent(mainPanel.withBorder(Borders.singleLine()));
 
             StartInputThread(screen, contentAreas, grid);
 
