@@ -1084,7 +1084,7 @@ public class Game {
     								int r = shape[k][0];
     								int c = shape[k][1];
     								contentAreas[r][c].SetBlock(color);
-    								if (r + 1 >= ROW) {
+    								if (r + 1 >= ROW-Trashlined_rows) {
     									condition1 = true;
     								}
     							}
