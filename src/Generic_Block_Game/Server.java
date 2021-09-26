@@ -181,7 +181,7 @@ public class Server {
 
     public void Server_Thread(Socket new_Socket) throws IOException {
 
-        in = new DataInputStream(
+        DataInputStream in = new DataInputStream(
                 new BufferedInputStream(new_Socket.getInputStream()));
 
         Thread thread = new Thread(() -> {
@@ -191,7 +191,7 @@ public class Server {
             while (new_Socket.isConnected() && !line.equals("Exit")) {
                 try {
 
-                    System.out.println("Client ricevuto");
+                    System.out.println("Receive here on Top");
                     if (!new_Socket.isInputShutdown()) {
 
                         line = in.readUTF();
@@ -211,10 +211,11 @@ public class Server {
                                     DataOutputStream out = new DataOutputStream(sockets.get(i).getOutputStream());
                                     out.writeUTF(line);
                                 }
+                                //send to all connected clients
                             }
                         }
 
-                       // System.out.println(line);
+                        System.out.println(line);
                     }
 
                 } catch (IOException i) {
