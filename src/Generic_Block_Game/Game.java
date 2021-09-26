@@ -160,7 +160,7 @@ public class Game {
 					contentAreas[i][j].SetBlock(TextColor.Indexed
 						.fromRGB(255, 255, 255));
 					grid[i][j] = 0;
-					if(i+trashLines<=0) {
+					if(i-trashLines<=0) {
 						reachedTop = true;
 					} else {
 						contentAreas[i-trashLines][j].SetBlock(index);
@@ -171,7 +171,7 @@ public class Game {
 					contentAreas[i][j].SetBlock(TextColor.Indexed
 							.fromRGB(255, 255, 255));
 					grid[i][j] = 0;
-					if(i+trashLines<=0) {
+					if(i-trashLines<=0) {
 						continue;
 					} else {
 						contentAreas[i-trashLines][j].SetBlock(index);
